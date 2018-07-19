@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Asap|Open+Sans+Condensed:300|Pacifico|Quicksand|Roboto+Slab');
+
+body {
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+.nav-head {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    border-bottom: 2px solid #fcfdfd;
+    align-items: center;
+    top: 0;
+}
+
+.nav-icon {
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 15px 0 10px;
+}
+
+.main-content {
+    position: relative;
+    top: 30px;
+    padding: 10px;
+}
+
+.list {
+    margin-bottom: 15px;
+}
