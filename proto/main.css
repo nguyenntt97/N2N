@@ -236,3 +236,15 @@ li .info-title {
     font-family: 'Francois One', sans-serif;
     font-size: 1em;
 }
+
+.vol-list {
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.vol-item {
+    max-width: 250px;
+    margin: 10px;
+}
