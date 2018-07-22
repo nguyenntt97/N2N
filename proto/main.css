@@ -241,10 +241,49 @@ li .info-title {
     width: 100%;
     display: flex;
     position: relative;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .vol-item {
     max-width: 250px;
-    margin: 10px;
+    margin: 10px -150px 10px 0;
+}
+
+.vol-col {
+    position: relative;
+}
+
+.vol-background {
+    width: 120%;
+    background: black;
+    position: absolute;
+    height: 280px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.vol-background::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+}
+
+.vol-background img {
+    width: 110%;
+    filter: blur(5px);
+    margin: -5px -10px -10px -5px;
+}
+
+.order-2 {
+    opacity: .7;
+    pointer-events: none;
+    transform: perspective(200px) translateZ(-20px);
+}
+.order-3 {
+    opacity: .6;
+    pointer-events: none;
+    transform: perspective(200px) translateZ(-30px);
 }
