@@ -287,3 +287,217 @@ li .info-title {
     pointer-events: none;
     transform: perspective(200px) translateZ(-30px);
 }
+
+.vol-tab {
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 2.5px 0 rgba(0,0,0,0.14), 0 1px 2px -1px rgba(0,0,0,0.3);
+}
+
+.vol-tab li {
+    padding: 5px 10px;
+}
+
+.vol-content {
+    height: auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    top: 30px;
+}
+
+.vol-card {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+.vol-cover {
+    min-width: 200px;
+}
+
+.vol-cover img {
+    width: 150px;
+    position: relative;
+    left: 20px;
+    bottom: 30px;
+}
+
+.chap-list {
+    position: relative;
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.chap-list .vol-title {
+    font-size: 2em;
+    color: #6d767e;
+    font-weight: bold;
+    width: 100%;
+}
+
+.chap-list a {
+    padding: 5px;
+    text-decoration: none;
+    color: #a8afb4;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.chap-list a:hover {
+    color: black;
+}
+
+.comment-section {
+    margin-top: 70px;
+    position: relative;
+}
+
+.new-message textarea {
+    height: 100px;
+    border: 1px solid #26a69a;
+}
+.comment-section h2 {
+    color: #6d767e;
+    font-size: 1.75em;   
+}
+
+.btn-set {
+    position: relative;
+    width: 100%;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.message {
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.message .mess-header {
+    font-size: .8em;
+    width: 100%;
+}
+
+.mess-header .mess-owner {
+    display: inline-block;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.mess-header .mess-date {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.mess-set {
+    font-size: .9em;
+    padding-left: 10px;
+    font-weight: bold
+}
+
+.mess-set a {
+    color: #5b6268;
+}
+
+.mess-rep {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.mess-rep .message {
+    border-left: 2px solid #a8afb4;
+}
+
+.edit-section {
+    margin-top: 30px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.main-section {
+    width: 70%;
+    margin: 5px;
+    min-width: 400px;
+}
+
+.nav-section {
+    width: 15%;
+    min-width: 250px;
+}
+
+.main-section .post-title {
+    border: none!important;
+    margin: 5px!important;
+    font-size: 1.75em!important;
+    font-family: 'Francois One'!important;
+    color: #5b6268!important;
+}
+
+.post-content {
+    max-height: 80%;
+    min-height: 400px;
+    border: none;
+    padding: 5px;
+}
+
+.collection-header h4 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* PROFILE PAGE */
+
+.info-section {
+    position: relative;
+    height: 200px;
+    padding: 10px;
+}
+
+.info-section .ava-holder {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    min-height: 100px;
+    width: 150px;
+}
+
+.ava-holder img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.ava-holder .info-name {
+    font-family: 'Francois One'!important;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.ava-holder .info-comp {
+    width: 100%;
+    display: flex;
+}
+
+.info-comp .info-type {
+    font-size: .8em;
+    font-weight: bold;
+    padding-top: 5px;
+    font-family: 'Fira Sans';
+    margin-right: 10px;
+}
+
+.info-comp .info-content {
+    font-size: 1.2em;
+}
+
+.info-section .detail-info {
+    background: #a8afb4;
+    width: 80%;
+    height: 100%;
+}
