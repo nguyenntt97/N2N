@@ -12,6 +12,7 @@ import Mainpage from "./views/Mainpage";
 import Projects from "./views/Projects";
 import FollowPanel from "./views/Follow";
 import Profile from "./views/Profile";
+import DraftPanel from "./views/DraftPanel";
 
 class App extends Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class App extends Component {
           </div>
         </div>
         <Route path="/follow/me" component={Profile} />
+        <Route path="/draft/id" component={DraftPanel} />
         {routes.map((route, index) => (
           <Route
             key={index}

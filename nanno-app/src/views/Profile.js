@@ -70,10 +70,12 @@ class Profile extends Component {
                 <li class="collection-header">
                   <h4>Thư mục</h4>
                 </li>
-                <li class="collection-item">Truyện</li>
-                <li class="collection-item">LN</li>
-                <li class="collection-item">Misc</li>
-                <li class="collection-item">Alvin</li>
+                <a class="collection-item">Truyện</a>
+                <Link className="collection-item" to="/draft/id">
+                  LN
+                </Link>
+                <a class="collection-item">Misc</a>
+                <a class="collection-item">Alvin</a>
               </ul>
             </div>
           </div>
