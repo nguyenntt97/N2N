@@ -434,7 +434,7 @@ li .info-title {
 }
 
 .edit-section {
-  margin-top: 30px;
+  margin-top: 60px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -588,8 +588,60 @@ li .info-title {
   font-size: 1.2em;
 }
 
+/* DRAFT PANEL */
+
+.dir-bar {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -5px rgba(0, 0, 0, 0.12), 0 -1px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+.dir-bar .address-text {
+  padding: 10px;
+  font-size: 0.9em;
+  font-family: "Fira Sans";
+  font-weight: bold;
+}
+
+.list-section {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
 .info-section .detail-info {
   background: #a8afb4;
   width: 80%;
   height: 100%;
+}
+
+.list-section .sub-group {
+  position: relative;
+  margin-right: 20px;
+  width: auto;
+}
+
+.title-section {
+  margin-bottom: 20px;
+  max-width: 80%;
+}
+
+.tab-section {
+  display: flex;
+}
+
+.tab-section li {
+  padding: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+  font-family: "Francois One";
+}
+
+.tab-section .active-tab {
+  background: #26a69a;
+  color: white;
 }

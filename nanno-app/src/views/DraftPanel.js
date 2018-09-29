@@ -7,18 +7,37 @@ class DraftPanel extends Component {
         <div class="edit-section container">
           <div class="main-section">
             <div class="dir-bar">
-              <input type="text" />
+              <i class="small material-icons">folder_open</i>
+              <div class="address-text">\LN\Tsuyokute</div>
+            </div>
+            <div class="title-section">
+              <input class="post-title" type="text" placeholder="Tiêu đề" />
+              <div class="msg-box" />
             </div>
             <div class="main-area">
               <div class="list-section">
-                <i class="small material-icons">format_align_left</i>
-                <i class="small material-icons">format_align_center</i>
-                <i class="small material-icons">format_align_right</i>
+                <div class="sub-group">
+                  <i class="small material-icons">format_bold</i>
+                  <i class="small material-icons">format_italic</i>
+                </div>
+
+                <div class="sub-group">
+                  <i class="small material-icons">insert_link</i>
+                  <i class="small material-icons">format_quote</i>
+                  <i class="small material-icons">image</i>
+                </div>
+
+                <div class="sub-group">
+                  <i class="small material-icons">format_align_left</i>
+                  <i class="small material-icons">format_align_center</i>
+                  <i class="small material-icons">format_align_right</i>
+                </div>
               </div>
-              <div class="title-section">
-                <input class="post-title" type="text" placeholder="Tiêu đề" />
-                <div class="msg-box" />
-              </div>
+
+              <ul class="tab-section ">
+                <li class="active-tab z-depth-2">Source</li>
+                <li>Preview</li>
+              </ul>
               <textarea class="post-content">
                 Nhập hoặc paste nội dung (Ctrl + V) vào đây
               </textarea>

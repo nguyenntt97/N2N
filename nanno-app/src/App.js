@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./main.css";
+import "materialize-css";
 import {
   BrowserRouter as Router,
   Route,
