@@ -397,8 +397,8 @@ li .info-title {
   position: relative;
   margin: 5px;
   display: flex;
-  flex-wrap: wrap;
   align-content: center;
+  flex-direction: column;
 }
 
 .chap-list .vol-title {
@@ -416,8 +416,44 @@ li .info-title {
   display: inline-block;
 }
 
+.chap-list .chapter:before {
+  content: "◊";
+  margin-right: 5px;
+  font-size: 0.8em;
+}
+
 .chap-list a:hover {
   color: black;
+}
+
+.vol-banner {
+  width: 30%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.vol-banner .background-banner {
+  height: 100%;
+  filter: blur(0.5rem);
+}
+
+.vol-banner .main-banner {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 5;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination li a {
+  font-size: 0.9em;
 }
 
 .comment-section {
@@ -439,6 +475,9 @@ li .info-title {
   width: 100%;
   text-align: right;
   margin-top: 5px;
+}
+.btn-set a {
+  margin-right: 5px;
 }
 
 .message {
