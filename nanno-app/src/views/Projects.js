@@ -1,4 +1,5 @@
 import React from "react";
+import Pagination from "../widget/Pagination";
 
 const CHAP_VOL_DATA = [
   {
@@ -177,6 +178,7 @@ const CHAP_VOL_DATA = [
 
 const MAX_ITEM_NUM = 5;
 const getDisplayRange = (pgNum, chapList) => {
+  console.log("2: ", chapList);
   let sId = (pgNum - 1) * MAX_ITEM_NUM;
   let eId = sId + MAX_ITEM_NUM - 1;
 
@@ -188,6 +190,15 @@ const getDisplayRange = (pgNum, chapList) => {
     eId: eId
   };
 };
+
+const getPageRange = (curPage, chapList) => {
+  let totalPageNum = Math.ceil(chapList.length / MAX_ITEM_NUM);
+  let sId = curPage - 2;
+  if (sId < 0) {
+    sId = 0;
+  }
+  let eId = sId + 4;
+}
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -202,6 +213,12 @@ class Projects extends React.Component {
     this.setState({
       curChap: index
     });
+  }
+
+  onPageChange(newPage) {
+    this.setState({
+      "curPagChap": newPage
+    })
   }
 
   onRenderVol() {
@@ -221,38 +238,12 @@ class Projects extends React.Component {
           </div>
           <div className="chap-list">
             <a className="vol-title">TẬP {curVolData["vol-id"]}</a>
-            {curVolData["chap-data"].splice(sId, eId + 1).map(chapter => (
+            {curVolData["chap-data"].slice(sId, eId + 1).map(chapter => (
               <a href="#" className="chapter">
                 <b>Chương {chapter["chap-id"]}:</b> {chapter["chap-name"]}
               </a>
             ))}
-            <ul className="pagination">
-              <li className="disabled">
-                <a href="#!">
-                  <i className="material-icons">chevron_left</i>
-                </a>
-              </li>
-              <li className="active">
-                <a href="#!">1</a>
-              </li>
-              <li className="waves-effect">
-                <a href="#!">2</a>
-              </li>
-              <li className="waves-effect">
-                <a href="#!">3</a>
-              </li>
-              <li className="waves-effect">
-                <a href="#!">4</a>
-              </li>
-              <li className="waves-effect">
-                <a href="#!">5</a>
-              </li>
-              <li className="waves-effect">
-                <a href="#!">
-                  <i className="material-icons">chevron_right</i>
-                </a>
-              </li>
-            </ul>
+            <Pagination event={newPage=>this.onPageChange(newPage)} start={} end={}/>
           </div>
           <div className="vol-banner">
             <img className="background-banner" src="bg1.jpg" />
