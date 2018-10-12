@@ -4,28 +4,31 @@ class Projects extends React.Component {
   render() {
     return (
       <div className="project-comp">
-        <div class="main-content container">
-          <div class="row">
-            <div class="col s9 vol-col">
-              <div class="vol-background">
+        <div className="main-content container">
+          <div className="row">
+            <div className="col s9 vol-col">
+              <div className="vol-background">
                 <img src="bg.jpg" />
               </div>
-              <div class="vol-list">
-                <div class="card small vol-item order-3">
-                  <div class="card-image waves-effect waves-block waves-light card-image-thumb">
-                    <img class="activator vol-thumb" src="vol1_sample.jpg" />
+              <div className="vol-list">
+                <div className="card small vol-item order-3">
+                  <div className="card-image waves-effect waves-block waves-light card-image-thumb">
+                    <img
+                      className="activator vol-thumb"
+                      src="vol1_sample.jpg"
+                    />
                   </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                      Tập 1<i class="material-icons right">more_vert</i>
+                  <div className="card-content">
+                    <span className="card-title activator grey-text text-darken-4">
+                      Tập 1<i className="material-icons right">more_vert</i>
                     </span>
                     <p>
                       <a href="#">This is a link</a>
                     </p>
                   </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">
-                      Tập 1<i class="material-icons right">close</i>
+                  <div className="card-reveal">
+                    <span className="card-title grey-text text-darken-4">
+                      Tập 1<i className="material-icons right">close</i>
                     </span>
                     <p>
                       Here is some more information about this product that is
@@ -34,21 +37,24 @@ class Projects extends React.Component {
                   </div>
                 </div>
 
-                <div class="card small vol-item order-2">
-                  <div class="card-image waves-effect waves-block waves-light card-image-thumb">
-                    <img class="activator vol-thumb" src="vol1_sample.jpg" />
+                <div className="card small vol-item order-2">
+                  <div className="card-image waves-effect waves-block waves-light card-image-thumb">
+                    <img
+                      className="activator vol-thumb"
+                      src="vol1_sample.jpg"
+                    />
                   </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                      Tập 2<i class="material-icons right">more_vert</i>
+                  <div className="card-content">
+                    <span className="card-title activator grey-text text-darken-4">
+                      Tập 2<i className="material-icons right">more_vert</i>
                     </span>
                     <p>
                       <a href="#">This is a link</a>
                     </p>
                   </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">
-                      Tập 2<i class="material-icons right">close</i>
+                  <div className="card-reveal">
+                    <span className="card-title grey-text text-darken-4">
+                      Tập 2<i className="material-icons right">close</i>
                     </span>
                     <p>
                       Here is some more information about this product that is
@@ -57,21 +63,24 @@ class Projects extends React.Component {
                   </div>
                 </div>
 
-                <div class="card small vol-item">
-                  <div class="card-image waves-effect waves-block waves-light card-image-thumb">
-                    <img class="activator vol-thumb" src="vol1_sample.jpg" />
+                <div className="card small vol-item">
+                  <div className="card-image waves-effect waves-block waves-light card-image-thumb">
+                    <img
+                      className="activator vol-thumb"
+                      src="vol1_sample.jpg"
+                    />
                   </div>
-                  <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">
-                      Tập 3<i class="material-icons right">more_vert</i>
+                  <div className="card-content">
+                    <span className="card-title activator grey-text text-darken-4">
+                      Tập 3<i className="material-icons right">more_vert</i>
                     </span>
                     <p>
                       <a href="#">This is a link</a>
                     </p>
                   </div>
-                  <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">
-                      Tập 3<i class="material-icons right">close</i>
+                  <div className="card-reveal">
+                    <span className="card-title grey-text text-darken-4">
+                      Tập 3<i className="material-icons right">close</i>
                     </span>
                     <p>
                       Here is some more information about this product that is
@@ -81,26 +90,28 @@ class Projects extends React.Component {
                 </div>
               </div>
             </div>
-            <div class="col s4" />
+            <div className="col s4" />
           </div>
         </div>
 
-        <div class="vol-body container">
-          <ul class="vol-tab">
-            <li>Tập 1</li>
-            <li>Tập 2</li>
-            <li>Tập 3</li>
-            <li>Tập 4</li>
-            <li>Tập 5</li>
-            <li>Tập 6</li>
+        <div className="vol-body container">
+          <ul className="vol-tab">
+            <li onClick={e => changeTab(e, 0)} className="cur-tab">
+              Tập 1
+            </li>
+            <li onClick={e => changeTab(e, 1)}>Tập 2</li>
+            <li onClick={e => changeTab(e, 2)}>Tập 3</li>
+            <li onClick={e => changeTab(e, 3)}>Tập 4</li>
+            <li onClick={e => changeTab(e, 4)}>Tập 5</li>
+            <li onClick={e => changeTab(e, 5)}>Tập 6</li>
           </ul>
-          <div class="vol-content">
-            <div class="vol-card z-depth-1">
-              <div class="vol-cover">
-                <img class="z-depth-2" src="vol1_sample.jpg" />
+          <div className="vol-content">
+            <div className="vol-card z-depth-1">
+              <div className="vol-cover">
+                <img className="z-depth-2" src="vol1_sample.jpg" />
               </div>
-              <div class="chap-list">
-                <a class="vol-title">TẬP 1</a>
+              <div className="chap-list">
+                <a className="vol-title">TẬP 1</a>
                 <a href="#">Chương 1</a>
                 <a href="#">Chương 2</a>
                 <a href="#">Chương 3</a>
@@ -139,44 +150,44 @@ class Projects extends React.Component {
           </div>
         </div>
 
-        <div class="comment-section container">
+        <div className="comment-section container">
           <h2>Tất cả 1 bình luận</h2>
-          <div class="new-message">
+          <div className="new-message">
             <textarea />
-            <div class="btn-set">
-              <a class="waves-effect waves-light btn-small">
-                <i class="material-icons right">delete</i>
+            <div className="btn-set">
+              <a className="waves-effect waves-light btn-small">
+                <i className="material-icons right">delete</i>
                 Xóa
               </a>
-              <a class="waves-effect waves-light btn-small">
-                <i class="material-icons right">send</i>
+              <a className="waves-effect waves-light btn-small">
+                <i className="material-icons right">send</i>
                 Đăng
               </a>
             </div>
           </div>
-          <div class="message">
-            <div class="mess-header">
-              <div class="mess-owner">tnguyen178</div>
-              <div class="mess-date">+13 12 giờ trước</div>
+          <div className="message">
+            <div className="mess-header">
+              <div className="mess-owner">tnguyen178</div>
+              <div className="mess-date">+13 12 giờ trước</div>
             </div>
-            <div class="mess-content">Truyện hay vãi</div>
+            <div className="mess-content">Truyện hay vãi</div>
           </div>
-          <div class="message">
-            <div class="mess-header">
-              <div class="mess-owner">tnguyen178</div>
-              <div class="mess-date">+13 12 giờ trước</div>
+          <div className="message">
+            <div className="mess-header">
+              <div className="mess-owner">tnguyen178</div>
+              <div className="mess-date">+13 12 giờ trước</div>
             </div>
-            <div class="mess-content">Truyện hay vãi</div>
-            <div class="mess-set">
+            <div className="mess-content">Truyện hay vãi</div>
+            <div className="mess-set">
               <a>trả lời</a>
             </div>
-            <div class="mess-rep">
-              <div class="message">
-                <div class="mess-header">
-                  <div class="mess-owner">tnguyen178</div>
-                  <div class="mess-date">+13 12 giờ trước</div>
+            <div className="mess-rep">
+              <div className="message">
+                <div className="mess-header">
+                  <div className="mess-owner">tnguyen178</div>
+                  <div className="mess-date">+13 12 giờ trước</div>
                 </div>
-                <div class="mess-content">Hay kax</div>
+                <div className="mess-content">Hay kax</div>
               </div>
             </div>
           </div>
@@ -185,5 +196,15 @@ class Projects extends React.Component {
     );
   }
 }
+
+const changeTab = (e, iNew) => {
+  let curTab = document.getElementsByClassName("cur-tab")[0];
+  if (curTab == e.target) {
+    return;
+  }
+  let iCur = Array.from(curTab.parentElement.children).indexOf(curTab);
+  curTab.className = "";
+  e.target.className = iNew > iCur ? "cur-tab tab-left" : "cur-tab tab-right";
+};
 
 export default Projects;

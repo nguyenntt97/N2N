@@ -1,503 +1,518 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Francois+One|Roboto');
-
-
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans|Francois+One|Roboto");
 
 body {
-    width: 100%;
-    height: 100px;
-    position: relative;
+  width: 100%;
+  height: 100px;
+  position: relative;
 }
 
 .nav-head {
-    height: 30px;
-    width: 100%;
-    display: flex;
-    position: fixed;
-    border-bottom: 2px solid #fcfdfd;
-    align-items: center;
-    top: 0;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  border-bottom: 2px solid #fcfdfd;
+  align-items: center;
+  top: 0;
 }
 
 .nav-icon {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 0 15px 0 10px;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 15px 0 10px;
 }
 
 .main-content {
-    position: relative;
-    top: 30px;
-    padding: 10px;
+  position: relative;
+  top: 30px;
+  padding: 10px;
 }
 
 .list {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .watchlist li {
-    height: 120px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-    background: #abd0fe;
-    border-radius: 3px;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  background: #abd0fe;
+  border-radius: 3px;
 }
 
 .watchlist li:hover {
-    background: #81abdf;
-    cursor: pointer;
+  background: #81abdf;
+  cursor: pointer;
 }
 
 .watchlist li:hover img {
-    top: -20%;
+  top: -20%;
 }
 
 .watchlist li img {
-    height: 120%;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all ease .3s;
+  height: 120%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all ease 0.3s;
 }
 
 .info-date {
-    position: relative;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-date .date-day {
-    font-size: 1.75em;
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: bold;
+  font-size: 1.75em;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: bold;
 }
 
 li .info-title {
-    font-size: 1.7em;
+  font-size: 1.7em;
 }
 
 .list-wig .wig-item {
-    padding: 10px;
-    margin: 5px 0;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.035), 
-                0 3px 1px -2px rgba(0, 0, 0, 0.03),
-                0 1px 5px 0 rgba(0, 0, 0, 0.03) !important;
+  padding: 10px;
+  margin: 5px 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.035),
+    0 3px 1px -2px rgba(0, 0, 0, 0.03), 0 1px 5px 0 rgba(0, 0, 0, 0.03) !important;
 }
 
 .list-discuss {
-    width: 100%;
-    height: 100%;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .list-discuss li {
-    width: 100%;
-    height: auto;
-    flex-wrap: wrap;
-    position: relative;
-    display: flex;
-    margin: 15px 0;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  margin: 15px 0;
 }
 
 .discusss .thumbnail {
-    width: 50px;
-    height: 50px;
-    background: #ececec;
+  width: 50px;
+  height: 50px;
+  background: #ececec;
 }
 
 .discusss .main-info {
-    width: 50%;
-    margin: 0 30px;
+  width: 50%;
+  margin: 0 30px;
 }
 
 .main-info .title {
-    width: 100%;
-    display: block;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.1em;
+  width: 100%;
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1em;
 }
 
-.main-info .author,.time,.comments {
-    font-size: 0.9em;
-    color: #b1b1b1;
-    margin-right: 5px;
+.main-info .author,
+.time,
+.comments {
+  font-size: 0.9em;
+  color: #b1b1b1;
+  margin-right: 5px;
 }
 
 .discusss .followers {
-    display: flex;
-    position: absolute;
-    justify-content: flex-end;
-    right: 10px;
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  right: 10px;
 }
 
 .followers .follower {
-    height: 30px;
-    width: 30px;
-    border: 1px solid white;
-    background: #ececec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: -5px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid white;
+  background: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: -5px;
 }
 
 .followers .follower img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .followers .total {
-    font-size: .8em;
+  font-size: 0.8em;
 }
 
 .event-timeline {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
 }
 
 .timeline {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 .timeline .event {
-    margin: 0 50px;
-    position: relative;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #2b3546;
+  margin: 0 50px;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #2b3546;
 }
 
 .event:nth-child(even) .event-info:before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    height: 150%;
-    top: -50%;
-    border-left: 1px solid #2b354648;
+  content: "";
+  position: absolute;
+  left: -5px;
+  height: 150%;
+  top: -50%;
+  border-left: 1px solid #2b354648;
 }
 
 .event:nth-child(odd) .event-info:before {
-    content: '';
-    position: absolute;
-    left: -5px;
-    height: 150%;
-    bottom: -50%;
-    border-left: 1px solid #2b354648;
+  content: "";
+  position: absolute;
+  left: -5px;
+  height: 150%;
+  bottom: -50%;
+  border-left: 1px solid #2b354648;
 }
 
 .event .event-info {
-    position: absolute;
-    width: 150px;
-    left: 12px;
+  position: absolute;
+  width: 150px;
+  left: 12px;
 }
 
 .event:nth-child(even) .event-info {
-    bottom: -100px;
+  bottom: -100px;
 }
 
 .event:nth-child(odd) .event-info {
-    top: -100px;
+  top: -100px;
 }
 
 .event .review {
-    font-size: .6em;
-    color: #b1b1b1;
-    max-height: 30px;
-    overflow: hidden;
+  font-size: 0.6em;
+  color: #b1b1b1;
+  max-height: 30px;
+  overflow: hidden;
 }
 
 .timeline::before {
-    content: ' ';
-    width: 100%;
-    height: 2px;
-    background-color: #2b354681;
-    position: absolute;
+  content: " ";
+  width: 100%;
+  height: 2px;
+  background-color: #2b354681;
+  position: absolute;
 }
 
 .event-info .date {
-    font-family: 'Francois One', sans-serif;
-    font-weight: bold;
-    font-size: 1.2em;
+  font-family: "Francois One", sans-serif;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 .event-info .event-name {
-    font-family: 'Francois One', sans-serif;
-    font-size: 1em;
+  font-family: "Francois One", sans-serif;
+  font-size: 1em;
 }
 
 .vol-list {
-    width: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
 }
 
 .vol-item {
-    max-width: 250px;
-    margin: 10px -150px 10px 0;
+  max-width: 250px;
+  margin: 10px -150px 10px 0;
 }
 
 .vol-col {
-    position: relative;
+  position: relative;
 }
 
 .vol-background {
-    width: 120%;
-    background: black;
-    position: absolute;
-    height: 280px;
-    margin-top: 20px;
-    overflow: hidden;
+  width: 120%;
+  background: black;
+  position: absolute;
+  height: 280px;
+  margin-top: 20px;
+  overflow: hidden;
 }
 
 .vol-background::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, .5);
-    position: absolute;
-    top: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
 }
 
 .vol-background img {
-    width: 110%;
-    filter: blur(5px);
-    margin: -5px -10px -10px -5px;
+  width: 110%;
+  filter: blur(5px);
+  margin: -5px -10px -10px -5px;
 }
 
 .order-2 {
-    opacity: .7;
-    pointer-events: none;
-    transform: perspective(200px) translateZ(-20px);
+  opacity: 0.7;
+  pointer-events: none;
+  transform: perspective(200px) translateZ(-20px);
 }
 .order-3 {
-    opacity: .6;
-    pointer-events: none;
-    transform: perspective(200px) translateZ(-30px);
+  opacity: 0.6;
+  pointer-events: none;
+  transform: perspective(200px) translateZ(-30px);
 }
 
 .vol-tab {
-    display: flex;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 2.5px 0 rgba(0,0,0,0.14), 0 1px 2px -1px rgba(0,0,0,0.3);
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 2.5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 2px -1px rgba(0, 0, 0, 0.3);
 }
 
 .vol-tab li {
-    padding: 5px 10px;
+  padding: 5px 10px;
 }
 
 .vol-content {
-    height: auto;
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    top: 30px;
+  height: auto;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  top: 30px;
 }
 
 .vol-card {
-    display: flex;
-    width: 100%;
-    position: relative;
+  display: flex;
+  width: 100%;
+  position: relative;
 }
 
 .vol-cover {
-    min-width: 200px;
+  min-width: 200px;
 }
 
 .vol-cover img {
-    width: 150px;
-    position: relative;
-    left: 20px;
-    bottom: 30px;
+  width: 150px;
+  position: relative;
+  left: 20px;
+  bottom: 30px;
 }
 
 .chap-list {
-    position: relative;
-    margin: 5px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+  position: relative;
+  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .chap-list .vol-title {
-    font-size: 2em;
-    color: #6d767e;
-    font-weight: bold;
-    width: 100%;
+  font-size: 2em;
+  color: #6d767e;
+  font-weight: bold;
+  width: 100%;
 }
 
 .chap-list a {
-    padding: 5px;
-    text-decoration: none;
-    color: #a8afb4;
-    font-size: 1.2em;
-    display: inline-block;
+  padding: 5px;
+  text-decoration: none;
+  color: #a8afb4;
+  font-size: 1.2em;
+  display: inline-block;
 }
 
 .chap-list a:hover {
-    color: black;
+  color: black;
 }
 
 .comment-section {
-    margin-top: 70px;
-    position: relative;
+  margin-top: 70px;
+  position: relative;
 }
 
 .new-message textarea {
-    height: 100px;
-    border: 1px solid #26a69a;
+  height: 100px;
+  border: 1px solid #26a69a;
 }
 .comment-section h2 {
-    color: #6d767e;
-    font-size: 1.75em;   
+  color: #6d767e;
+  font-size: 1.75em;
 }
 
 .btn-set {
-    position: relative;
-    width: 100%;
-    text-align: right;
-    margin-top: 5px;
+  position: relative;
+  width: 100%;
+  text-align: right;
+  margin-top: 5px;
 }
 
 .message {
-    padding: 5px;
-    margin-bottom: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .message .mess-header {
-    font-size: .8em;
-    width: 100%;
+  font-size: 0.8em;
+  width: 100%;
 }
 
 .mess-header .mess-owner {
-    display: inline-block;
-    font-size: 1.25em;
-    font-weight: bold;
+  display: inline-block;
+  font-size: 1.25em;
+  font-weight: bold;
 }
 
 .mess-header .mess-date {
-    display: inline-block;
-    margin-left: 5px;
+  display: inline-block;
+  margin-left: 5px;
 }
 
 .mess-set {
-    font-size: .9em;
-    padding-left: 10px;
-    font-weight: bold
+  font-size: 0.9em;
+  padding-left: 10px;
+  font-weight: bold;
 }
 
 .mess-set a {
-    color: #5b6268;
+  color: #5b6268;
 }
 
 .mess-rep {
-    padding-left: 20px;
-    margin-top: 5px;
+  padding-left: 20px;
+  margin-top: 5px;
 }
 
 .mess-rep .message {
-    border-left: 2px solid #a8afb4;
+  border-left: 2px solid #a8afb4;
 }
 
 .edit-section {
-    margin-top: 30px;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: wrap;
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .main-section {
-    width: 70%;
-    margin: 5px;
-    min-width: 400px;
+  width: 70%;
+  margin: 5px;
+  min-width: 400px;
 }
 
 .nav-section {
-    width: 15%;
-    min-width: 250px;
+  width: 15%;
+  min-width: 250px;
 }
 
 .main-section .post-title {
-    border: none!important;
-    margin: 5px!important;
-    font-size: 1.75em!important;
-    font-family: 'Francois One'!important;
-    color: #5b6268!important;
+  border: none !important;
+  margin: 5px !important;
+  font-size: 1.75em !important;
+  font-family: "Francois One" !important;
+  color: #5b6268 !important;
 }
 
 .post-content {
-    max-height: 80%;
-    min-height: 400px;
-    border: none;
-    padding: 5px;
+  max-height: 80%;
+  min-height: 400px;
+  border: none;
+  padding: 5px;
 }
 
 .collection-header h4 {
-    font-size: 1.4em;
-    font-weight: bold;
+  font-size: 1.4em;
+  font-weight: bold;
 }
 
 /* PROFILE PAGE */
 
 .info-section {
-    position: relative;
-    height: 200px;
-    padding: 10px;
+  position: relative;
+  height: 200px;
+  padding: 10px;
 }
 
 .info-section .ava-holder {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    min-height: 100px;
-    width: 150px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  min-height: 100px;
+  width: 150px;
 }
 
 .ava-holder img {
-    width: 100%;
-    height: auto;
-    
+  width: 100%;
+  height: auto;
 }
 
 .ava-holder .info-name {
-    font-family: 'Francois One'!important;
-    text-align: center;
-    font-size: 1.5em;
+  font-family: "Francois One" !important;
+  text-align: center;
+  font-size: 1.5em;
 }
 
 .ava-holder .info-comp {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 .info-comp .info-type {
-    font-size: .8em;
-    font-weight: bold;
-    padding-top: 5px;
-    font-family: 'Fira Sans';
-    margin-right: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding-top: 5px;
+  font-family: "Fira Sans";
+  margin-right: 10px;
 }
 
 .info-comp .info-content {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .info-section .detail-info {
-    background: #a8afb4;
-    width: 80%;
-    height: 100%;
+  background: #a8afb4;
+  width: 80%;
+  height: 100%;
+}
+
+/* EDIT SECTION */
+.dir-bar {
+  position: relative;
+}
+.main-area {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  height: 800px;
+}
+
+.title-section {
+  width: 100%;
 }

@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 
+const content = "Nhập hoặc paste nội dung (Ctrl + V) vào đây";
+
 class DraftPanel extends Component {
+  constructor(props) {
+    super(props);
+
+    this.changeTab = this.changeTab.bind(this);
+    this.state = {
+      previewTab: true
+    };
+  }
+
   render() {
     return (
       <div class="main-frame">
@@ -33,14 +44,10 @@ class DraftPanel extends Component {
                   <i class="small material-icons">format_align_right</i>
                 </div>
               </div>
-
-              <ul class="tab-section ">
-                <li class="active-tab z-depth-2">Source</li>
-                <li>Preview</li>
-              </ul>
-              <textarea class="post-content">
-                Nhập hoặc paste nội dung (Ctrl + V) vào đây
-              </textarea>
+              {this.renderTab(this.state.previewTab)}
+              <div class="view-content">
+                {renderViewContent(this.state.previewTab, content)}
+              </div>
             </div>
           </div>
           <div class="nav-section">
@@ -60,6 +67,39 @@ class DraftPanel extends Component {
       </div>
     );
   }
+
+  changeTab() {
+    console.log(this.state.previewTab);
+    this.setState({
+      previewTab: !this.state.previewTab
+    });
+  }
+
+  renderTab = isPreview => {
+    if (isPreview) {
+      return (
+        <ul class="tab-section">
+          <li onClick={this.changeTab}>Source</li>
+          <li class="active-tab z-depth-2">Preview</li>
+        </ul>
+      );
+    } else {
+      return (
+        <ul class="tab-section">
+          <li class="active-tab z-depth-2">Source</li>
+          <li onClick={this.changeTab}>Preview</li>
+        </ul>
+      );
+    }
+  };
 }
+
+const renderViewContent = (isPreview, content) => {
+  if (isPreview) {
+    return <div class="post-preview">{content}</div>;
+  } else {
+    return <textarea class="post-content">{content}</textarea>;
+  }
+};
 
 export default DraftPanel;

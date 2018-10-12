@@ -311,12 +311,60 @@ li .info-title {
 .vol-tab {
   display: flex;
   flex-wrap: wrap;
-  box-shadow: 0 2px 2.5px 0 rgba(0, 0, 0, 0.14),
-    0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  width: 70%;
+  border-bottom: 2px solid #b1b1b19a;
 }
 
 .vol-tab li {
   padding: 5px 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.vol-tab li:hover {
+  background: #5463803b;
+  cursor: pointer;
+}
+
+.vol-tab li:active {
+  background: #44516b8a;
+}
+
+.vol-tab .cur-tab:before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #2b354681;
+  bottom: -2px;
+  transition: all ease 1s;
+}
+
+.vol-tab .tab-left:before {
+  animation: tabShowLeft ease 0.3s;
+}
+
+.vol-tab .tab-right:before {
+  animation: tabShowRight ease 0.3s;
+}
+
+@keyframes tabShowLeft {
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes tabShowRight {
+  from {
+    right: -50%;
+  }
+  to {
+    right: 0;
+  }
 }
 
 .vol-content {
