@@ -14,6 +14,7 @@ import Projects from "./views/Projects";
 import FollowPanel from "./views/Follow";
 import Profile from "./views/Profile";
 import DraftPanel from "./views/DraftPanel";
+import ReadPanel from "./views/ReadPanel";
 
 class App extends Component {
   constructor(props) {
@@ -76,6 +77,23 @@ const routes = [
       </Link>
     ),
     main: () => <Projects />
+  },
+  {
+    path: "/project/vol-1-chap-1",
+    exact: true,
+    sidebar: () => [
+      <Link to="/">
+        <div className="nav-item">
+          Project <i className="small material-icons">chevron_right</i>
+        </div>
+      </Link>,
+      <Link to="/">
+        <div className="nav-item">
+          Vol 1 Chap 1 <i className="small material-icons">chevron_right</i>
+        </div>
+      </Link>
+    ],
+    main: () => <ReadPanel />
   },
   {
     path: "/",
