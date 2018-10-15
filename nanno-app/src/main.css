@@ -2,8 +2,9 @@
 
 body {
   width: 100%;
-  height: 100px;
+  min-height: 100px;
   position: relative;
+  padding-bottom: 100px;
 }
 
 .nav-head {
@@ -731,4 +732,34 @@ li .info-title {
 .tab-section .active-tab {
   background: #26a69a;
   color: white;
+}
+
+/* Comment Bar Big */
+.comment-bar-big {
+  display: flex;
+  background: #424242;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  z-index: 10;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.other-comment {
+  background: #757575;
+  width: 100%;
+  padding: 5px;
+}
+
+.my-comment {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+.my-comment a {
+  right: 10px;
+  position: absolute;
 }

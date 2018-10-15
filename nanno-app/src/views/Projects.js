@@ -1,5 +1,6 @@
 import React from "react";
 import Pagination from "../widget/Pagination";
+import CommentBar from "../widget/CommentBar";
 
 const CHAP_VOL_DATA = [
   {
@@ -436,7 +437,9 @@ class Projects extends React.Component {
           {this.onRenderVol()}
         </div>
 
-        <div className="comment-section container">
+        <CommentBar />
+
+        {/* <div className="comment-section container">
           <h2>Tất cả 1 bình luận</h2>
           <div className="new-message">
             <textarea />
@@ -477,7 +480,7 @@ class Projects extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
