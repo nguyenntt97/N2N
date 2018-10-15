@@ -171,6 +171,26 @@ const CHAP_VOL_DATA = [
       {
         "chap-id": "9",
         "chap-name": "The return of the Chef"
+      },
+      {
+        "chap-id": "10",
+        "chap-name": "The return of the Chef"
+      },
+      {
+        "chap-id": "11",
+        "chap-name": "The return of the Chef"
+      },
+      {
+        "chap-id": "12",
+        "chap-name": "The return of the Chef"
+      },
+      {
+        "chap-id": "13",
+        "chap-name": "The return of the Chef"
+      },
+      {
+        "chap-id": "14",
+        "chap-name": "The return of the Chef"
       }
     ]
   }
@@ -194,11 +214,21 @@ const getDisplayRange = (pgNum, chapList) => {
 const getPageRange = (curPage, chapList) => {
   let totalPageNum = Math.ceil(chapList.length / MAX_ITEM_NUM);
   let sId = curPage - 2;
-  if (sId < 0) {
-    sId = 0;
+  if (sId < 1) {
+    sId = 1;
   }
   let eId = sId + 4;
-}
+  if (eId > totalPageNum) {
+    eId = totalPageNum;
+  }
+
+  console.log("Total: ", totalPageNum, eId);
+
+  return {
+    sId: sId,
+    eId: eId
+  };
+};
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -207,6 +237,8 @@ class Projects extends React.Component {
       curChap: 0,
       curPagChap: 1
     };
+
+    this.onPageChange = this.onPageChange.bind(this);
   }
 
   onChapterFocus(e, index) {
@@ -216,9 +248,10 @@ class Projects extends React.Component {
   }
 
   onPageChange(newPage) {
+    console.log("New page", newPage);
     this.setState({
-      "curPagChap": newPage
-    })
+      curPagChap: newPage
+    });
   }
 
   onRenderVol() {
@@ -227,9 +260,18 @@ class Projects extends React.Component {
       this.state.curPagChap,
       curVolData["chap-data"]
     );
+
+    let pageRangeObj = getPageRange(
+      this.state.curPagChap,
+      curVolData["chap-data"]
+    );
+
     console.log(rangeObj);
     let sId = rangeObj["sId"];
     let eId = rangeObj["eId"];
+
+    let pSId = pageRangeObj["sId"];
+    let pEId = pageRangeObj["eId"];
     return (
       <div className="vol-content">
         <div className="vol-card z-depth-1">
@@ -238,12 +280,19 @@ class Projects extends React.Component {
           </div>
           <div className="chap-list">
             <a className="vol-title">TẬP {curVolData["vol-id"]}</a>
-            {curVolData["chap-data"].slice(sId, eId + 1).map(chapter => (
-              <a href="#" className="chapter">
-                <b>Chương {chapter["chap-id"]}:</b> {chapter["chap-name"]}
-              </a>
-            ))}
-            <Pagination event={newPage=>this.onPageChange(newPage)} start={} end={}/>
+            {curVolData["chap-data"]
+              .slice(sId, eId + 1)
+              .map((chapter, index) => (
+                <a key={index} href="#" className="chapter">
+                  <b>Chương {chapter["chap-id"]}:</b> {chapter["chap-name"]}
+                </a>
+              ))}
+            <Pagination
+              event={this.onPageChange}
+              pStart={pSId}
+              pEnd={pEId}
+              pCur={this.state.curPagChap}
+            />
           </div>
           <div className="vol-banner">
             <img className="background-banner" src="bg1.jpg" />
