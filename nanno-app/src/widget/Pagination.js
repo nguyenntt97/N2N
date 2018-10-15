@@ -2,8 +2,7 @@ import React, { Component } from "react";
 
 const renderPages = (start, end, active, event) => {
   let htmlContent = [];
-  var i = 0;
-  for (i = start; i <= end; i++) {
+  for (let i = start; i <= end; i++) {
     if (active == i) {
       htmlContent.push(
         <li key={i} className="active">
@@ -14,7 +13,7 @@ const renderPages = (start, end, active, event) => {
       console.log("count: " + i);
       htmlContent.push(
         <li key={i} className="waves-effect">
-          <a href="#!" onClick={i => event(i)}>
+          <a href="#!" onClick={() => event(i)}>
             {i}
           </a>
         </li>
