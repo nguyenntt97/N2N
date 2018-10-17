@@ -6,6 +6,7 @@ class ReadPanel extends Component {
   }
 
   render() {
+    console.log("This: ", this.props.link);
     return (
       <div className="main-content container read-content">
         <h3>

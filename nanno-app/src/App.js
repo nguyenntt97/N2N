@@ -54,7 +54,7 @@ class App extends Component {
         <Route path="/draft/id" component={DraftPanel} />
         {routes.map((route, index) => (
           <Route
-            key={index}
+            key={"0033" + index}
             path={route.path}
             exact={route.exact}
             component={route.main}
@@ -67,33 +67,36 @@ class App extends Component {
 
 const routes = [
   {
-    path: "/project",
+    path: "/:project",
     exact: true,
-    sidebar: () => (
+    sidebar: ({ match }) => (
       <Link to="/">
         <div className="nav-item">
-          Project <i className="small material-icons">chevron_right</i>
+          {match.params.project}{" "}
+          <i className="small material-icons">chevron_right</i>
         </div>
       </Link>
     ),
     main: () => <Projects />
   },
   {
-    path: "/project/vol-1-chap-1",
+    path: "/:project/:chaplink",
     exact: true,
-    sidebar: () => [
+    sidebar: ({ match }) => [
       <Link to="/">
         <div className="nav-item">
-          Project <i className="small material-icons">chevron_right</i>
+          {match.params.project}{" "}
+          <i className="small material-icons">chevron_right</i>
         </div>
       </Link>,
       <Link to="/">
         <div className="nav-item">
-          Vol 1 Chap 1 <i className="small material-icons">chevron_right</i>
+          {match.params.chaplink}{" "}
+          <i className="small material-icons">chevron_right</i>
         </div>
       </Link>
     ],
-    main: () => <ReadPanel />
+    main: ({ match }) => <ReadPanel link={match.params.chaplink} />
   },
   {
     path: "/",

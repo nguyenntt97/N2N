@@ -787,7 +787,7 @@ h4 {
 }
 
 .read-content p {
-  font-size: 1.2em;
+  font-size: 1.3em;
   --x-height-multiplier: 0.375;
   --baseline-multiplier: 0.17;
   letter-spacing: 0.01rem;
@@ -797,7 +797,8 @@ h4 {
 }
 
 .read-content img {
-  width: 100%;
+  width: auto;
+  height: 100%;
 }
 
 .read-content .img-holder {

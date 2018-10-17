@@ -1,6 +1,7 @@
 import React from "react";
 import Pagination from "../widget/Pagination";
 import CommentBar from "../widget/CommentBar";
+import { Link } from "react-router-dom";
 
 const CHAP_VOL_DATA = [
   {
@@ -10,7 +11,8 @@ const CHAP_VOL_DATA = [
     "chap-data": [
       {
         "chap-id": "1",
-        "chap-name": "The return of the King"
+        "chap-name": "The return of the King",
+        "chap-link": "v1c1"
       },
       {
         "chap-id": "2",
@@ -284,9 +286,17 @@ class Projects extends React.Component {
             {curVolData["chap-data"]
               .slice(sId, eId + 1)
               .map((chapter, index) => (
-                <a key={index} href="#" className="chapter">
-                  <b>Chương {chapter["chap-id"]}:</b> {chapter["chap-name"]}
-                </a>
+                <Link
+                  key={index}
+                  to={"/aaa/" + chapter["chap-link"]}
+                  className="chapter"
+                >
+                  <b>
+                    Chương{" "}
+                    {chapter["chap-id"] == null ? "#" : chapter["chap-id"]}:
+                  </b>{" "}
+                  {chapter["chap-name"]}
+                </Link>
               ))}
             <Pagination
               event={this.onPageChange}
@@ -295,10 +305,10 @@ class Projects extends React.Component {
               pCur={this.state.curPagChap}
             />
           </div>
-          <div className="vol-banner">
+          {/* <div className="vol-banner">
             <img className="background-banner" src="bg1.jpg" />
             <img className="main-banner" src="bg1.jpg" />
-          </div>
+          </div> */}
         </div>
       </div>
     );
