@@ -1,6 +1,8 @@
 import React from "react";
 import Pagination from "../widget/Pagination";
 import CommentBar from "../widget/CommentBar";
+import ModalBox from "../widget/NotiBox";
+
 import { Link } from "react-router-dom";
 
 const CHAP_VOL_DATA = [
@@ -201,7 +203,6 @@ const CHAP_VOL_DATA = [
 
 const MAX_ITEM_NUM = 5;
 const getDisplayRange = (pgNum, chapList) => {
-  console.log("2: ", chapList);
   let sId = (pgNum - 1) * MAX_ITEM_NUM;
   let eId = sId + MAX_ITEM_NUM - 1;
 
@@ -225,20 +226,33 @@ const getPageRange = (curPage, chapList) => {
     eId = totalPageNum;
   }
 
-  console.log("Total: ", totalPageNum, eId);
-
   return {
     sId: sId,
     eId: eId
   };
 };
+
+const onNotiRender = modalObj => {
+  if (modalObj == null) {
+    return;
+  }
+  return (
+    <ModalBox title={modalObj["title"]} msg={modalObj["msg"]} timeout={5} />
+  );
+};
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       curVol: 0,
       curChap: 0,
-      curPagChap: 1
+      curPagChap: 1,
+      modal: {
+        title: "Message",
+        type: 1,
+        msg: "This is a mockup message"
+      }
     };
 
     this.onPageChange = this.onPageChange.bind(this);
@@ -251,7 +265,6 @@ class Projects extends React.Component {
   }
 
   onPageChange(newPage) {
-    console.log("New page", newPage);
     this.setState({
       curPagChap: newPage
     });
@@ -277,6 +290,7 @@ class Projects extends React.Component {
     let pEId = pageRangeObj["eId"];
     return (
       <div className="vol-content">
+        {onNotiRender(this.state.modal)}
         <div className="vol-card z-depth-1">
           <div className="vol-cover">
             <img className="z-depth-2" src={curVolData["vol-ava"]} />
