@@ -104,7 +104,7 @@ const routes = [
     sidebar: () => (
       <Link to="/project">
         <div className="nav-item">
-          \ <i class="small material-icons">chevron_right</i>
+          \ <i className="small material-icons">chevron_right</i>
         </div>
       </Link>
     ),

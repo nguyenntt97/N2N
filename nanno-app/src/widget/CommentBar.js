@@ -17,6 +17,15 @@ class CommentBar extends Component {
     };
   }
 
+  onMsgBoxCollapseChange() {
+    let msgContent = document.getElementsByClassName("comment-section")[0];
+    if (msgContent.style.height != "0px") {
+      msgContent.style.height = "0px";
+    } else {
+      msgContent.style.height = "400px";
+    }
+  }
+
   // handleKeyPress = ev => {
   //   let curMsg = "";
   //   switch (ev.keyCode) {
@@ -65,11 +74,21 @@ class CommentBar extends Component {
     return (
       <div className="comment-bar-big z-depth-2">
         <div className="other-comment">
-          <div className="comment-msg">
+          <div className="comment-msg" onClick={this.onMsgBoxCollapseChange}>
             <div>
               <i className="tiny material-icons">forum</i>
               Comments
             </div>
+            <ul className="tab-list">
+              <li className="tab-head cur-tab-head">Project A</li>
+              <li className="tab-head">project B</li>
+              <li className="tab-head">project C</li>
+              <li className="tab-head">project D</li>
+              <li className="tab-head">project E</li>
+            </ul>
+            <i id="box-maximize-btn" className="tiny material-icons">
+              add
+            </i>
           </div>
           <div className="comment-section">
             <div className="message">

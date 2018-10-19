@@ -458,8 +458,12 @@ li .info-title {
 }
 
 .comment-section {
+  display: block;
   position: relative;
   padding: 5px;
+  transition: all ease 0.3s;
+  overflow: hidden;
+  height: 0px;
 }
 
 .new-message textarea {
@@ -754,8 +758,10 @@ li .info-title {
 }
 
 .other-comment .comment-msg {
-  padding: 5px;
   background: #616161;
+  cursor: pointer;
+  display: flex;
+  position: relative;
 }
 
 .comment-msg > div {
@@ -763,6 +769,7 @@ li .info-title {
   font-size: 0.9em;
   display: flex;
   align-items: center;
+  padding: 5px;
 }
 
 .comment-msg i {
@@ -829,6 +836,35 @@ button {
   content: "❚";
   font-weight: bold;
   font-size: 1.2em;
+}
+
+#box-maximize-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: #424242;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.tab-list {
+  width: 400px;
+  display: flex;
+  margin: 0 0 0 10px;
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  box-shadow: none;
+}
+.tab-list li {
+  text-decoration: none;
+  color: black;
+  padding: 0 5px 0 5px;
+  background: #424242;
+  border-radius: 0 5px 0 0;
+  color: #f5f5f5;
+  font-size: 0.9em;
+  margin-right: 2px;
 }
 
 /* READING VIEW */
