@@ -14,7 +14,9 @@ BOT_NAME = 'N2Ncrawler'
 SPIDER_MODULES = ['N2Ncrawler.spiders']
 NEWSPIDER_MODULE = 'N2Ncrawler.spiders'
 
-
+ITEM_PIPELINES = {
+    'N2Ncrawler.pipelines.ProjectPipeline': 300
+}
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'N2Ncrawler (+http://www.yourdomain.com)'
 

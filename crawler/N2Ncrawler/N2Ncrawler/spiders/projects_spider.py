@@ -1,4 +1,5 @@
 import scrapy
+from ..items import Project
 
 
 class ProjectsSpider(scrapy.Spider):
@@ -12,8 +13,19 @@ class ProjectsSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, response):
-        page = response.url[-1]
-        filename = "projects-%s.html" % page
-        with open(filename, 'wb') as f:
-            f.write(response.body)
-        self.log('Saved file %s' % filename)
+        self.log('Processed file %s' % response.url)
+        for href in response.xpath('//tr[@class="bdrank"]//span/a/@href').extract():
+            yield response.follow(href, self.parse_project)
+
+        for pgHref in response.xpath('//div[@class="digg_pagination"]//em/following-sibling::a/@href'):
+            yield response.follow(pgHref, self.parse)
+
+    def parse_project(self, response):
+        pj = Project()
+        pj["name"] = response.xpath('//div[@class="seriestitlenu"]/text()').extract_first()
+        pj["createdIn"] = response.xpath('//div[@id="edityear"]/text()').extract_first()
+        pj["author"] = response.xpath('//div[@id="showauthors"]/a/text()').extract_first()
+        pj["artist"] = response.xpath('//div[@id="showartists"]/a/text()').extract_first()
+        pj["synopsis"] = response.xpath('//div[@id="editdescription"]/p/text()').extract_first()
+        pj["tags"] = response.xpath('//div[@id="seriesgenre"]/a/text()').extract_first()
+        yield  pj
