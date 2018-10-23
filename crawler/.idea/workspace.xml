@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="377193ee-736f-4075-a760-0bb4c2180b79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/N2Ncrawler/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/N2Ncrawler/projects-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/projects-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/N2Ncrawler/scrapy.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/N2Ncrawler/scrapy.cfg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +24,10 @@
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -47,7 +46,8 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Ini" value="40" />
-          <entry key="Python" value="1227" />
+          <entry key="Python" value="1985" />
+          <entry key="SQL" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -55,18 +55,18 @@
         <counts>
           <entry key="Python Console" value="17" />
           <entry key="cfg" value="40" />
-          <entry key="py" value="1210" />
+          <entry key="py" value="1979" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
+            <state relative-caret-position="507">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -77,22 +77,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="26" column="8" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="8" />
+            <state relative-caret-position="616">
+              <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
               <folding>
-                <marker date="1539923133739" expanded="true" signature="319:324" ph="..." />
+                <marker date="1540267237271" expanded="true" signature="319:324" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+            <state relative-caret-position="221">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
-                <marker date="1539931995552" expanded="true" signature="521:868" ph="..." />
+                <element signature="e#193#207#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,9 +131,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py" />
         <option value="$PROJECT_DIR$/N2Ncrawler/scrapy.cfg" />
         <option value="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/settings.py" />
+        <option value="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py" />
         <option value="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py" />
         <option value="$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py" />
       </list>
@@ -157,6 +157,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,7 +184,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,8 +242,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="500" y="80" width="1400" height="1000" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2533235" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25701624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -283,33 +284,10 @@
     <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/middlewares.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py">
+    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="88" selection-start-line="29" selection-start-column="88" selection-end-line="29" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="26" column="8" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="8" />
-          <folding>
-            <marker date="1539923133739" expanded="true" signature="319:324" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-          <folding>
-            <marker date="1539931995552" expanded="true" signature="521:868" ph="..." />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -320,10 +298,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/settings.py">
+    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/spiders/projects_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="507">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <marker date="1540267237271" expanded="true" signature="319:324" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/N2Ncrawler/N2Ncrawler/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#193#207#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

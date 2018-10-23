@@ -17,14 +17,14 @@ class N2NcrawlerItem(scrapy.Item):
 class Project(scrapy.Item):
     id = scrapy.Field();
     name = scrapy.Field();
-    nameAlter = scrapy.Field();
-    createdIn = scrapy.Field();
-    lastUpdated = scrapy.Field();
+    name_alter = scrapy.Field();
+    created_in = scrapy.Field();
+    last_updated = scrapy.Field();
     author = scrapy.Field();
     artist = scrapy.Field();
     synopsis = scrapy.Field();
     rating = scrapy.Field();
     tags = scrapy.Field();
     genres = scrapy.Field();
-    thumbImg = scrapy.Field();
+    thumb_img = scrapy.Field();
     link = scrapy.Field();

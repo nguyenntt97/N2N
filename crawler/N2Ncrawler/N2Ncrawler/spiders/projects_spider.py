@@ -1,5 +1,6 @@
 import scrapy
 from ..items import Project
+import datetime
 
 
 class ProjectsSpider(scrapy.Spider):
@@ -23,9 +24,12 @@ class ProjectsSpider(scrapy.Spider):
     def parse_project(self, response):
         pj = Project()
         pj["name"] = response.xpath('//div[@class="seriestitlenu"]/text()').extract_first()
-        pj["createdIn"] = response.xpath('//div[@id="edityear"]/text()').extract_first()
+        pj["created_in"] = int(response.xpath('//div[@id="edityear"]/text()').extract_first().strip())
+        pj['last_updated'] = str(datetime.datetime.now())
         pj["author"] = response.xpath('//div[@id="showauthors"]/a/text()').extract_first()
         pj["artist"] = response.xpath('//div[@id="showartists"]/a/text()').extract_first()
         pj["synopsis"] = response.xpath('//div[@id="editdescription"]/p/text()').extract_first()
+        pj["thumb_img"] = response.xpath('//div[@class="seriesimg"]/img/@src').extract_first()
         pj["tags"] = response.xpath('//div[@id="seriesgenre"]/a/text()').extract_first()
+        pj["link"] = response.request.url
         yield  pj
