@@ -293,7 +293,10 @@ class Projects extends React.Component {
         {onNotiRender(this.state.modal)}
         <div className="vol-card z-depth-1">
           <div className="vol-cover">
-            <img className="z-depth-2" src={curVolData["vol-ava"]} />
+            <img
+              className="z-depth-2 responsive-img"
+              src={curVolData["vol-ava"]}
+            />
           </div>
           <div className="chap-list">
             <a className="vol-title">TẬP {curVolData["vol-id"]}</a>
