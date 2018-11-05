@@ -11,6 +11,11 @@
 
 BOT_NAME = 'N2Ncrawler'
 
+MYSQL_URI = 'localhost'
+MYSQL_DATABASE = 'n2n_v1'
+MYSQL_USER = 'root'
+MYSQL_PASS = 'elKINO@2511'
+
 SPIDER_MODULES = ['N2Ncrawler.spiders']
 NEWSPIDER_MODULE = 'N2Ncrawler.spiders'
 

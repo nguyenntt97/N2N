@@ -22,14 +22,21 @@ class ProjectsSpider(scrapy.Spider):
             yield response.follow(pgHref, self.parse)
 
     def parse_project(self, response):
-        pj = Project()
-        pj["name"] = response.xpath('//div[@class="seriestitlenu"]/text()').extract_first()
-        pj["created_in"] = int(response.xpath('//div[@id="edityear"]/text()').extract_first().strip())
-        pj['last_updated'] = str(datetime.datetime.now())
-        pj["author"] = response.xpath('//div[@id="showauthors"]/a/text()').extract_first()
-        pj["artist"] = response.xpath('//div[@id="showartists"]/a/text()').extract_first()
-        pj["synopsis"] = response.xpath('//div[@id="editdescription"]/p/text()').extract_first()
-        pj["thumb_img"] = response.xpath('//div[@class="seriesimg"]/img/@src').extract_first()
-        pj["tags"] = response.xpath('//div[@id="seriesgenre"]/a/text()').extract_first()
-        pj["link"] = response.request.url
-        yield  pj
+        project = self.retrieve_project(response)
+        yield project
+
+
+    def retrieve_project(self, response):
+        project = Project()
+
+        project["name"] = response.xpath('//div[@class="seriestitlenu"]/text()').extract_first()
+        project["created_in"] = int(response.xpath('//div[@id="edityear"]/text()').extract_first().strip())
+        project['last_updated'] = str(datetime.datetime.now())
+        project["author"] = response.xpath('//div[@id="showauthors"]/a/text()').extract_first()
+        project["artist"] = response.xpath('//div[@id="showartists"]/a/text()').extract_first()
+        project["synopsis"] = response.xpath('//div[@id="editdescription"]/p/text()').extract_first()
+        project["thumb_img"] = response.xpath('//div[@class="seriesimg"]/img/@src').extract_first()
+        project["tags"] = response.xpath('//div[@id="seriesgenre"]/a/text()').extract_first()
+        project["link"] = response.request.url
+
+        return project
