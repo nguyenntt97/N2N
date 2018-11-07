@@ -7,6 +7,15 @@ body {
   padding-bottom: 100px;
 }
 
+a {
+  text-decoration: none;
+  color: #5f6366;
+}
+
+a:hover {
+  color: #517db3;
+}
+
 .nav-head {
   height: 50px;
   width: 100%;
@@ -47,8 +56,33 @@ body {
 
 .main-content {
   position: relative;
-  top: 30px;
-  padding: 10px;
+  top: 50px;
+  width: 100%;
+}
+
+.side-content {
+  width: 200px !important;
+}
+
+.content-section {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.content-section .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.guild-content {
+  width: 60%;
+  min-width: 500px;
 }
 
 .list {
@@ -412,8 +446,6 @@ li .info-title {
 
 .chap-list a {
   padding: 5px;
-  text-decoration: none;
-  color: #a8afb4;
   font-size: 1.2em;
   display: inline-block;
 }
@@ -625,6 +657,9 @@ li .info-title {
   width: 80%;
   padding: 5px;
   margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .custom-bar .custom-img {
@@ -634,9 +669,74 @@ li .info-title {
   overflow: hidden;
 }
 
-.custom-img img {
+.board-noti {
+  font-size: 0.85em;
+  margin-right: 20px;
+  font-family: "Fira Sans";
+  position: relative;
+  font-weight: bold;
+  padding: 3px 10px 3px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.board-noti > div {
+  font-size: 0.9em;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  font-weight: normal;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  display: flex;
+  background: rgb(197, 61, 61);
+  color: white;
+}
+
+.board-noti ul {
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  width: 300px;
+  max-width: 40vw;
+  background: white;
+  flex-direction: column;
+}
+
+.board-noti ul li {
+  position: relative;
+  display: flex;
+  padding: 8px;
+}
+
+.board-noti ul li:hover {
+  background: #a8afb449;
+  cursor: pointer;
+}
+
+.board-noti li img {
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+}
+
+.my-profile .custom-img img {
   width: 100%;
   height: 100%;
+}
+
+.board-noti .noti-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.board-noti .noti-content .board-noti-time {
+  font-weight: normal;
+  font-size: 0.9em;
 }
 
 /* PROFILE PAGE */
