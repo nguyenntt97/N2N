@@ -371,7 +371,7 @@ class Projects extends React.Component {
       <div className="content-section">
         <div className="project-comp">
           <div className="row">
-            <div className="col s9 vol-col">
+            <div className="vol-col">
               <div className="vol-background">
                 <img src="bg.jpg" />
               </div>
@@ -458,7 +458,7 @@ class Projects extends React.Component {
             <div className="col s4" />
           </div>
 
-          <div className="vol-body container">
+          <div className="vol-body">
             <ul className="vol-tab">{this.onRenderTab()}</ul>
             {this.onRenderVol()}
           </div>
