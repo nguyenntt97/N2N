@@ -368,8 +368,8 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div className="project-comp">
-        <div className="main-content container">
+      <div className="content-section">
+        <div className="project-comp">
           <div className="row">
             <div className="col s9 vol-col">
               <div className="vol-background">
@@ -457,16 +457,13 @@ class Projects extends React.Component {
             </div>
             <div className="col s4" />
           </div>
-        </div>
 
-        <div className="vol-body container">
-          <ul className="vol-tab">{this.onRenderTab()}</ul>
-          {this.onRenderVol()}
-        </div>
+          <div className="vol-body container">
+            <ul className="vol-tab">{this.onRenderTab()}</ul>
+            {this.onRenderVol()}
+          </div>
 
-        <CommentBar />
-
-        {/* <div className="comment-section container">
+          {/* <div className="comment-section container">
           <h2>Tất cả 1 bình luận</h2>
           <div className="new-message">
             <textarea />
@@ -508,6 +505,8 @@ class Projects extends React.Component {
             </div>
           </div>
         </div> */}
+        </div>
+        <CommentBar />
       </div>
     );
   }
