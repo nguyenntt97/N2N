@@ -306,10 +306,11 @@ li .info-title {
 
 .vol-col {
   position: relative;
+  width: 100%;
 }
 
 .vol-background {
-  width: 120%;
+  width: 100%;
   background: black;
   position: absolute;
   height: 280px;
@@ -1203,4 +1204,9 @@ h4 {
     width: 40px !important;
     min-width: 0;
   }
+}
+
+/* PROJECT VIEW */
+.project-comp {
+  width: 100%;
 }
