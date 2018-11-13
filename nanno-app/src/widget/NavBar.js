@@ -4,7 +4,45 @@ import { BrowserRouter as Route, Link } from "react-router-dom";
 class NavBar extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      notiActive: false,
+      notiUnActive: false
+    };
+
+    this.onNotiClick = this.onNotiClick.bind(this);
+    this.onNotiOutClick = this.onNotiOutClick.bind(this);
   }
+
+  componentDidMount() {
+    document.addEventListener("click", this.onNotiOutClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("click", this.onNotiOutClick);
+  }
+
+  onNotiOutClick = e => {
+    let notiCheck = document.getElementById("noti-check");
+    if (!notiCheck.contains(e.target)) {
+      this.setState({
+        notiActive: false,
+        notiUnActive: true
+      });
+      e.stopPropagation();
+    }
+  };
+
+  onNotiClick = e => {
+    if (this.state.notiActive) {
+      return;
+    }
+    console.log(this.state.notiActive);
+
+    this.setState({
+      notiActive: true,
+      notiUnActive: false
+    });
+  };
 
   render() {
     return (
@@ -20,10 +58,17 @@ class NavBar extends Component {
         ))}
         <div className="nav-item item-cur">Re:Zero</div>
         <div className="nav-item-item" />
-        <div className="custom-bar">
-          <div className="board-noti">
-            Board
+        <div className="custom-bar" id="noti-check">
+          <div
+            className={
+              (this.state.notiUnActive ? "unactive" : "") +
+              (this.state.notiActive ? " active" : "") +
+              " board-noti"
+            }
+            onClick={this.onNotiClick}
+          >
             <div>+3</div>
+            <span />
             <ul className="z-depth-1">
               <li>
                 <img src="/sample-ava.jpg" />

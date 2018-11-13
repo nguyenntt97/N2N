@@ -11,8 +11,13 @@ class NotiBox extends Component {
 
   doCountDown() {
     setTimeout(function() {
-      document.getElementById("notification").className =
-        "noti-box z-depth-1 fade-out";
+      let target = document.getElementById("notification");
+      if (target === null) {
+        return;
+      }
+
+      target.className = "noti-box z-depth-1 fade-out";
+      target.style.zIndex = "0";
     }, this.props.timeout * 1000);
   }
 
