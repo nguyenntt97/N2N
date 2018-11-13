@@ -15,6 +15,7 @@ import FollowPanel from "./views/Follow";
 import Profile from "./views/Profile";
 import DraftPanel from "./views/DraftPanel";
 import ReadPanel from "./views/ReadPanel";
+import NavBar from "./widget/NavBar";
 
 class App extends Component {
   constructor(props) {
@@ -28,52 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="nav-head">
-          <div className="nav-icon">Nanno</div>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              component={route.sidebar}
-            />
-          ))}
-          <div className="nav-item item-cur">Re:Zero</div>
-          <div className="nav-item-item" />
-          <div className="custom-bar">
-            <div className="board-noti">
-              Board
-              <div>+3</div>
-              <ul className="z-depth-1">
-                <li>
-                  <img src="/sample-ava.jpg" />
-                  <div className="noti-content">
-                    <span className="board-noti-title">
-                      Tại sao các cô gái Việt Nam lại rất xinh xắn
-                    </span>
-                    <span className="board-noti-time">1 hour ago</span>
-                  </div>
-                </li>
-                <li>
-                  <img src="/sample-ava.jpg" />
-                  <div className="noti-content">
-                    <span className="board-noti-title">
-                      Tại sao các cô gái Việt Nam lại rất xinh xắn
-                    </span>
-                    <span className="board-noti-time">1 hour ago</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="my-profile">
-              <div className="avatar custom-img">
-                <Link to="/follow/me">
-                  <img src="/sample-ava.jpg" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        <NavBar routes={routes} />
         <div className="main-content container">
           <Route path="/follow/me" component={Profile} />
           <Route path="/draft/id" component={DraftPanel} />
