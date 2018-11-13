@@ -13,18 +13,26 @@ class N2NcrawlerItem(scrapy.Item):
     # name = scrapy.Field()
     pass
 
+class Update(object):
+    def __init__(self):
+        self.name = ""
+        self.link = ""
+        self.group = ""
+        self.date = ""
+
 
 class Project(scrapy.Item):
-    id = scrapy.Field();
-    name = scrapy.Field();
-    name_alter = scrapy.Field();
-    created_in = scrapy.Field();
-    last_updated = scrapy.Field();
-    author = scrapy.Field();
-    artist = scrapy.Field();
-    synopsis = scrapy.Field();
-    rating = scrapy.Field();
-    tags = scrapy.Field();
-    genres = scrapy.Field();
-    thumb_img = scrapy.Field();
-    link = scrapy.Field();
+    id = scrapy.Field()
+    name = scrapy.Field()
+    name_alter = scrapy.Field()
+    created_in = scrapy.Field()
+    last_updated = scrapy.Field()
+    author = scrapy.Field()
+    artist = scrapy.Field()
+    synopsis = scrapy.Field()
+    rating = scrapy.Field()
+    tags = scrapy.Field()
+    genres = scrapy.Field()
+    thumb_img = scrapy.Field()
+    link = scrapy.Field()
+    update_list = scrapy.Field()

@@ -74,14 +74,12 @@ class ProjectPipeline(object):
         if project['author'] in self.projects_seen:
             same_auth_prjs = self.projects_seen[project['author']]
 
-        print('====%s====' % project['name'], len(same_auth_prjs))
-
         top_result = None
         for prj in same_auth_prjs:
             a = prj['name'].lower()
             b = project['name'].lower()
 
-            score = 0 if a==b else laven_dist(prj['name'], project['name'])/min(len(a), len(b))
+            score = 0 if a == b else laven_dist(prj['name'], project['name']) / min(len(a), len(b))
 
             if (score < 0.1):
                 top_result = prj
@@ -92,22 +90,25 @@ class ProjectPipeline(object):
         else:
             return None
 
-
-
     def process_item(self, item, spider):
         exist_proj = self.check_dup_project(item)
+        print("TO BE ADD: ", item)
 
         if (exist_proj is None):
             # prepare a cursor object using cursor() method
             cursor = self.client.cursor()
 
             # execute SQL query using execute() method.
-            sql = "INSERT INTO project(project_name, project_created, project_latest, project_author, project_artist, project_synopsis, project_ava, project_link) values (%s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO project(project_name, project_created, \
+                  project_latest, project_author, project_artist, \
+                  project_synopsis, project_ava, project_link, \
+                  project_update_info) \
+                  values (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
             val = (item["name"], item["created_in"],
                    item["last_updated"],
                    item["author"], item["artist"],
                    item["synopsis"], item["thumb_img"],
-                   item["link"])
+                   item["link"], item["update_list"])
 
             cursor.execute(sql, val)
             # Fetch a single row using fetchone() method.
