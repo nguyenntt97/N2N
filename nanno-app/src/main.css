@@ -4,7 +4,7 @@ body {
   width: 100%;
   min-height: 100px;
   position: relative;
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 a {
@@ -56,7 +56,7 @@ a:hover {
 
 .main-content {
   position: relative;
-  top: 50px;
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -417,17 +417,136 @@ li .info-title {
   width: 100%;
   position: relative;
   flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .vol-cover {
-  min-width: 200px;
+  width: 200px;
+  margin: 0 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: all ease-in-out 0.2s;
+}
+
+.vol-cover .vol-sum {
+  position: absolute;
+  width: 200px;
+  z-index: 10;
+  font-size: 1.1em;
+  font-family: "Francois One", sans-serif;
+  opacity: 0;
+  transition: all ease-in-out 0.2s;
 }
 
 .vol-cover img {
-  width: 150px;
   position: relative;
-  left: 20px;
-  bottom: 30px;
+  transition: all ease-in-out 0.2s;
+}
+
+.vol-cover::before,
+.vol-cover::after {
+  content: "";
+  width: 100%;
+  border: 5px;
+  background: white;
+  position: absolute;
+  transition: all ease-in-out 0.2s;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.vol-cover::before {
+  top: 0;
+}
+
+.vol-cover::after {
+  bottom: 0;
+}
+
+.vol-cover .vol-border {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  border: 2px solid rgb(107, 106, 106);
+  box-sizing: content-box;
+  transition: all ease-in-out 0.2s;
+  z-index: 5;
+}
+
+.vol-cover:hover {
+  width: 260px;
+  margin: 0;
+}
+
+.vol-cover:hover .vol-border {
+  width: 95%;
+  height: 75%;
+  background: rgba(255, 255, 255, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.61) 47%,
+    rgba(237, 237, 237, 0.18) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(0%, rgba(255, 255, 255, 1)),
+    color-stop(47%, rgba(246, 246, 246, 0.61)),
+    color-stop(100%, rgba(237, 237, 237, 0.18))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.61) 47%,
+    rgba(237, 237, 237, 0.18) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.61) 47%,
+    rgba(237, 237, 237, 0.18) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.61) 47%,
+    rgba(237, 237, 237, 0.18) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(246, 246, 246, 0.61) 47%,
+    rgba(237, 237, 237, 0.18) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+
+.vol-cover:hover::before,
+.vol-cover:hover::after {
+  padding: 17px;
+}
+
+.vol-cover:hover img {
+  margin-top: 10px;
+  transform: scale(1.3) translateY(10%);
+  filter: blur(10px);
+}
+
+.vol-cover:hover .vol-sum {
+  opacity: 1;
 }
 
 .chap-list {
@@ -436,6 +555,8 @@ li .info-title {
   display: flex;
   align-content: center;
   flex-direction: column;
+  height: 300px;
+  width: 500px;
 }
 
 .chap-list .vol-title {
@@ -484,7 +605,8 @@ li .info-title {
 }
 
 .pagination {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 5px;
 }
 
 .pagination li a {

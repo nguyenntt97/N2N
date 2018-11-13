@@ -9,6 +9,8 @@ const CHAP_VOL_DATA = [
   {
     "vol-id": "1",
     "vol-name": "The Beginning",
+    "vol-sum":
+      "Tập 2 nối tiếp câu chuyện kể về cuộc phiêu lưu của nhóm và những thử thách được đặt ra...",
     "vol-ava": "vol1_sample.jpg",
     "chap-data": [
       {
@@ -291,12 +293,11 @@ class Projects extends React.Component {
     return (
       <div className="vol-content">
         {onNotiRender(this.state.modal)}
-        <div className="vol-card z-depth-1">
+        <div className="vol-card">
           <div className="vol-cover">
-            <img
-              className="z-depth-2 responsive-img"
-              src={curVolData["vol-ava"]}
-            />
+            <div className="vol-sum">{curVolData["vol-sum"]}</div>
+            <div className="vol-border" />
+            <img className="responsive-img" src={curVolData["vol-ava"]} />
           </div>
           <div className="chap-list">
             <a className="vol-title">TẬP {curVolData["vol-id"]}</a>
