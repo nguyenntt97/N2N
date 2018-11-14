@@ -4,22 +4,42 @@ import Projects from "./Projects";
 import SideWidget from "../widget/SideWidget";
 import GuildBoard from "../widget/GuildBoard";
 
-const sample_data = {
-  title: "KONOSUBA chương 16",
-  author: "hungtb96",
-  time: "3 tiếng trước",
-  comments: "26 bình luận",
-  followers: {
-    followList: [
-      { ava: "sample-ava.jpg" },
-      { ava: "sample-ava.jpg" },
-      { ava: "sample-ava.jpg" },
-      { ava: "sample-ava.jpg" },
-      { ava: "sample-ava.jpg" }
-    ],
-    total: 7
+const sample_data = [
+  {
+    title: "RE-ZERO chương 16",
+    author: "hungtb96",
+    time: "3 tiếng trước",
+    comments: "26 bình luận",
+    link: "re-zero",
+    followers: {
+      followList: [
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" }
+      ],
+      total: 7
+    }
+  },
+  {
+    title: "KONOSUBA chương 15",
+    author: "hungtb96",
+    time: "5 tiếng trước",
+    comments: "21 bình luận",
+    link: "konosuba",
+    followers: {
+      followList: [
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" },
+        { ava: "sample-ava.jpg" }
+      ],
+      total: 7
+    }
   }
-};
+];
 class Mainpage extends React.Component {
   render() {
     return (

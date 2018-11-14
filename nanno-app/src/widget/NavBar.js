@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Route, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link, Router } from "react-router-dom";
 
 class NavBar extends Component {
   constructor(props) {
@@ -28,7 +28,6 @@ class NavBar extends Component {
         notiActive: false,
         notiUnActive: true
       });
-      e.stopPropagation();
     }
   };
 
@@ -45,19 +44,26 @@ class NavBar extends Component {
   };
 
   render() {
+    console.log("Props", this.props.routes);
     return (
       <div className="nav-head">
-        <div className="nav-icon">Nanno</div>
-        {this.props.routes.map((route, index) => (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.sidebar}
-          />
-        ))}
-        <div className="nav-item item-cur">Re:Zero</div>
-        <div className="nav-item-item" />
+        <Link to="/">
+          <div className="nav-icon">Nanno</div>
+        </Link>
+        {this.props.breadcrumb.map((bread, index) => {
+          return [
+            <i className="small material-icons">chevron_right</i>,
+            index == this.props.breadcrumb.length - 1 ? (
+              <div className="nav-item">{bread.label}</div>
+            ) : (
+              <Link to={bread.href}>
+                <div className="nav-item">{bread.label}</div>
+              </Link>
+            )
+          ];
+        })}
+        {/* <div className="nav-item item-cur">Re:Zero</div>
+        <div className="nav-item-item" /> */}
         <div className="custom-bar" id="noti-check">
           <div
             className={

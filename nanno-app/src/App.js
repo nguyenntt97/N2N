@@ -6,7 +6,8 @@ import {
   Route,
   NavLink,
   Link,
-  withRouter
+  withRouter,
+  Switch
 } from "react-router-dom";
 
 import Mainpage from "./views/Mainpage";
@@ -29,7 +30,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar routes={routes} />
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.sidebar}
+          />
+        ))}
         <div className="main-content container">
           <Route path="/follow/me" component={Profile} />
           <Route path="/draft/id" component={DraftPanel} />
@@ -51,45 +59,40 @@ const routes = [
   {
     path: "/:project",
     exact: true,
-    sidebar: ({ match }) => (
-      <Link to="/">
-        <div className="nav-item">
-          {match.params.project}{" "}
-          <i className="small material-icons">chevron_right</i>
-        </div>
-      </Link>
-    ),
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      breadcrumbs.push({
+        label: match.params.project,
+        href: "/" + match.params.project
+      });
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
     main: () => <Projects />
   },
   {
     path: "/:project/:chaplink",
     exact: true,
-    sidebar: ({ match }) => [
-      <Link to="/">
-        <div className="nav-item">
-          {match.params.project}{" "}
-          <i className="small material-icons">chevron_right</i>
-        </div>
-      </Link>,
-      <Link to="/">
-        <div className="nav-item">
-          {match.params.chaplink}{" "}
-          <i className="small material-icons">chevron_right</i>
-        </div>
-      </Link>
-    ],
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      breadcrumbs.push({
+        label: match.params.project,
+        href: "/" + match.params.project
+      });
+      breadcrumbs.push({
+        label: match.params.chaplink,
+        href: "/" + match.params.project + "/" + match.params.chaplink
+      });
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
     main: ({ match }) => <ReadPanel link={match.params.chaplink} />
   },
   {
     path: "/",
     exact: true,
-    sidebar: () => (
-      <Link to="/project">
-        <div className="nav-item">
-          \ <i className="small material-icons">chevron_right</i>
-        </div>
-      </Link>
-    ),
     main: () => <Mainpage />
   }
 ];

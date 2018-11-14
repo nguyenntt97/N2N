@@ -10,127 +10,24 @@ class GuildBoard extends Component {
       <div className="guild-content">
         <h4>GUILD BOARD</h4>
         <ul className="list-discuss">
-          {renderPostItem(
-            this.props.data.title,
-            this.props.data.author,
-            this.props.data.time,
-            this.props.data.commentNo,
-            this.props.data.followers
+          {this.props.data.map(postItem =>
+            renderPostItem(
+              postItem.title,
+              postItem.author,
+              postItem.time,
+              postItem.commentNo,
+              postItem.followers,
+              postItem.link
+            )
           )}
-
-          <li className="discusss">
-            <div className="thumbnail" />
-            <div className="main-info">
-              <span className="title">KONOSUBA chương 16</span>
-              <span className="author">hungtb96</span>
-              <span className="time">3 tiếng trước</span>
-              <span className="comments">26 bình luận</span>
-            </div>
-            <div className="followers">
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower" />
-              <div className="follower" />
-              <div className="follower total">+5</div>
-            </div>
-          </li>
-
-          <li className="discusss">
-            <div className="thumbnail" />
-            <div className="main-info">
-              <span className="title">KONOSUBA chương 16</span>
-              <span className="author">hungtb96</span>
-              <span className="time">3 tiếng trước</span>
-              <span className="comments">26 bình luận</span>
-            </div>
-            <div className="followers">
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower" />
-              <div className="follower" />
-              <div className="follower total">+5</div>
-            </div>
-          </li>
-
-          <li className="discusss">
-            <div className="thumbnail" />
-            <div className="main-info">
-              <span className="title">KONOSUBA chương 16</span>
-              <span className="author">hungtb96</span>
-              <span className="time">3 tiếng trước</span>
-              <span className="comments">26 bình luận</span>
-            </div>
-            <div className="followers">
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower" />
-              <div className="follower" />
-              <div className="follower total">+5</div>
-            </div>
-          </li>
-
-          <li className="discusss">
-            <div className="thumbnail" />
-            <div className="main-info">
-              <span className="title">KONOSUBA chương 16</span>
-              <span className="author">hungtb96</span>
-              <span className="time">3 tiếng trước</span>
-              <span className="comments">26 bình luận</span>
-            </div>
-            <div className="followers">
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower" />
-              <div className="follower" />
-              <div className="follower total">+5</div>
-            </div>
-          </li>
-
-          <li className="discusss">
-            <div className="thumbnail" />
-            <div className="main-info">
-              <span className="title">KONOSUBA chương 16</span>
-              <span className="author">hungtb96</span>
-              <span className="time">3 tiếng trước</span>
-              <span className="comments">26 bình luận</span>
-            </div>
-            <div className="followers">
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower">
-                <img src="sample-ava.jpg" />
-              </div>
-              <div className="follower" />
-              <div className="follower" />
-              <div className="follower total">+5</div>
-            </div>
-          </li>
         </ul>
       </div>
     );
   }
 }
-const renderPostItem = (title, author, time, commentNo, followers) => {
+const renderPostItem = (title, author, time, commentNo, followers, link) => {
   return (
-    <Link to="/project">
-      Click
+    <Link to={link}>
       <li className="discusss">
         <div className="thumbnail" />
         <div className="main-info">
