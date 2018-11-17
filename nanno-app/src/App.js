@@ -93,6 +93,11 @@ const routes = [
   {
     path: "/",
     exact: true,
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
     main: () => <Mainpage />
   }
 ];

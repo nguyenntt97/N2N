@@ -17,11 +17,29 @@ class CommentBar extends Component {
     };
   }
 
-  onMsgBoxCollapseChange() {
+  componentDidMount() {
+    document.addEventListener("click", this.onMsgBoxOutClick);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("click", this.onMsgBoxOutClick);
+  }
+
+  onMsgBoxOutClick = e => {
+    let msgBox = document.getElementById("msgBox");
+    if (!msgBox.contains(e.target)) {
+      this.onMsgBoxCollapseChange(false);
+    }
+  };
+
+  onMsgBoxCollapseChange(isForce) {
     let msgContent = document.getElementsByClassName("comment-section")[0];
     if (msgContent.style.height != "0px") {
       msgContent.style.height = "0px";
     } else {
+      if (!isForce) {
+        return;
+      }
       msgContent.style.height = "400px";
     }
   }
@@ -72,9 +90,12 @@ class CommentBar extends Component {
 
   render() {
     return (
-      <div className="comment-bar-big z-depth-2">
+      <div id="msgBox" className="comment-bar-big z-depth-2">
         <div className="other-comment">
-          <div className="comment-msg" onClick={this.onMsgBoxCollapseChange}>
+          <div
+            className="comment-msg"
+            onClick={() => this.onMsgBoxCollapseChange(true)}
+          >
             <div>
               <i className="tiny material-icons">forum</i>
               Comments
