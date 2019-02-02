@@ -1,11 +1,13 @@
 package io.elpsychris.snk.snkdemo.models;
 
+import io.elpsychris.snk.snkdemo.com.util.JpaConverterJson;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user", schema = "n2n_v1", catalog = "")
-public class UserEntity {
+@Table(name = "accounts", schema = "n2n_v1")
+public class AccountsEntity {
     private int userId;
     private String userName;
     private String userPass;
@@ -58,6 +60,7 @@ public class UserEntity {
         return userProfile;
     }
 
+    @Convert(converter = JpaConverterJson.class)
     public void setUserProfile(Object userProfile) {
         this.userProfile = userProfile;
     }
@@ -66,7 +69,7 @@ public class UserEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserEntity that = (UserEntity) o;
+        AccountsEntity that = (AccountsEntity) o;
         return userId == that.userId &&
                 Objects.equals(userName, that.userName) &&
                 Objects.equals(userPass, that.userPass) &&

@@ -5,12 +5,10 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "chapters", schema = "n2n_v1", catalog = "")
+@Table(name = "chapters", schema = "n2n_v1")
 public class ChaptersEntity {
     private int chapId;
-    private Integer projectId;
     private Date updateDate;
-    private Integer author;
     private Integer views;
     private Double rating;
     private String chapContent;
@@ -26,16 +24,6 @@ public class ChaptersEntity {
     }
 
     @Basic
-    @Column(name = "project_id", nullable = true)
-    public Integer getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(Integer projectId) {
-        this.projectId = projectId;
-    }
-
-    @Basic
     @Column(name = "update_date", nullable = true)
     public Date getUpdateDate() {
         return updateDate;
@@ -43,16 +31,6 @@ public class ChaptersEntity {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
-    }
-
-    @Basic
-    @Column(name = "author", nullable = true)
-    public Integer getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Integer author) {
-        this.author = author;
     }
 
     @Basic
@@ -91,9 +69,7 @@ public class ChaptersEntity {
         if (o == null || getClass() != o.getClass()) return false;
         ChaptersEntity that = (ChaptersEntity) o;
         return chapId == that.chapId &&
-                Objects.equals(projectId, that.projectId) &&
                 Objects.equals(updateDate, that.updateDate) &&
-                Objects.equals(author, that.author) &&
                 Objects.equals(views, that.views) &&
                 Objects.equals(rating, that.rating) &&
                 Objects.equals(chapContent, that.chapContent);
@@ -101,6 +77,6 @@ public class ChaptersEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(chapId, projectId, updateDate, author, views, rating, chapContent);
+        return Objects.hash(chapId, updateDate, views, rating, chapContent);
     }
 }

@@ -11,6 +11,7 @@
       <mapping class="io.elpsychris.snk.snkdemo.models.GenreMapEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.ProjectEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.UserEntity"/>
+      <mapping class="io.elpsychris.snk.snkdemo.models.AccountsEntity"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

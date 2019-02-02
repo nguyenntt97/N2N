@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name = "genre_map", schema = "n2n_v1", catalog = "")
+@Table(name = "genre_map", schema = "n2n_v1")
 public class GenreMapEntity {
     private int genreMapId;
 
