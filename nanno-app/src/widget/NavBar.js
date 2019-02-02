@@ -48,7 +48,7 @@ class NavBar extends Component {
     return (
       <div className="nav-head">
         <Link to="/">
-          <div className="nav-icon">Nanno</div>
+          <div className="nav-icon">Sonako</div>
         </Link>
         {this.props.breadcrumb.map((bread, index) => {
           return [

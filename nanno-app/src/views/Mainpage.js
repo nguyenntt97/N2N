@@ -13,11 +13,11 @@ const sample_data = [
     link: "re-zero",
     followers: {
       followList: [
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" }
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" }
       ],
       total: 7
     }
@@ -30,11 +30,11 @@ const sample_data = [
     link: "konosuba",
     followers: {
       followList: [
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" },
-        { ava: "sample-ava.jpg" }
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" },
+        { ava: "/sample-ava.jpg" }
       ],
       total: 7
     }

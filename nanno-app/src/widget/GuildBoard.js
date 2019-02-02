@@ -27,7 +27,7 @@ class GuildBoard extends Component {
 }
 const renderPostItem = (title, author, time, commentNo, followers, link) => {
   return (
-    <Link to={link}>
+    <Link to={"/projects/" + link}>
       <li className="discusss">
         <div className="thumbnail" />
         <div className="main-info">

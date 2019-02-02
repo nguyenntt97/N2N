@@ -39,11 +39,10 @@ class App extends Component {
           />
         ))}
         <div className="main-content container">
-          <Route path="/follow/me" component={Profile} />
           <Route path="/draft/id" component={DraftPanel} />
           {routes.map((route, index) => (
             <Route
-              key={"0033" + index}
+              key={index}
               path={route.path}
               exact={route.exact}
               component={route.main}
@@ -57,7 +56,22 @@ class App extends Component {
 
 const routes = [
   {
-    path: "/:project",
+    path: "/profile",
+    exact: true,
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      breadcrumbs.push({
+        label: "Profile",
+        href: "/profile"
+      });
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
+    main: () => <Profile />
+  },
+  {
+    path: "/projects/:project",
     exact: true,
     sidebar: ({ match }) => {
       var breadcrumbs = [];
@@ -72,7 +86,7 @@ const routes = [
     main: () => <Projects />
   },
   {
-    path: "/:project/:chaplink",
+    path: "/projects/:project/:chaplink",
     exact: true,
     sidebar: ({ match }) => {
       var breadcrumbs = [];

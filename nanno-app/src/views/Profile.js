@@ -21,48 +21,6 @@ class Profile extends Component {
                 </div>
               </div>
               <div class="detail-info" />
-              <div class="comment-section container">
-                <h2>Tất cả 1 bình luận</h2>
-                <div class="new-message">
-                  <textarea />
-                  <div class="btn-set">
-                    <a class="waves-effect waves-light btn-small">
-                      <i class="material-icons right">delete</i>
-                      Xóa
-                    </a>
-                    <a class="waves-effect waves-light btn-small">
-                      <i class="material-icons right">send</i>
-                      Đăng
-                    </a>
-                  </div>
-                </div>
-                <div class="message">
-                  <div class="mess-header">
-                    <div class="mess-owner">tnguyen178</div>
-                    <div class="mess-date">+13 12 giờ trước</div>
-                  </div>
-                  <div class="mess-content">Truyện hay vãi</div>
-                </div>
-                <div class="message">
-                  <div class="mess-header">
-                    <div class="mess-owner">tnguyen178</div>
-                    <div class="mess-date">+13 12 giờ trước</div>
-                  </div>
-                  <div class="mess-content">Truyện hay vãi</div>
-                  <div class="mess-set">
-                    <a>trả lời</a>
-                  </div>
-                  <div class="mess-rep">
-                    <div class="message">
-                      <div class="mess-header">
-                        <div class="mess-owner">tnguyen178</div>
-                        <div class="mess-date">+13 12 giờ trước</div>
-                      </div>
-                      <div class="mess-content">Hay kax</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div class="nav-section">
@@ -78,6 +36,48 @@ class Profile extends Component {
                 <a class="collection-item">Misc</a>
                 <a class="collection-item">Alvin</a>
               </ul>
+            </div>
+          </div>
+          <div class="comment-section container wall-section">
+            <h2>Tất cả 1 bình luận</h2>
+            <div class="new-message">
+              <textarea />
+              <div class="btn-set">
+                <a class="waves-effect waves-light btn-small">
+                  <i class="material-icons right">delete</i>
+                  Xóa
+                </a>
+                <a class="waves-effect waves-light btn-small">
+                  <i class="material-icons right">send</i>
+                  Đăng
+                </a>
+              </div>
+            </div>
+            <div class="message">
+              <div class="mess-header">
+                <div class="mess-owner">tnguyen178</div>
+                <div class="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div class="mess-content">Truyện hay vãi</div>
+            </div>
+            <div class="message">
+              <div class="mess-header">
+                <div class="mess-owner">tnguyen178</div>
+                <div class="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div class="mess-content">Truyện hay vãi</div>
+              <div class="mess-set">
+                <a>trả lời</a>
+              </div>
+              <div class="mess-rep">
+                <div class="message">
+                  <div class="mess-header">
+                    <div class="mess-owner">tnguyen178</div>
+                    <div class="mess-date">+13 12 giờ trước</div>
+                  </div>
+                  <div class="mess-content">Hay kax</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

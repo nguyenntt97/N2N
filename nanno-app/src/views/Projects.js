@@ -4,6 +4,8 @@ import CommentBar from "../widget/CommentBar";
 import ModalBox from "../widget/NotiBox";
 
 import { Link } from "react-router-dom";
+import FavBtn from "../lib/FavBtn";
+import ScoreBoard from "../lib/ScoreBoard";
 
 const CHAP_VOL_DATA = [
   {
@@ -11,7 +13,7 @@ const CHAP_VOL_DATA = [
     "vol-name": "The Beginning",
     "vol-sum":
       "Tập 2 nối tiếp câu chuyện kể về cuộc phiêu lưu của nhóm và những thử thách được đặt ra...",
-    "vol-ava": "vol1_sample.jpg",
+    "vol-ava": "/vol1_sample.jpg",
     "chap-data": [
       {
         "chap-id": "1",
@@ -55,7 +57,7 @@ const CHAP_VOL_DATA = [
   {
     "vol-id": "2",
     "vol-name": "The Starting",
-    "vol-ava": "vol1_sample.jpg",
+    "vol-ava": "/vol1_sample.jpg",
     "chap-data": [
       {
         "chap-id": "1",
@@ -98,7 +100,7 @@ const CHAP_VOL_DATA = [
   {
     "vol-id": "3",
     "vol-name": "The Ending",
-    "vol-ava": "vol1_sample.jpg",
+    "vol-ava": "/vol1_sample.jpg",
     "chap-data": [
       {
         "chap-id": "1",
@@ -141,7 +143,7 @@ const CHAP_VOL_DATA = [
   {
     "vol-id": "4",
     "vol-name": "The Epilogue",
-    "vol-ava": "vol1_sample.jpg",
+    "vol-ava": "/vol1_sample.jpg",
     "chap-data": [
       {
         "chap-id": "1",
@@ -306,7 +308,7 @@ class Projects extends React.Component {
               .map((chapter, index) => (
                 <Link
                   key={index}
-                  to={"/aaa/" + chapter["chap-link"]}
+                  to={"aaa/" + chapter["chap-link"]}
                   className="chapter"
                 >
                   <b>
@@ -374,14 +376,18 @@ class Projects extends React.Component {
           <div className="row">
             <div className="vol-col">
               <div className="vol-background">
-                <img src="bg.jpg" />
+                <img src="/bg.jpg" />
+              </div>
+              <div className="projects-actions">
+                {/* <FavBtn /> */}
+                <ScoreBoard />
               </div>
               <div className="vol-list">
                 <div className="card small vol-item order-3">
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
                     <img
                       className="activator vol-thumb"
-                      src="vol1_sample.jpg"
+                      src="/vol1_sample.jpg"
                     />
                   </div>
                   <div className="card-content">
@@ -407,7 +413,7 @@ class Projects extends React.Component {
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
                     <img
                       className="activator vol-thumb"
-                      src="vol1_sample.jpg"
+                      src="/vol1_sample.jpg"
                     />
                   </div>
                   <div className="card-content">
@@ -433,7 +439,7 @@ class Projects extends React.Component {
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
                     <img
                       className="activator vol-thumb"
-                      src="vol1_sample.jpg"
+                      src="/vol1_sample.jpg"
                     />
                   </div>
                   <div className="card-content">
@@ -456,7 +462,6 @@ class Projects extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col s4" />
           </div>
 
           <div className="vol-body">

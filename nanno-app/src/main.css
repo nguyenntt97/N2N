@@ -621,6 +621,10 @@ li .info-title {
   height: 0px;
 }
 
+.comment-section.wall-section {
+  height: auto;
+}
+
 .new-message textarea {
   height: 100px;
   border: 1px solid #26a69a;
@@ -727,12 +731,12 @@ li .info-title {
   position: relative;
   height: 200px;
   padding: 10px;
+  display: flex;
+  width: 100%;
 }
 
 .info-section .ava-holder {
   position: absolute;
-  right: 10px;
-  top: 10px;
   min-height: 100px;
   width: 150px;
 }
@@ -900,8 +904,6 @@ li .info-title {
 
 .info-section .ava-holder {
   position: absolute;
-  right: 10px;
-  top: 10px;
   min-height: 100px;
   width: 150px;
 }
@@ -1405,4 +1407,167 @@ h4 {
 /* PROJECT VIEW */
 .project-comp {
   width: 100%;
+}
+
+.projects-actions {
+  display: flex;
+  width: 400px;
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.my-btn {
+  padding: 10px;
+  background: #82478a;
+  color: white;
+  transition: all 0.1s ease;
+  z-index: 10;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.my-btn:active {
+  background: #430a4b;
+}
+
+.project-score-board {
+  display: flex;
+  background: #82478a;
+  margin: 10px;
+  border-radius: 100%;
+  z-index: 10;
+  justify-content: center;
+}
+
+.prec {
+  display: flex;
+  position: relative;
+  font-size: 30px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+
+.circle {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background-color: #5c2437;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.active-border {
+  position: relative;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  z-index: 30;
+
+  transition: all 0.3s ease;
+  background-color: #a12a6c;
+  background-image: linear-gradient(90deg, transparent 50%, white 50%),
+    linear-gradient(90deg, white 50%, transparent 50%);
+}
+
+.rank-board {
+  padding: 5px;
+  background: #973858;
+  position: absolute;
+  width: 80px;
+  color: white;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  border: white 1.1px solid;
+  border-radius: 5px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.rank-board .rank-num {
+  font-size: 0.9em;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: rgb(226, 226, 78);
+  color: #973858;
+  position: absolute;
+  left: -15px;
+  top: -5px;
+  font-weight: bold;
+}
+.rank-board .rank-title {
+  font-size: 0.6em;
+  margin-left: 15px;
+}
+.rank-board .rank-total-mem {
+  font-size: 0.8em;
+  margin-left: 15px;
+}
+
+.rank-board .rank-total-mem:after {
+  content: "lượt";
+  font-size: 0.7em;
+  margin-left: 5px;
+}
+
+.wave {
+  opacity: 0.4;
+  position: absolute;
+  background: #dd5d87;
+  width: 100px;
+  height: 100px;
+  transform-origin: 50% 45%;
+  border-radius: 43%;
+  animation: drift 3000ms infinite linear;
+}
+
+.wave.-three {
+  animation: drift 5000ms infinite linear;
+}
+
+.wave.-two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  background: rgb(255, 41, 33);
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.active-border .your-score {
+  position: absolute;
+  display: flex;
+  transition: all 0.3s ease;
+  background: #dd5d87;
+  width: 150px;
+  left: -130px;
+  top: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.1em;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.active-border .your-score li {
 }
