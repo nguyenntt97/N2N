@@ -1,11 +1,14 @@
 package io.elpsychris.snk.snkdemo.models;
 
-import io.elpsychris.snk.snkdemo.com.util.JpaConverterJson;
+import com.vladmihalcea.hibernate.type.json.JsonStringType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@TypeDef(name = "json", typeClass = JsonStringType.class)
 @Table(name = "accounts", schema = "n2n_v1")
 public class AccountsEntity {
     private int userId;
@@ -54,13 +57,12 @@ public class AccountsEntity {
         this.userRole = userRole;
     }
 
-    @Basic
+    @Type( type = "json" )
     @Column(name = "user_profile", nullable = true)
     public Object getUserProfile() {
         return userProfile;
     }
 
-    @Convert(converter = JpaConverterJson.class)
     public void setUserProfile(Object userProfile) {
         this.userProfile = userProfile;
     }

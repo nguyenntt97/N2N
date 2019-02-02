@@ -1,10 +1,16 @@
 package io.elpsychris.snk.snkdemo.models;
 
+import com.vladmihalcea.hibernate.type.json.JsonStringType;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@TypeDef(name = "json", typeClass = JsonStringType.class)
 @Table(name = "project", schema = "n2n_v1")
 public class ProjectEntity {
     private int projectId;
@@ -19,6 +25,7 @@ public class ProjectEntity {
     private String projectAva;
     private String projectLink;
     private Object projectUpdateInfo;
+    private List<ChaptersEntity> chapterList;
 
     @Id
     @Column(name = "project_id", nullable = false)
@@ -130,14 +137,23 @@ public class ProjectEntity {
         this.projectLink = projectLink;
     }
 
-    @Basic
-    @Column(name = "project_update_info", nullable = true)
+    @Type( type = "json" )
+    @Column(name = "project_update_info", nullable = true, columnDefinition = "json")
     public Object getProjectUpdateInfo() {
         return projectUpdateInfo;
     }
 
     public void setProjectUpdateInfo(Object projectUpdateInfo) {
         this.projectUpdateInfo = projectUpdateInfo;
+    }
+
+    @OneToMany(mappedBy = "project")
+    public List<ChaptersEntity> getChapterList() {
+        return chapterList;
+    }
+
+    public void setChapterList(List<ChaptersEntity> chapterList) {
+        this.chapterList = chapterList;
     }
 
     @Override

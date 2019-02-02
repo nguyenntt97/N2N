@@ -12,6 +12,7 @@ public class ChaptersEntity {
     private Integer views;
     private Double rating;
     private String chapContent;
+    private ProjectEntity project;
 
     @Id
     @Column(name = "chap_id", nullable = false)
@@ -61,6 +62,16 @@ public class ChaptersEntity {
 
     public void setChapContent(String chapContent) {
         this.chapContent = chapContent;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "project_id", nullable = false)
+    public ProjectEntity getProject() {
+        return project;
+    }
+
+    public void setProject(ProjectEntity project) {
+        this.project = project;
     }
 
     @Override
