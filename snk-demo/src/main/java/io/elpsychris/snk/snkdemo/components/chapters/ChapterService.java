@@ -1,6 +1,7 @@
 package io.elpsychris.snk.snkdemo.components.chapters;
 
 import io.elpsychris.snk.snkdemo.models.ChaptersEntity;
+import io.elpsychris.snk.snkdemo.models.ProjectEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -14,9 +15,16 @@ import java.util.List;
 public class ChapterService {
     private ChapterRepository chapterRepository;
 
-    public Page<ChaptersEntity> getAllChapter(int page, int size, long projectId) {
+    public ChapterService(ChapterRepository chapterRepository) {
+        this.chapterRepository = chapterRepository;
+    }
+
+    public List<ChaptersEntity> getAllChapter(int page, int size, int projectId) {
         Pageable pageable = PageRequest.of(page, size);
 
-        return chapterRepository.findChaptersEntitiesByProject(projectId, pageable);
+        ProjectEntity projectEntity = new ProjectEntity();
+        projectEntity.setProjectId(projectId);
+
+        return chapterRepository.findChaptersEntitiesByProject(projectEntity);
     }
 }

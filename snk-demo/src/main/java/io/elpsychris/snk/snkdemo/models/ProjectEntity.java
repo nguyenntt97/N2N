@@ -1,5 +1,6 @@
 package io.elpsychris.snk.snkdemo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
@@ -147,6 +148,7 @@ public class ProjectEntity {
         this.projectUpdateInfo = projectUpdateInfo;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "project")
     public List<ChaptersEntity> getChapterList() {
         return chapterList;
