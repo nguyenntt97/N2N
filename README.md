@@ -60,6 +60,19 @@ We are the Sonako Dev Team
 * User
 
 ### API Endpoints
+#### Project service
+(Waiting for updates)
 
 ## Sub API
-## 
+### Recommender system
+(Waiting for updates)
+
+### Editor features
+(Waiting for updates)
+
+### Information hub features
+(Waiting for updates)
+
+## Web Client
+### Views
+(Waiting for updates)
