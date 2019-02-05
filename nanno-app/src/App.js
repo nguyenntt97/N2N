@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./main.css";
+import styles from "./main.css";
 import "materialize-css";
 import {
   BrowserRouter as Router,
@@ -29,7 +29,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={styles.App}>
         {routes.map((route, index) => (
           <Route
             key={index}

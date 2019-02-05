@@ -1,4 +1,12 @@
+/* import ant design */
+@import '~antd/dist/antd.css';
+
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans|Francois+One|Roboto");
+/* thử css module */
+.hihi > ul {
+  margin-top: 10px;
+  background: #f00;
+}
 
 body {
   width: 100%;
