@@ -3,8 +3,8 @@
 This is N2N project:
 - An web app for sharing LN's fan translation and other information
 - This project is a combination of
-  * A main API server for managing projects (Java - Spring)
-  * A server for sub components: Recommender system, Editor and Information Hub features (Golang)
+  * A main web service for main components (Java - Spring)
+  * A web service for other sub-components: Recommender system, Editor and Information Hub, Chatting features (Golang)
   * A web client (React)
   * A mobile app (Android)
 
