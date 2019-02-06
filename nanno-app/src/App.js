@@ -17,6 +17,7 @@ import Profile from "./views/Profile";
 import DraftPanel from "./views/DraftPanel";
 import ReadPanel from "./views/ReadPanel";
 import NavBar from "./widget/NavBar";
+import UserProfile from "./views/UserProfile";
 
 class App extends Component {
   constructor(props) {
@@ -113,6 +114,16 @@ const routes = [
       return <NavBar breadcrumb={breadcrumbs} />;
     },
     main: () => <Mainpage />
+  },
+  {
+    path: '/userprofile',
+    exact: true,
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
+    main: () => <UserProfile />,
   }
 ];
 

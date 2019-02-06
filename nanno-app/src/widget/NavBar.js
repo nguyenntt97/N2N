@@ -12,7 +12,7 @@ class NavBar extends Component {
       profileMenu: [
         {
           label: 'View Profile',
-          href: 'follow/me',
+          href: 'userprofile',
         },
         {
           label: 'Message Wall',
