@@ -18,9 +18,14 @@ public class ChapterController {
     }
 
     @GetMapping(value = "/{project-id}", params = {"page", "size"})
-    public List<ChaptersEntity> getAllChapter(@RequestParam(value = "page") int page,
+    public Page<ChaptersEntity> getAllChapter(@RequestParam(value = "page") int page,
                                               @RequestParam(value = "size") int size,
                                               @PathVariable("project-id") int projectId) {
         return chapterService.getAllChapter(page, size, projectId);
+    }
+
+    @PostMapping()
+    public ChaptersEntity addNewChapter(@RequestBody ChaptersEntity chaptersEntity) {
+        return chapterService.addNewChapter(chaptersEntity);
     }
 }
