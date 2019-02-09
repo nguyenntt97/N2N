@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import styles from './../styles/UserProfile.module.scss';
+import styles from './UserProfile.module.scss';
 import { Card, Icon, Avatar, Row, Col, Tag, Button, Tabs, Table } from 'antd';
 
 const { Meta } = Card;
@@ -55,7 +55,7 @@ class UserProfile extends Component {
                     ],
                 },
                 {
-                    title: 'Truyện đã đăng',
+                    title: 'Truyện đã tham gia',
                     num: 4,
                     content: [
                         {  

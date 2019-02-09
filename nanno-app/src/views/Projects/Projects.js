@@ -1,11 +1,12 @@
 import React from "react";
-import Pagination from "../widget/Pagination";
-import CommentBar from "../widget/CommentBar";
-import ModalBox from "../widget/NotiBox";
+import Pagination from "../../widget/Pagination";
+import CommentBar from "../../widget/CommentBar";
+import ModalBox from "../../widget/NotiBox";
 
 import { Link } from "react-router-dom";
-import FavBtn from "../lib/FavBtn";
-import ScoreBoard from "../lib/ScoreBoard";
+// import FavBtn from "../lib/FavBtn";
+import ScoreBoard from "../../lib/ScoreBoard";
+// import { isMoment } from "moment";
 
 const CHAP_VOL_DATA = [
   {

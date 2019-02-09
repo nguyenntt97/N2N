@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Route, Link, Router } from "react-router-dom";
 import { Menu, Dropdown, Icon } from 'antd';
-import styles from './../styles/Navbar.module.scss';
+import styles from './Navbar.module.scss';
 
 class NavBar extends Component {
   constructor(props) {

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Projects from "./Projects";
-import SideWidget from "../widget/SideWidget";
-import GuildBoard from "../widget/GuildBoard";
+import Projects from "../Projects";
+import SideWidget from "../../widget/SideWidget";
+import GuildBoard from "../../widget/GuildBoard";
 
 const sample_data = [
   {
