@@ -469,7 +469,7 @@ class Projects extends React.Component {
             {this.onRenderVol()}
           </div>
 
-          <div className="comment-section container">
+          {/* <div className="comment-section container">
             <h2>Tất cả 1 bình luận</h2>
             <div className="new-message">
               <textarea />
@@ -510,7 +510,7 @@ class Projects extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <CommentBar />
       </div>

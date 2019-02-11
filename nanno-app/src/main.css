@@ -8,6 +8,10 @@
   background: #f00;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   width: 100%;
   min-height: 100px;
@@ -1063,6 +1067,7 @@ li .info-title {
   color: white;
   border: none;
   overflow: hidden;
+  background: none;
 }
 
 textarea,
