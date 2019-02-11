@@ -382,7 +382,7 @@ class Projects extends React.Component {
                 {/* <FavBtn /> */}
                 <ScoreBoard />
               </div>
-              <div className="vol-list">
+              {/* <div className="vol-list">
                 <div className="card small vol-item order-3">
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
                     <img
@@ -407,7 +407,7 @@ class Projects extends React.Component {
                       only revealed once clicked on.
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="card small vol-item order-2">
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
