@@ -382,7 +382,7 @@ class Projects extends React.Component {
                 {/* <FavBtn /> */}
                 <ScoreBoard />
               </div>
-              {/* <div className="vol-list">
+              <div className="vol-list">
                 <div className="card small vol-item order-3">
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
                     <img
@@ -407,7 +407,7 @@ class Projects extends React.Component {
                       only revealed once clicked on.
                     </p>
                   </div>
-                </div> */}
+                </div>
 
                 <div className="card small vol-item order-2">
                   <div className="card-image waves-effect waves-block waves-light card-image-thumb">
@@ -469,48 +469,48 @@ class Projects extends React.Component {
             {this.onRenderVol()}
           </div>
 
-          {/* <div className="comment-section container">
-          <h2>Tất cả 1 bình luận</h2>
-          <div className="new-message">
-            <textarea />
-            <div className="btn-set">
-              <a className="waves-effect waves-light btn-small">
-                <i className="material-icons right">delete</i>
-                Xóa
-              </a>
-              <a className="waves-effect waves-light btn-small">
-                <i className="material-icons right">send</i>
-                Đăng
-              </a>
+          <div className="comment-section container">
+            <h2>Tất cả 1 bình luận</h2>
+            <div className="new-message">
+              <textarea />
+              <div className="btn-set">
+                <a className="waves-effect waves-light btn-small">
+                  <i className="material-icons right">delete</i>
+                  Xóa
+                </a>
+                <a className="waves-effect waves-light btn-small">
+                  <i className="material-icons right">send</i>
+                  Đăng
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="message">
-            <div className="mess-header">
-              <div className="mess-owner">tnguyen178</div>
-              <div className="mess-date">+13 12 giờ trước</div>
+            <div className="message">
+              <div className="mess-header">
+                <div className="mess-owner">tnguyen178</div>
+                <div className="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div className="mess-content">Truyện hay vãi</div>
             </div>
-            <div className="mess-content">Truyện hay vãi</div>
-          </div>
-          <div className="message">
-            <div className="mess-header">
-              <div className="mess-owner">tnguyen178</div>
-              <div className="mess-date">+13 12 giờ trước</div>
-            </div>
-            <div className="mess-content">Truyện hay vãi</div>
-            <div className="mess-set">
-              <a>trả lời</a>
-            </div>
-            <div className="mess-rep">
-              <div className="message">
-                <div className="mess-header">
-                  <div className="mess-owner">tnguyen178</div>
-                  <div className="mess-date">+13 12 giờ trước</div>
+            <div className="message">
+              <div className="mess-header">
+                <div className="mess-owner">tnguyen178</div>
+                <div className="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div className="mess-content">Truyện hay vãi</div>
+              <div className="mess-set">
+                <a>trả lời</a>
+              </div>
+              <div className="mess-rep">
+                <div className="message">
+                  <div className="mess-header">
+                    <div className="mess-owner">tnguyen178</div>
+                    <div className="mess-date">+13 12 giờ trước</div>
+                  </div>
+                  <div className="mess-content">Hay</div>
                 </div>
-                <div className="mess-content">Hay</div>
               </div>
             </div>
           </div>
-        </div> */}
         </div>
         <CommentBar />
       </div>

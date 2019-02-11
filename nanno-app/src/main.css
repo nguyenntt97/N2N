@@ -301,7 +301,6 @@ li .info-title {
 }
 
 .vol-list {
-  width: 50px;
   display: flex;
   position: relative;
   align-items: center;
@@ -309,7 +308,7 @@ li .info-title {
 
 .vol-item {
   max-width: 250px;
-  margin: 10px -150px 10px 0;
+  margin: 10px -130px 10px 0 !important;
 }
 
 .vol-col {
