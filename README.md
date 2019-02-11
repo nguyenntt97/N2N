@@ -41,12 +41,19 @@ We are the Sonako Dev Team
 
 - Extract zip file
 - Create your own database and tables in Idea (table name must match)
+- Create an 'application.properties' file in `/snk-demo/src/main/resources`
 - Config your properties file in Spring project as following:
 
 **application.properties**
 ```
+spring.datasource.url = <mysql-connection-url>
 spring.datasource.username = root
-spring.datasource.password = password
+spring.datasource.password = <password>
+
+spring.jpa.show-sql = false
+spring.jpa.hibernate.ddl-auto = none
+spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 ```
 
 
