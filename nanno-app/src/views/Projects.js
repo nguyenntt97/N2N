@@ -470,47 +470,47 @@ class Projects extends React.Component {
           </div>
 
           {/* <div className="comment-section container">
-          <h2>Tất cả 1 bình luận</h2>
-          <div className="new-message">
-            <textarea />
-            <div className="btn-set">
-              <a className="waves-effect waves-light btn-small">
-                <i className="material-icons right">delete</i>
-                Xóa
-              </a>
-              <a className="waves-effect waves-light btn-small">
-                <i className="material-icons right">send</i>
-                Đăng
-              </a>
-            </div>
-          </div>
-          <div className="message">
-            <div className="mess-header">
-              <div className="mess-owner">tnguyen178</div>
-              <div className="mess-date">+13 12 giờ trước</div>
-            </div>
-            <div className="mess-content">Truyện hay vãi</div>
-          </div>
-          <div className="message">
-            <div className="mess-header">
-              <div className="mess-owner">tnguyen178</div>
-              <div className="mess-date">+13 12 giờ trước</div>
-            </div>
-            <div className="mess-content">Truyện hay vãi</div>
-            <div className="mess-set">
-              <a>trả lời</a>
-            </div>
-            <div className="mess-rep">
-              <div className="message">
-                <div className="mess-header">
-                  <div className="mess-owner">tnguyen178</div>
-                  <div className="mess-date">+13 12 giờ trước</div>
-                </div>
-                <div className="mess-content">Hay</div>
+            <h2>Tất cả 1 bình luận</h2>
+            <div className="new-message">
+              <textarea />
+              <div className="btn-set">
+                <a className="waves-effect waves-light btn-small">
+                  <i className="material-icons right">delete</i>
+                  Xóa
+                </a>
+                <a className="waves-effect waves-light btn-small">
+                  <i className="material-icons right">send</i>
+                  Đăng
+                </a>
               </div>
             </div>
-          </div>
-        </div> */}
+            <div className="message">
+              <div className="mess-header">
+                <div className="mess-owner">tnguyen178</div>
+                <div className="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div className="mess-content">Truyện hay vãi</div>
+            </div>
+            <div className="message">
+              <div className="mess-header">
+                <div className="mess-owner">tnguyen178</div>
+                <div className="mess-date">+13 12 giờ trước</div>
+              </div>
+              <div className="mess-content">Truyện hay vãi</div>
+              <div className="mess-set">
+                <a>trả lời</a>
+              </div>
+              <div className="mess-rep">
+                <div className="message">
+                  <div className="mess-header">
+                    <div className="mess-owner">tnguyen178</div>
+                    <div className="mess-date">+13 12 giờ trước</div>
+                  </div>
+                  <div className="mess-content">Hay</div>
+                </div>
+              </div>
+            </div>
+          </div> */}
         </div>
         <CommentBar />
       </div>

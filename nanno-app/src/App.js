@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./main.css";
+import styles from "./main.css";
 import "materialize-css";
 import {
   BrowserRouter as Router,
@@ -17,6 +17,7 @@ import Profile from "./views/Profile";
 import DraftPanel from "./views/DraftPanel";
 import ReadPanel from "./views/ReadPanel";
 import NavBar from "./widget/NavBar";
+import UserProfile from "./views/UserProfile";
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className={styles.App}>
         {routes.map((route, index) => (
           <Route
             key={index}
@@ -113,6 +114,16 @@ const routes = [
       return <NavBar breadcrumb={breadcrumbs} />;
     },
     main: () => <Mainpage />
+  },
+  {
+    path: '/userprofile',
+    exact: true,
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
+    main: () => <UserProfile />,
   }
 ];
 
