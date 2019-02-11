@@ -35,6 +35,7 @@ We are the Sonako Dev Team
   * ThinhDV - ducthinhvu96@gmail.com
   * ThaiPCH - futoshihito@gmail.com
   * ChauTL - longchau21@gmail.com
+  * NghiaNT - nghiant9608@gmail.com
 
 # Database recovery and data import
 
