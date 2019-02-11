@@ -36,11 +36,18 @@ We are the Sonako Dev Team
   * ThaiPCH - futoshihito@gmail.com
 
 # Database recovery and data import
----
+
 - Extract zip file
 - Create your own database and tables in Idea (table name must match)
 - Config your properties file in Spring project as following:
-![config db](https://raw.githubusercontent.com/TuanDSE62171/RestaurantApp/master/config_db.png)
+
+**application.properties**
+```
+spring.datasource.username = root
+spring.datasource.password = password
+```
+
+
 - Open the database explorer by navigating `View -> Tool Windows -> Database`
 - Right click on each table and select `Import Data from File...`
 - In the dialog choose corresponding table name (CSV) -> `OK`
