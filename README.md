@@ -133,5 +133,7 @@ As Danrley Willyan said:
 
 > npm or a process controlled by it is watching too many files. Updating max_user_watches on the build node can fix it forever. For debian put the following on terminal:
 > `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
+>
+> The full discussion can be found at [StackOverflow - Node.js: what is ENOSPC error and how to solve?](https://stackoverflow.com/a/53221475/6356411)
 
 **DN**: *This is ONLY the temporary measurement and will be fixed completely in the future.*
