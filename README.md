@@ -33,7 +33,7 @@ We are the Sonako Dev Team
 * Found a problem? Contact any of our team members:
   * NguyenNTT - rohirrim3105@gmail.com
   * ThinhDV - n/a
-  * ThaiPCH - n/a
+  * ThaiPCH - futoshihito@gmail.com
 
 # Database recovery and data import
 ---
