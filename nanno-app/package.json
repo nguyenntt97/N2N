@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^3.13.1",
+    "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "merge": ">=1.2.1",
     "node-sass": "^4.11.0",
