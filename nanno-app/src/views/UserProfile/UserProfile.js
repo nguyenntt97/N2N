@@ -146,6 +146,7 @@ class UserProfile extends Component {
                             <img src={this.state.cover} />
                         </div>;
         const avatar = <Avatar src={this.state.avatar}
+                                className={styles.avatar}
                                 size={this.state.avatarSize} />;
         const title = this.mergeLevelToUserName(this.state.username, this.state.level);
         const tab = this.generateTabs(this.state.tabs);
