@@ -12,7 +12,7 @@ class NavBar extends Component {
       profileMenu: [
         {
           label: 'View Profile',
-          href: 'userprofile',
+          href: '/userprofile',
         },
         {
           label: 'Message Wall',
@@ -78,18 +78,16 @@ class NavBar extends Component {
         <Link to="/">
           <div className="nav-icon">Sonako</div>
         </Link>
-        {this.props.breadcrumb.map((bread, index) => {
-          return [
-            <i className="small material-icons">chevron_right</i>,
-            index == this.props.breadcrumb.length - 1 ? (
+        {this.props.breadcrumb.map((bread, index) => 
+            [<i className="small material-icons">chevron_right</i>,
+            index === this.props.breadcrumb.length - 1 ? (
               <div className="nav-item">{bread.label}</div>
             ) : (
               <Link to={bread.href}>
                 <div className="nav-item">{bread.label}</div>
               </Link>
             )
-          ];
-        })}
+          ])}
         {/* <div className="nav-item item-cur">Re:Zero</div>
         <div className="nav-item-item" /> */}
         <div className="custom-bar" id="noti-check">
