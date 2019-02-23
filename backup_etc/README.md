@@ -6,7 +6,7 @@
 - 23th Feb. 2019 - ver1.0 (draft) completed
 ```
 ## Database EER
-[EER_N2N_v1](EER_Feb23v10.png)
+![EER_N2N_v1](EER_Feb23v10.png)
 
 
 # Database recovery and data import
