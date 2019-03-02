@@ -10,14 +10,14 @@ import {
   Switch
 } from "react-router-dom";
 
-import Mainpage from "./views/Mainpage";
-import Projects from "./views/Projects";
-import FollowPanel from "./views/Follow";
-import Profile from "./views/Profile";
-import DraftPanel from "./views/DraftPanel";
-import ReadPanel from "./views/ReadPanel";
-import NavBar from "./widget/NavBar";
-import UserProfile from "./views/UserProfile";
+import Mainpage from "./presentational/Mainpage";
+import Projects from "./presentational/Projects";
+import FollowPanel from "./presentational/widgets/Follow";
+import Profile from "./presentational/Profile";
+import DraftPanel from "./presentational/DraftPanel";
+import ReadPanel from "./presentational/ReadPanel";
+import NavBar from "./presentational/widgets/NavBar";
+import UserProfile from "./presentational/UserProfile";
 
 class App extends Component {
   constructor(props) {
@@ -116,14 +116,14 @@ const routes = [
     main: () => <Mainpage />
   },
   {
-    path: '/userprofile',
+    path: "/userprofile",
     exact: true,
     sidebar: ({ match }) => {
       var breadcrumbs = [];
 
       return <NavBar breadcrumb={breadcrumbs} />;
     },
-    main: () => <UserProfile />,
+    main: () => <UserProfile />
   }
 ];
 

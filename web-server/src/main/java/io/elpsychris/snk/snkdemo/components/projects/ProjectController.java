@@ -1,11 +1,8 @@
 package io.elpsychris.snk.snkdemo.components.projects;
 
-import io.elpsychris.snk.snkdemo.models.ProjectEntity;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.elpsychris.snk.snkdemo.models.ProjectsEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
@@ -19,13 +16,13 @@ public class ProjectController {
     }
 
     @GetMapping(params = {"page", "size"})
-    public Page<ProjectEntity> getAllProjects(@RequestParam(value = "page") int page,
-                                              @RequestParam(value = "size") int size) {
+    public Page<ProjectsEntity> getAllProjects(@RequestParam(value = "page") int page,
+                                               @RequestParam(value = "size") int size) {
         return projectService.findAllProject(page, size);
     }
 
     @PostMapping("")
-    public void addNewProject(ProjectEntity projectEntity) {
+    public void addNewProject(ProjectsEntity projectEntity) {
         projectService.addNewProject(projectEntity);
     }
 
