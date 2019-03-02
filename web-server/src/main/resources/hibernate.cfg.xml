@@ -6,13 +6,18 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://localhost:3306/n2n_v1</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-      <mapping class="io.elpsychris.snk.snkdemo.models.ChaptersEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.ChaptersEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.GenreEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.GenreMapEntity"/>
-      <mapping class="io.elpsychris.snk.snkdemo.models.ProjectEntity"/>
-      <mapping class="io.elpsychris.snk.snkdemo.models.UserEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.AccountsEntity"/>
-      <!-- <property name="connection.username"/> -->
+    <mapping class="io.elpsychris.snk.snkdemo.models.CommentsEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.EditPermissionEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.JoinInfoEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.ProjectsEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.TopicProjectMapEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.TopicsEntity"/>
+    <mapping class="io.elpsychris.snk.snkdemo.models.VolumesEntity"/>
+    <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

@@ -1,32 +1,30 @@
 package io.elpsychris.snk.snkdemo.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vladmihalcea.hibernate.type.json.JsonStringType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
 @TypeDef(name = "json", typeClass = JsonStringType.class)
-@Table(name = "project", schema = "n2n_v1")
-public class ProjectEntity {
+@Table(name = "projects", schema = "n2n_v1")
+public class ProjectsEntity {
     private int projectId;
     private String projectName;
     private String projectNameAlter;
     private Integer projectCreated;
     private Timestamp projectLatest;
-    private String projectAuthor;
-    private String projectArtist;
+    private Integer projectAuthor;
+    private Integer projectArtist;
     private String projectSynopsis;
     private String projectTags;
     private String projectAva;
     private String projectLink;
     private Object projectUpdateInfo;
-    private List<ChaptersEntity> chapterList;
+    private Integer projectCreator;
 
     @Id
     @Column(name = "project_id", nullable = false)
@@ -79,22 +77,22 @@ public class ProjectEntity {
     }
 
     @Basic
-    @Column(name = "project_author", nullable = true, length = 45)
-    public String getProjectAuthor() {
+    @Column(name = "project_author", nullable = true)
+    public Integer getProjectAuthor() {
         return projectAuthor;
     }
 
-    public void setProjectAuthor(String projectAuthor) {
+    public void setProjectAuthor(Integer projectAuthor) {
         this.projectAuthor = projectAuthor;
     }
 
     @Basic
-    @Column(name = "project_artist", nullable = true, length = 45)
-    public String getProjectArtist() {
+    @Column(name = "project_artist", nullable = true)
+    public Integer getProjectArtist() {
         return projectArtist;
     }
 
-    public void setProjectArtist(String projectArtist) {
+    public void setProjectArtist(Integer projectArtist) {
         this.projectArtist = projectArtist;
     }
 
@@ -148,21 +146,21 @@ public class ProjectEntity {
         this.projectUpdateInfo = projectUpdateInfo;
     }
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "project")
-    public List<ChaptersEntity> getChapterList() {
-        return chapterList;
+    @Basic
+    @Column(name = "project_creator", nullable = true)
+    public Integer getProjectCreator() {
+        return projectCreator;
     }
 
-    public void setChapterList(List<ChaptersEntity> chapterList) {
-        this.chapterList = chapterList;
+    public void setProjectCreator(Integer projectCreator) {
+        this.projectCreator = projectCreator;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProjectEntity that = (ProjectEntity) o;
+        ProjectsEntity that = (ProjectsEntity) o;
         return projectId == that.projectId &&
                 Objects.equals(projectName, that.projectName) &&
                 Objects.equals(projectNameAlter, that.projectNameAlter) &&
@@ -174,11 +172,12 @@ public class ProjectEntity {
                 Objects.equals(projectTags, that.projectTags) &&
                 Objects.equals(projectAva, that.projectAva) &&
                 Objects.equals(projectLink, that.projectLink) &&
-                Objects.equals(projectUpdateInfo, that.projectUpdateInfo);
+                Objects.equals(projectUpdateInfo, that.projectUpdateInfo) &&
+                Objects.equals(projectCreator, that.projectCreator);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, projectName, projectNameAlter, projectCreated, projectLatest, projectAuthor, projectArtist, projectSynopsis, projectTags, projectAva, projectLink, projectUpdateInfo);
+        return Objects.hash(projectId, projectName, projectNameAlter, projectCreated, projectLatest, projectAuthor, projectArtist, projectSynopsis, projectTags, projectAva, projectLink, projectUpdateInfo, projectCreator);
     }
 }

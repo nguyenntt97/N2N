@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Route, Link, Router } from "react-router-dom";
-import { Menu, Dropdown, Icon } from 'antd';
-import styles from './../styles/Navbar.module.scss';
+import { Menu, Dropdown, Icon } from "antd";
+import styles from "../../styles/Navbar.module.scss";
 
 class NavBar extends Component {
   constructor(props) {
@@ -11,20 +11,20 @@ class NavBar extends Component {
       notiUnActive: false,
       profileMenu: [
         {
-          label: 'View Profile',
-          href: 'userprofile',
+          label: "View Profile",
+          href: "userprofile"
         },
         {
-          label: 'Message Wall',
-          href: '#',
+          label: "Message Wall",
+          href: "#"
         },
         {
-          label: '',
-          href: '',
+          label: "",
+          href: ""
         },
         {
-          label: 'Log Out',
-          href: '#',
+          label: "Log Out",
+          href: "#"
         }
       ]
     };
@@ -64,15 +64,19 @@ class NavBar extends Component {
   };
   render() {
     console.log("Props", this.props.routes);
-    const pMenu = <Menu>
-      {
-        this.state.profileMenu.map((item, idx) => item.href ? 
-          <Menu.Item key={idx}>
-            <a href={item.href}>{item.label}</a>
-          </Menu.Item> : 
-          <Menu.Divider></Menu.Divider>)
-      }
-    </Menu>;
+    const pMenu = (
+      <Menu>
+        {this.state.profileMenu.map((item, idx) =>
+          item.href ? (
+            <Menu.Item key={idx}>
+              <a href={item.href}>{item.label}</a>
+            </Menu.Item>
+          ) : (
+            <Menu.Divider />
+          )
+        )}
+      </Menu>
+    );
     return (
       <div className="nav-head">
         <Link to="/">
@@ -125,15 +129,17 @@ class NavBar extends Component {
             </ul>
           </div>
           <div className="my-profile">
-            <div className={'avatar custom-img'}>
-                {/* thử antd và css module */}
-                <Dropdown overlay={pMenu}
-                          overlayClassName={styles.hihi}
-                          trigger={['click']}>
-                  <a className="ant-dropdown-link">
-                    <img src="/sample-ava.jpg" />
-                  </a>
-                </Dropdown>
+            <div className={"avatar custom-img"}>
+              {/* thử antd và css module */}
+              <Dropdown
+                overlay={pMenu}
+                overlayClassName={styles.hihi}
+                trigger={["click"]}
+              >
+                <a className="ant-dropdown-link">
+                  <img src="/sample-ava.jpg" />
+                </a>
+              </Dropdown>
             </div>
           </div>
         </div>
