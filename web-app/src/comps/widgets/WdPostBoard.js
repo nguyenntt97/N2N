@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import post from "../GuildNews";
+import post from "../Post";
 
-class GuildBoard extends Component {
+class WdPostBoard extends Component {
   constructor(props) {
     super(props);
   }
@@ -28,4 +28,4 @@ class GuildBoard extends Component {
   }
 }
 
-export default GuildBoard;
+export default WdPostBoard;

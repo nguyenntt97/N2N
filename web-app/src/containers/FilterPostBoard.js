@@ -1,27 +1,26 @@
-import { VisibilityFilters, markNews } from "../actions/guildboard";
+import { VisibilityFilters, markPost } from "../actions/postActions";
 import { connect } from "react-redux";
-import GuildBoard from "../comps/widgets/GuildBoard";
+import WdPostBoard from "../comps/widgets/WdPostBoard";
 
-const getNewsList = news => {
+const getPostsList = posts => {
   // switch (filter) {
   // case VisibilityFilters.SHOW_ALL:
   //   return news;
   // default:
   //   return news;
   // }
-  console.log("hahahahahahah", news);
-  return news;
+  return posts;
 };
 
 const mapStateToProps = state => ({
-  data: getNewsList(state.news)
+  data: getPostsList(state.posts)
 });
 
 const mapDispatchToProps = dispatch => ({
-  markNews: id => dispatch(markNews(id))
+  markPost: id => dispatch(markPost(id))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(GuildBoard);
+)(WdPostBoard);

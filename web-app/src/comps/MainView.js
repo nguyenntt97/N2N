@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Projects from "./Projects";
-import SideWidget from "./widgets/SideWidget";
+import Projects from "./ProjectView";
+import SideWidget from "./widgets/WdTrend";
 // import GuildBoard from "./widgets/GuildBoard";
-import GuildBoard from "../containers/GuildBoard";
+import GuildBoard from "../containers/FilterPostBoard";
 
 class Mainpage extends React.Component {
   render() {

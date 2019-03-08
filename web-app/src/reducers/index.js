@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import news from "./guildboard";
+import posts from "./posts";
 
-const nannoApp = combineReducers({ news });
+const rootReducer = combineReducers({ posts });
 
-export default nannoApp;
+export default rootReducer;

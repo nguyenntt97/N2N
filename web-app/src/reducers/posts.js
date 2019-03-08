@@ -1,4 +1,4 @@
-import { ADD_NEWS } from "../actions/guildboard";
+import { ADD_POST } from "../actions/postActions";
 
 const initial_state = [
   {
@@ -37,14 +37,13 @@ const initial_state = [
   }
 ];
 
-const news = (state = initial_state, action) => {
+const posts = (state = initial_state, action) => {
   switch (action.type) {
-    case ADD_NEWS:
+    case ADD_POST:
       return [
         ...state,
         {
-          id: action.newsId,
-          newsObj: action.newsObj
+          data: action.post
         }
       ];
 
@@ -53,4 +52,4 @@ const news = (state = initial_state, action) => {
   }
 };
 
-export default news;
+export default posts;
