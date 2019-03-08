@@ -10,14 +10,14 @@ import {
   Switch
 } from "react-router-dom";
 
-import Mainpage from "./presentational/Mainpage";
-import Projects from "./presentational/Projects";
-import FollowPanel from "./presentational/widgets/Follow";
-import Profile from "./presentational/Profile";
-import DraftPanel from "./presentational/DraftPanel";
-import ReadPanel from "./presentational/ReadPanel";
-import NavBar from "./presentational/widgets/NavBar";
-import UserProfile from "./presentational/UserProfile";
+import Mainpage from "./comps/MainView";
+import Projects from "./comps/ProjectView";
+import FollowPanel from "./comps/widgets/WdFollowBox";
+import Profile from "./comps/ProfileView";
+import DraftPanel from "./comps/DraftView";
+import ReadPanel from "./comps/ReadingView";
+import NavBar from "./comps/widgets/WidNavBar";
+import UserProfile from "./comps/ProfileView2";
 
 class App extends Component {
   constructor(props) {

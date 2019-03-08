@@ -1,45 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Projects from "./Projects";
-import SideWidget from "./widgets/SideWidget";
-import GuildBoard from "./widgets/GuildBoard";
+import Projects from "./ProjectView";
+import SideWidget from "./widgets/WdTrend";
+// import GuildBoard from "./widgets/GuildBoard";
+import GuildBoard from "../containers/FilterPostBoard";
 
-const sample_data = [
-  {
-    title: "RE-ZERO chương 16",
-    author: "hungtb96",
-    time: "3 tiếng trước",
-    comments: "26 bình luận",
-    link: "re-zero",
-    followers: {
-      followList: [
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" }
-      ],
-      total: 7
-    }
-  },
-  {
-    title: "KONOSUBA chương 15",
-    author: "hungtb96",
-    time: "5 tiếng trước",
-    comments: "21 bình luận",
-    link: "konosuba",
-    followers: {
-      followList: [
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" },
-        { ava: "/sample-ava.jpg" }
-      ],
-      total: 7
-    }
-  }
-];
 class Mainpage extends React.Component {
   render() {
     return (
@@ -117,7 +82,7 @@ class Mainpage extends React.Component {
         </div>
 
         <div className="row">
-          <GuildBoard data={sample_data} />
+          <GuildBoard />
           <SideWidget />
         </div>
         <script type="text/javascript" src="js/materialize.min.js" />
