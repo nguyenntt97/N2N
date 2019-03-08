@@ -1,31 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
-class GuildBoard extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className="guild-content">
-        <h4>GUILD BOARD</h4>
-        <ul className="list-discuss">
-          {this.props.data.map(postItem =>
-            renderPostItem(
-              postItem.title,
-              postItem.author,
-              postItem.time,
-              postItem.commentNo,
-              postItem.followers,
-              postItem.link
-            )
-          )}
-        </ul>
-      </div>
-    );
-  }
-}
-const renderPostItem = (title, author, time, commentNo, followers, link) => {
+const post = (title, author, time, commentNo, followers, link) => {
   return (
     <Link to={"/projects/" + link}>
       <li className="discusss">
@@ -49,4 +26,4 @@ const renderPostItem = (title, author, time, commentNo, followers, link) => {
   );
 };
 
-export default GuildBoard;
+export default post;

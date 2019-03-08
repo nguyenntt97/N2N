@@ -1,6 +1,6 @@
 import React from "react";
 import Pagination from "./widgets/Pagination";
-import CommentBar from "./widgets/CommentBar";
+import CommentBar from "./widgets/WdComment";
 import ModalBox from "./widgets/NotiBox";
 
 import { Link } from "react-router-dom";
