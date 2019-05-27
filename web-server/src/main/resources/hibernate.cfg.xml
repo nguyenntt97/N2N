@@ -6,7 +6,7 @@
   <session-factory>
     <property name="connection.url">jdbc:mysql://localhost:3306/n2n_v1</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-    <mapping class="io.elpsychris.snk.snkdemo.models.ChaptersEntity"/>
+      <mapping class="io.elpsychris.snk.snkdemo.models.ChaptersEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.GenreEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.GenreMapEntity"/>
       <mapping class="io.elpsychris.snk.snkdemo.models.AccountsEntity"/>
