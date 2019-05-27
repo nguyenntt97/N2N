@@ -4,15 +4,15 @@
   "private": true,
   "dependencies": {
     "antd": "^3.13.1",
-    "jquery": "^3.3.1",
+    "font-awesome": "^4.7.0",
     "materialize-css": "^1.0.0-rc.2",
     "merge": ">=1.2.1",
     "node-sass": "^4.11.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.8",
+    "react-scripts": "^3.0.1",
+    "react-redux": "^6.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },

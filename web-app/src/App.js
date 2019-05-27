@@ -10,14 +10,15 @@ import {
   Switch
 } from "react-router-dom";
 
-import Mainpage from "./comps/MainView";
-import Projects from "./comps/ProjectView";
-import FollowPanel from "./comps/widgets/WdFollowBox";
-import Profile from "./comps/ProfileView";
-import DraftPanel from "./comps/DraftView";
-import ReadPanel from "./comps/ReadingView";
-import NavBar from "./comps/widgets/WidNavBar";
-import UserProfile from "./comps/ProfileView2";
+import Mainpage from "./views/Mainpage";
+import Projects from "./views/Projects";
+import FollowPanel from "./views/Follow";
+import Profile from "./views/Profile";
+import DraftPanel from "./views/DraftPanel";
+import ReadPanel from "./views/ReadPanel";
+import NavBar from "./widget/NavBar";
+import UserProfile from "./views/UserProfile";
+import AdvancedSearch from "./views/AdvancedSearch";
 
 class App extends Component {
   constructor(props) {
@@ -124,6 +125,16 @@ const routes = [
       return <NavBar breadcrumb={breadcrumbs} />;
     },
     main: () => <UserProfile />
+  },
+  {
+    path: "/advancedsearch",
+    exact: true,
+    sidebar: ({ match }) => {
+      var breadcrumbs = [];
+
+      return <NavBar breadcrumb={breadcrumbs} />;
+    },
+    main: () => <AdvancedSearch />
   }
 ];
 

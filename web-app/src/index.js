@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import "./index.css";
 import App from "./App";
+import "font-awesome/css/font-awesome.min.css";
 import { createStore } from "redux";
 import nannoApp from "./reducers";
 import { Provider } from "react-redux";
