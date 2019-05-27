@@ -12,6 +12,8 @@ public class TopicsEntity {
     private Integer memNum;
     private Timestamp lastUpdate;
     private Boolean isOpen;
+    private String extLink;
+    private Integer creator;
 
     @Id
     @Column(name = "topic_id", nullable = false)
@@ -78,5 +80,25 @@ public class TopicsEntity {
     @Override
     public int hashCode() {
         return Objects.hash(topicId, topicName, memNum, lastUpdate, isOpen);
+    }
+
+    @Basic
+    @Column(name = "ext_link", nullable = true, length = 500)
+    public String getExtLink() {
+        return extLink;
+    }
+
+    public void setExtLink(String extLink) {
+        this.extLink = extLink;
+    }
+
+    @Basic
+    @Column(name = "creator", nullable = true)
+    public Integer getCreator() {
+        return creator;
+    }
+
+    public void setCreator(Integer creator) {
+        this.creator = creator;
     }
 }
