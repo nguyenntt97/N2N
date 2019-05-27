@@ -1,8 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./index.css";
 import App from "./App";
-import 'font-awesome/css/font-awesome.min.css';
+import "font-awesome/css/font-awesome.min.css";
+import { createStore } from "redux";
+import nannoApp from "./reducers";
+import { Provider } from "react-redux";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -12,10 +17,14 @@ import {
 } from "react-router-dom";
 import registerServiceWorker from "./registerServiceWorker";
 
+const store = createStore(nannoApp);
+
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 registerServiceWorker();
