@@ -10,6 +10,9 @@ import {
   Switch
 } from "react-router-dom";
 
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+
 import Mainpage from "./views/Mainpage";
 import Projects from "./views/Projects";
 import FollowPanel from "./views/Follow";

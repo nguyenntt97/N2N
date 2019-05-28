@@ -1,6 +1,7 @@
 package io.elpsychris.snk.snkdemo.components.topics;
 
 import io.elpsychris.snk.snkdemo.models.TopicsEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ public class TopicController {
         this.topicService = topicService;
     }
 
+    @CrossOrigin
     @GetMapping()
     public List<TopicsEntity> getAllTopics() {
         return topicService.getAllTopics();
