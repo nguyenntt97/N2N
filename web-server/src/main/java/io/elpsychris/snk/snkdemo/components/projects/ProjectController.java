@@ -15,17 +15,20 @@ public class ProjectController {
         this.projectService = projectService;
     }
 
+    @CrossOrigin
     @GetMapping(params = {"page", "size"})
     public Page<ProjectsEntity> getAllProjects(@RequestParam(value = "page") int page,
                                                @RequestParam(value = "size") int size) {
         return projectService.findAllProject(page, size);
     }
 
+    @CrossOrigin
     @PostMapping("")
     public void addNewProject(ProjectsEntity projectEntity) {
         projectService.addNewProject(projectEntity);
     }
 
+    @CrossOrigin
     @DeleteMapping("")
     public void removeProject(long projectId) {
         projectService.removeProject(projectId);

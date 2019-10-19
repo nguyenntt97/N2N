@@ -15,6 +15,7 @@ public class ChapterController {
         this.chapterService = chapterService;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{project-id}", params = {"page", "size"})
     public Page<ChaptersEntity> getAllChapter(@RequestParam(value = "page") int page,
                                               @RequestParam(value = "size") int size,
@@ -22,6 +23,7 @@ public class ChapterController {
         return chapterService.getAllChapter(page, size, projectId);
     }
 
+    @CrossOrigin
     @PostMapping()
     public ChaptersEntity addNewChapter(@RequestBody ChaptersEntity chaptersEntity) {
         return chapterService.addNewChapter(chaptersEntity);
