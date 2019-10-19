@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>snk-core</groupId>
+    <artifactId>snk-core</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.tools.version>2.10</scala.tools.version>
+        <scala.version>2.10.2</scala.version>
+        <akka.version>2.6.0-MB</akka.version>
+        <spray.version>1.3.4</spray.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>${scala.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.spray</groupId>
+            <artifactId>spray-can_2.11</artifactId>
+            <version>${spray.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.spray</groupId>
+            <artifactId>spray-routing_2.11</artifactId>
+            <version>${spray.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.spray</groupId>
+            <artifactId>spray-json_2.11</artifactId>
+            <version>${spray.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-actor_2.13</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-slf4j_2.13</artifactId>
+            <version>${akka.version}</version>
+        </dependency>
+
+        <!--Test-->
+        <dependency>
+            <groupId>io.spray</groupId>
+            <artifactId>spray-testkit_2.11</artifactId>
+            <version>${spray.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.typesafe.akka</groupId>
+            <artifactId>akka-testkit_2.13</artifactId>
+            <version>${akka.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
