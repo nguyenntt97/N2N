@@ -16,8 +16,7 @@ import QuickOption from "./QuickOpt";
 
 const useStyles = makeStyles(theme => ({
   headerBg: {
-    background:
-      "linear-gradient(36deg, rgb(239,233,204) 12%, rgb(255, 255, 255) 71%)",
+    background: "#f6ecbf",
     color: "#292929"
   },
   grows: {

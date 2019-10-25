@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   title: {
-    background: "#5a1818",
+    background: "#c886e5",
     width: "100%",
     color: "white",
     fontWeight: "bold",

@@ -17,7 +17,7 @@ class Mainpage extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={Theme}>
-        <Grid container xs={12}>
+        <Grid container xs={12} spacing={1}>
           <Grid item xs={12}>
             <GlobalHeader viewName={"Trang chủ"} />
             <Breadcrumb />
