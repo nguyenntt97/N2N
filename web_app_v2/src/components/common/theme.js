@@ -5,9 +5,11 @@ import * as Colors from "@material-ui/core/colors";
 export const Theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#fff"
+      main: "#e26241"
     },
-    secondary: Colors.brown,
+    secondary: {
+      main: "#940a37"
+    },
     error: Colors.red,
     // Used by `getContrastText()` to maximize the contrast between the background and
     // the text.
@@ -21,14 +23,6 @@ export const Theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: [
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"'
-    ].join(",")
+    fontFamily: ["Roboto", "Oswald"].join(",")
   }
 });

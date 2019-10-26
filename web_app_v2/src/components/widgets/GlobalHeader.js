@@ -16,7 +16,7 @@ import QuickOption from "./QuickOpt";
 
 const useStyles = makeStyles(theme => ({
   headerBg: {
-    background: "#f6ecbf",
+    background: "#ffd369",
     color: "#292929"
   },
   grows: {
