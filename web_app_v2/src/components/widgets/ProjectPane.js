@@ -7,7 +7,7 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import Radio from "@material-ui/core/Radio";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import { Link, Route, Redirect } from "react-router-dom";
 import { ENODEV } from "constants";
 import { inherits } from "util";
 import { relative } from "path";
@@ -61,7 +61,12 @@ const projectItem = (item, classes) => {
       <div className={classes.cover}>
         <img src={item.cover} width="100%" />
       </div>
-      <Link href="#" onClick={preventDefault} className={classes.link}>
+      <Link
+        href="/projects/123"
+        // onClick={preventDefault}
+        // className={classes.link}
+        to={"/projects/123"}
+      >
         {getShortened(item.title)}
       </Link>
       <div className={classes.borderLayout}></div>

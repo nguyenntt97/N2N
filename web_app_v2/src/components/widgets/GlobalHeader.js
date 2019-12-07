@@ -16,7 +16,8 @@ import QuickOption from "./QuickOpt";
 
 const useStyles = makeStyles(theme => ({
   headerBg: {
-    background: "#ffd369",
+    position: "fixed",
+    background: "#fff",
     color: "#292929"
   },
   grows: {
@@ -41,7 +42,6 @@ export default function MainAppBar(props) {
       <AppBar
         className={classes.headerBg}
         position="static"
-        color="primary"
         elevation={2}
       >
         <Toolbar>
@@ -53,7 +53,7 @@ export default function MainAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src="logo_2.png" height="50px" />
+          <img src="/logo_2.png" height="50px" />
 
           <SearchBar />
           <div className={classes.grows} />

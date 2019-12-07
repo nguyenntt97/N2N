@@ -31,6 +31,20 @@ const useStyles = makeStyles({
     marginTop: Theme.spacing(5),
     borderRadius: 0,
     borderBottom: "1px solid #940a37"
+  },
+  indicator: {
+    "&::after": {
+      content: "''",
+      position: "absolute",
+      width: 0,
+      height: 0,
+      borderLeft: "5px solid transparent",
+      borderRight: "5px solid transparent",
+      borderTop: "5px solid transparent",
+      left: 0,
+      right: 0,
+      margin: "auto"
+    }
   }
 });
 

@@ -5,3 +5,6 @@ export { default as Breadcrumb } from "./Breadcrumb";
 export { default as ProjectPane } from "./ProjectPane";
 export { default as TabPane } from "./TabPane";
 export { default as NewsPane } from "./NewsPane";
+export { default as ProjectInfo } from "./ProjectInfo";
+export { default as VolPane } from "./VolPane";
+
