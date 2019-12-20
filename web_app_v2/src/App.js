@@ -8,18 +8,26 @@ import {
   withRouter,
   Switch
 } from "react-router-dom";
+import { Theme } from "./components/common/theme";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
-import MainView from "./components/MainView";
 import {
-  NavBar,
-  Profile,
-  ReadPanel,
-  UserProfile,
-  Projects
+  GlobalHeader,
+  GlobalTabs,
+  Breadcrumb,
+  ProjectPane,
+  TabPane,
+  NewsPane
 } from "./components/widgets";
+
+import MainView from "./components/MainView";
+import ProjectView from "./components/ProjectView";
+
+import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
 
 class App extends Component {
   constructor(props) {
@@ -33,7 +41,36 @@ class App extends Component {
   render() {
     return (
       <div className={styles.App}>
-        <MainView />
+        <MuiThemeProvider theme={Theme}>
+          <Grid container xs={12} justify="center">
+            {/* {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.sidebar}
+          />
+        ))} */}
+
+            <Grid item xs={12}>
+              <GlobalHeader viewName={"Trang chủ"} />
+              <Breadcrumb />
+            </Grid>
+            {routes.map((route, index) => (
+              <Grid style={{
+                marginTop:20,
+                padding: 10}
+                } item xs={12}>
+                <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                component={route.main}
+              />
+              </Grid>
+            ))}
+          </Grid>
+        </MuiThemeProvider>
       </div>
     );
   }
@@ -55,21 +92,21 @@ const routes = [
   //   },
   //   main: () => <Profile />
   // },
-  // {
-  //   path: "/projects/:project",
-  //   exact: true,
-  //   sidebar: ({ match }) => {
-  //     var breadcrumbs = [];
+  {
+    path: "/projects/:project",
+    exact: true,
+    // sidebar: ({ match }) => {
+    //   var breadcrumbs = [];
 
-  //     breadcrumbs.push({
-  //       label: match.params.project,
-  //       href: "/" + match.params.project
-  //     });
+    //   breadcrumbs.push({
+    //     label: match.params.project,
+    //     href: "/" + match.params.project
+    //   });
 
-  //     return <NavBar breadcrumb={breadcrumbs} />;
-  //   },
-  //   main: () => <Projects />
-  // },
+    //   return <NavBar breadcrumb={breadcrumbs} />;
+    // },
+    main: () => <ProjectView />
+  },
   // {
   //   path: "/projects/:project/:chaplink",
   //   exact: true,
@@ -92,11 +129,11 @@ const routes = [
   {
     path: "/",
     exact: true,
-    sidebar: ({ match }) => {
-      var breadcrumbs = [];
+    // sidebar: ({ match }) => {
+    //   var breadcrumbs = [];
 
-      return <NavBar breadcrumb={breadcrumbs} />;
-    },
+    //   return <NavBar breadcrumb={breadcrumbs} />;
+    // },
     main: () => <MainView />
     // },
     // {
