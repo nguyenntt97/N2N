@@ -1,6 +1,9 @@
 # Introduction
+
 ## What is it?
+
 This is N2N project:
+
 - An web app for sharing LN's fan translation and other information
 - This project is a combination of
   * A main web service for main components (Java - Spring)
@@ -8,7 +11,35 @@ This is N2N project:
   * A web client (React)
   * A mobile app (Android)
 
+### Directory index
+
+```
+snk_project
+|-- backup_etc    // Backup data, schema, EER
+|-- crawler       // Crawler to generate mockup data and future migration
+|-- main-server   // Backend project
+|-- web_app_v2    // Frontend project
+|-- web-prototype // Prototype project (Deprecated)
+```
+
+### Tech stack
+
+Database:
+
+- Main DB - MySQL
+
+Main API:
+
+- Finch Framework (Scala)
+
+Web app:
+
+- React JS
+
+
+
 ## System Requirements
+
 - OS: Ubuntu (version)
 - DB: 
   - MySQL (version)
@@ -21,16 +52,21 @@ This is N2N project:
   - Docker (version)
 
 ## Update logs
+
 ```
 - 5th Feb. 2019 - Note created
 ```
 
 ## Contacts
+
 We are the Sonako Dev Team
+
 * Sonako fanpage can be found at [Sonako Fanpage](https://www.facebook.com/SonakoWiki/)
+
 * Sonako main website can be found at [Sonako](https://sonako.fandom.com/wiki/Sonako_Light_Novel)
 
 * Found a problem? Contact any of our team members:
+  
   * NguyenNTT - rohirrim3105@gmail.com
   * ThinhDV - ducthinhvu96@gmail.com
   * ThaiPCH - futoshihito@gmail.com
@@ -45,6 +81,7 @@ We are the Sonako Dev Team
 - Config your properties file in Spring project as following:
 
 **application.properties**
+
 ```
 spring.datasource.url = <mysql-connection-url>
 spring.datasource.username = root
@@ -56,14 +93,16 @@ spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
 spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 ```
 
-
 - Open the database explorer by navigating `View -> Tool Windows -> Database`
 - Right click on each table and select `Import Data from File...`
 - In the dialog choose corresponding table name (CSV) -> `OK`
 - Click `OK`
-# Modules Specification
-## Main API
-### Entities Definition
+  
+  # Modules Specification
+  
+  ## Main API
+  
+  ### Entities Definition
 * Projects: The API allows user to create new project of a LN title (or LN series)
 * Volumes: A project (or a LN title) includes many vols in it. A vol (or Arc in WN) is a group of many chapters
 * Chapters: A vol then seperated into more small chapters
@@ -72,38 +111,51 @@ spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
 * Tags
 
 ### Roles
+
 * Admin
 * User
 
 ### API Endpoints
+
 #### Project service
+
 (Waiting for updates)
 
 ## Sub API
+
 ### Recommender system
+
 (Waiting for updates)
 
 ### Editor features
+
 (Waiting for updates)
 
 ### Information hub features
+
 (Waiting for updates)
 
 ## Web Client
+
 ### Views
+
 (Waiting for updates)
 
 # Bugs
+
 ## Web app
+
 ### Error: ENOSPC: System limit for number of file watchers reached...
+
 #### Output
+
 ```
 Starting the development server...
- 
+
 events.js:167
       throw er; // Unhandled 'error' event
       ^
- 
+
 Error: ENOSPC: System limit for number of file watchers reached, watch '/home/elpsychris/projects/test/N2N/nanno-app/public'
     at FSWatcher.start (internal/fs/watchers.js:165:26)
     at Object.watch (fs.js:1254:11)
@@ -127,21 +179,23 @@ npm ERR! Exit status 1
 npm ERR!
 npm ERR! Failed at the nanno-app@0.1.0 start script.
 npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
- 
+
 npm ERR! A complete log of this run can be found in:
 npm ERR!     /home/elpsychris/.npm/_logs/2019-02-07T15_56_25_668Z-debug.log
 elpsychris@tnguyen:~/projects/test/N2N/nanno-app$ script log.txt
 Script started, file is log.txt
 elpsychris@tnguyen:~/projects/test/N2N/nanno-app$
 ```
+
 #### How to fix it
+
 This is not a bug from npm and can only be met when you use `npm run start`
 
 As Danrley Willyan said:
 
 > npm or a process controlled by it is watching too many files. Updating max_user_watches on the build node can fix it forever. For debian put the following on terminal:
 > `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`
->
+> 
 > The full discussion can be found at [StackOverflow - Node.js: what is ENOSPC error and how to solve?](https://stackoverflow.com/a/53221475/6356411)
 
 **DN**: *This is ONLY the temporary measurement and will be fixed completely in the future.*
