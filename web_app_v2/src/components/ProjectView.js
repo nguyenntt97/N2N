@@ -1,17 +1,12 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Theme } from "./common/theme";
+import { makeStyles } from "@material-ui/core/styles";
 
-import { TabPane, NewsPane, ProjectInfo, VolPane } from "./widgets";
+import { TabPane, ProjectInfo, VolPane } from "./widgets";
+import ChatView from "./chat/ChatView";
+import color from "@material-ui/core/colors/amber";
+import { Typography, Divider } from "@material-ui/core";
 // import GuildBoard from "./widgets/GuildBoard";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  }
-}));
 
 const widget = [
   {
@@ -26,18 +21,46 @@ const widget = [
   }
 ];
 
-const data = [
-  {
-    cover: "img/cover1.jpg",
-    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
-  }
-];
-
 const vol_data = [
   {
     vol_id: "121313",
     vol_title: "Tập 1",
     chapters: [
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      },
       {
         id: "1232423",
         chapter_id: 1,
@@ -55,24 +78,85 @@ const vol_data = [
         title: "Chương 1: Khởi đầu 2"
       }
     ]
+  },
+  {
+    vol_id: "121313",
+    vol_title: "Tập 3",
+    chapters: [
+      {
+        id: "1232423",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu"
+      }
+    ]
+  },
+  {
+    vol_id: "121313",
+    vol_title: "Tập 4",
+    chapters: [
+      {
+        id: "1232424",
+        chapter_id: 1,
+        title: "Chương 1: Khởi đầu 2"
+      }
+    ]
   }
-]
+];
 
-const generateVolViews = (volData) => volData.map(v => ({
-  "title": v.vol_title,
-  "label": "latest-news",
-  "body": <VolPane/>
-}));
+const COMMENT = [
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Kết từ cái nhìn đầu",
+    date: "11/02/2019"
+  },
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Chém gió",
+    date: "11/02/2019"
+  },
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Kết từ cái nhìn đầu",
+    date: "11/02/2019"
+  }
+];
+
+const generateVolViews = volData =>
+  volData.map(v => ({
+    title: v.vol_title,
+    label: "latest-news",
+    body: <VolPane chapters={v.chapters} />
+  }));
 
 class ProjectView extends React.Component {
   render() {
     return (
-      <Grid container xs={11} spacing={1}>
-        <Grid item xs={12} md={7}>
-          <ProjectInfo />
-          <TabPane immersive content={generateVolViews(vol_data)} />
+      <Grid container spacing={2}>
+        <Grid item container xs={12} md={8} spacing={3}>
+          <Grid item xs={12} md={12}>
+            <ProjectInfo />
+          </Grid>
+          <Grid item xs={12} md={10} lg={8}>
+            <TabPane content={generateVolViews(vol_data)} immersive />
+          </Grid>
+          <Grid item xs={12}>
+            <Typography
+              variant="h6"
+              style={{
+                color: "#4a47a3",
+                fontWeight: "bold"
+              }}
+            >
+              Bình luận
+            </Typography>
+            <Divider />
+            <ChatView data={COMMENT} />
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={8} md={4} justify="center">
           <TabPane content={widget} />
         </Grid>
       </Grid>

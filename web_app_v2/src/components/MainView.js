@@ -1,24 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Theme } from "./common/theme";
 
-import {
-  GlobalHeader,
-  GlobalTabs,
-  Breadcrumb,
-  ProjectPane,
-  TabPane,
-  NewsPane
-} from "./widgets";
+import { ProjectPane, TabPane, NewsPane } from "./widgets";
 // import GuildBoard from "./widgets/GuildBoard";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  }
-}));
 
 const widget = [
   {
@@ -49,6 +33,30 @@ const data = [
   {
     cover: "img/cover1.jpg",
     title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover1.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover1.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover3.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover1.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover1.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
+  },
+  {
+    cover: "img/cover1.jpg",
+    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?"
   }
 ];
 
@@ -68,8 +76,8 @@ const mainContent = [
 class MainView extends React.Component {
   render() {
     return (
-      <Grid container xs={11} spacing={1}>
-        <Grid item xs={12} md={7}>
+      <Grid container spacing={1}>
+        <Grid container item xs={12} md={8}>
           <ProjectPane data={data} title="Mới nhất" />
           <TabPane immersive content={mainContent} />
         </Grid>

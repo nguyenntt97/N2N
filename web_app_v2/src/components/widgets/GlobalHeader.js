@@ -1,11 +1,8 @@
 import React from "react";
-import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
-import { ThemeProvider } from "styled-components";
+import { makeStyles } from "@material-ui/core/styles";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
 
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -17,8 +14,11 @@ import QuickOption from "./QuickOpt";
 const useStyles = makeStyles(theme => ({
   headerBg: {
     position: "fixed",
-    background: "#fff",
-    color: "#292929"
+    background: "#4a47a3",
+    color: "#f0f0f0"
+  },
+  customTb: {
+    minHeight: 30
   },
   grows: {
     flexGrow: 1
@@ -39,12 +39,8 @@ export default function MainAppBar(props) {
   const classes = useStyles();
   return (
     <div className={classes.grows}>
-      <AppBar
-        className={classes.headerBg}
-        position="static"
-        elevation={2}
-      >
-        <Toolbar>
+      <AppBar className={classes.headerBg} position="static" elevation={0}>
+        <Toolbar className={classes.customTb}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -53,7 +49,6 @@ export default function MainAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src="/logo_2.png" height="50px" />
 
           <SearchBar />
           <div className={classes.grows} />

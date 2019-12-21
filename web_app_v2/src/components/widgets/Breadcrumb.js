@@ -1,49 +1,64 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
+import { emphasize, withStyles } from "@material-ui/core/styles";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import NavigateNextIcon from "@material-ui/icons/NavigateNext";
+import Chip from "@material-ui/core/Chip";
+import HomeIcon from "@material-ui/icons/Home";
+import { upperFirst } from "../common/utils";
+import { Link } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
+const StyledBreadcrumb = withStyles(theme => ({
   root: {
-    justifyContent: "center",
-    flexWrap: "wrap"
-  },
-  paper: {
-    padding: theme.spacing(3, 2, 2, 2)
+    backgroundColor: theme.palette.grey[100],
+    height: theme.spacing(3),
+    color: theme.palette.grey[800],
+    fontWeight: theme.typography.fontWeightRegular,
+    "&:hover, &:focus": {
+      backgroundColor: theme.palette.grey[300]
+    },
+    "&:active": {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(theme.palette.grey[300], 0.12)
+    }
   }
-}));
+}))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
 
 function handleClick(event) {
   event.preventDefault();
-  alert("You clicked a breadcrumb.");
+  console.info("You clicked a breadcrumb.");
 }
 
-export default function CustomSeparator() {
-  const classes = useStyles();
+export default function CustomizedBreadcrumbs(props) {
+  let arr = [
+    <Link to="/">
+      <Breadcrumbs aria-label="breadcrumb">
+        <StyledBreadcrumb
+          component="a"
+          key="home"
+          href="/"
+          label="Home"
+          icon={<HomeIcon fontSize="small" />}
+          // onClick={handleClick}
+        />
+      </Breadcrumbs>
+    </Link>
+  ];
+  arr = [
+    ...arr,
+    ...props.curUrl.map((level, index) => {
+      let current1 = upperFirst(level);
+      return (
+        <Link to={"/"}>
+          <StyledBreadcrumb
+            key={index}
+            href={"/" + current1}
+            label={current1}
+            // onClick={handleClick}
+          />
+        </Link>
+      );
+    })
+  ];
+  console.log(arr);
 
-  return (
-    <div className={classes.root}>
-      <Paper elevation={0} className={classes.paper}>
-        <Breadcrumbs
-          separator={<NavigateNextIcon fontSize="small" />}
-          aria-label="breadcrumb"
-        >
-          <Link color="inherit" href="/" onClick={handleClick}>
-            Material-UI
-          </Link>
-          <Link
-            color="inherit"
-            href="/getting-started/installation/"
-            onClick={handleClick}
-          >
-            Core
-          </Link>
-          <Typography color="textPrimary">Breadcrumb</Typography>
-        </Breadcrumbs>
-      </Paper>
-    </div>
-  );
+  return <Breadcrumbs aria-label="breadcrumb">{arr}</Breadcrumbs>;
 }

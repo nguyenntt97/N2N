@@ -1,33 +1,16 @@
 import React, { Component } from "react";
 import styles from "./main.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Link,
-  withRouter,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Theme } from "./components/common/theme";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-
-import {
-  GlobalHeader,
-  GlobalTabs,
-  Breadcrumb,
-  ProjectPane,
-  TabPane,
-  NewsPane
-} from "./components/widgets";
+import { GlobalHeader, CustomizedBreadcrumbs } from "./components/widgets";
 
 import MainView from "./components/MainView";
 import ProjectView from "./components/ProjectView";
 
-import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
+// import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
 
 class App extends Component {
   constructor(props) {
@@ -37,12 +20,11 @@ class App extends Component {
       toProject: false
     };
   }
-
   render() {
     return (
       <div className={styles.App}>
         <MuiThemeProvider theme={Theme}>
-          <Grid container xs={12} justify="center">
+          <Grid container justify="center">
             {/* {routes.map((route, index) => (
           <Route
             key={index}
@@ -54,19 +36,36 @@ class App extends Component {
 
             <Grid item xs={12}>
               <GlobalHeader viewName={"Trang chủ"} />
-              <Breadcrumb />
             </Grid>
-            {routes.map((route, index) => (
-              <Grid style={{
-                marginTop:20,
-                padding: 10}
-                } item xs={12}>
-                <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                component={route.main}
+
+            <Grid
+              item
+              xs={12}
+              style={{
+                padding: 10,
+                marginTop: 50
+              }}
+            >
+              <CustomizedBreadcrumbs
+                curUrl={window.location.pathname.split("/").filter(Boolean)}
               />
+            </Grid>
+
+            {routes.map((route, index) => (
+              <Grid
+                style={{
+                  padding: 10
+                }}
+                item
+                key={index}
+                xs={12}
+              >
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.main}
+                />
               </Grid>
             ))}
           </Grid>
@@ -105,7 +104,7 @@ const routes = [
 
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
-    main: () => <ProjectView />
+    main: props => <ProjectView {...props} />
   },
   // {
   //   path: "/projects/:project/:chaplink",
@@ -134,7 +133,7 @@ const routes = [
 
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
-    main: () => <MainView />
+    main: props => <MainView {...props} />
     // },
     // {
     //   path: "/userprofile",

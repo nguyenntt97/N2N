@@ -50,7 +50,7 @@ export default function ProjectInfo(props) {
 
   return (
     <Grid className={classes.projectBanner} container xs={12}>
-      <Grid elevation={5} item xs={12} md={7}>
+      <Grid item xs={12} md={7}>
         <img className={classes.projectPortrait} src={data[0].cover} />
       </Grid>
       <Grid item xs={12} md={5}></Grid>

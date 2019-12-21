@@ -1,17 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Radio from "@material-ui/core/Radio";
+
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { Link, Route, Redirect } from "react-router-dom";
-import { ENODEV } from "constants";
-import { inherits } from "util";
-import { relative } from "path";
-import { flexbox } from "@material-ui/system";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,8 +13,8 @@ const useStyles = makeStyles(theme => ({
   title: {
     width: "100%",
     color: "#5b0909",
-    fontWeight: "bold",
-    fontFamily: "Oswald"
+    fontWeight: "bold"
+    // fontFamily: "Oswald"
   },
   paper: {
     height: 280,
@@ -38,11 +31,10 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden"
   },
   borderLayout: {
-    width: 150,
-    height: 210,
-    top: 5,
+    width: "90%",
+    height: "75%",
     position: "absolute",
-    border: "2px solid rgba(226, 98, 65, 0.5)"
+    border: "2px solid rgb(65,60,105,0.5)"
   },
   link: {
     display: "flex",
@@ -64,7 +56,7 @@ const projectItem = (item, classes) => {
       <Link
         href="/projects/123"
         // onClick={preventDefault}
-        // className={classes.link}
+        className={classes.link}
         to={"/projects/123"}
       >
         {getShortened(item.title)}
@@ -84,7 +76,7 @@ export default function ProjectPane(props) {
         {props.title}
       </Typography>
       <Grid item xs={12}>
-        <Grid container justify="left" spacing={3}>
+        <Grid container justify="center" spacing={3}>
           {props.data.map((k, i) => (
             <Grid key={i} item>
               {projectItem(k, classes)}

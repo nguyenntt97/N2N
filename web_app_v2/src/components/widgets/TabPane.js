@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
 import { Theme } from "../common/theme";
+import { fontFamily } from "@material-ui/system";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -28,9 +29,9 @@ function TabPanel(props) {
 
 const useStyles = makeStyles({
   root: {
-    marginTop: Theme.spacing(5),
+    // marginTop: Theme.spacing(5),
     borderRadius: 0,
-    borderBottom: "1px solid #940a37"
+    borderBottom: "1px solid #413c69"
   },
   indicator: {
     "&::after": {
@@ -38,13 +39,20 @@ const useStyles = makeStyles({
       position: "absolute",
       width: 0,
       height: 0,
-      borderLeft: "5px solid transparent",
-      borderRight: "5px solid transparent",
-      borderTop: "5px solid transparent",
+      borderLeft: "10px solid transparent",
+      borderRight: "10px solid transparent",
+      borderTop: "10px solid transparent",
       left: 0,
       right: 0,
       margin: "auto"
     }
+  },
+  tab: {
+    fontFamily: "Fira Sans Condense, sans-serif",
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "#413c69",
+    minWidth: 20
   }
 });
 
@@ -61,7 +69,7 @@ function a11yProps(index) {
   };
 }
 
-export default function CenteredTabs(props) {
+export default function TabPane(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -70,21 +78,19 @@ export default function CenteredTabs(props) {
   };
 
   return (
-    <Paper>
+    <Paper elevation={props.immersive ? "0" : "1"}>
       <Tabs
-        elevation={props.immersive ? 0 : 1}
-        className={props.immersive ? classes.root : null}
+        className={classes.root}
         value={value}
         onChange={handleChange}
         indicatorColor="primary"
-        textColor="white"
       >
         {props.content.map(t => (
-          <Tab label={t.title} />
+          <Tab label={t.title} key={t.title} className={classes.tab} />
         ))}
       </Tabs>
       {props.content.map((t, i) => (
-        <TabPanel value={value} index={i}>
+        <TabPanel value={value} index={i} key={i}>
           {t.body}
         </TabPanel>
       ))}
