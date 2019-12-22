@@ -8,7 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import Dante from "../dante/Dante";
+import { Dante, DanteMini } from "../dante/Dante";
 import { Paper } from "@material-ui/core";
 import { Theme } from "../common/theme";
 
@@ -27,7 +27,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   },
   yourComment: {
-    padding: 10
+    padding: 10,
+    marginLeft: 80
   }
 }));
 
@@ -61,15 +62,20 @@ export default function ChatView() {
             <img src="/sample-ava.jpg" className={classes.ava} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText
-          primary={<img src="/sample-ava.jpg" />}
-          secondary={"sirOwen"}
-        />
+        <ListItemText primary="OMG <3" secondary={"sirOwen"} />
       </ListItem>
       <Divider variant="middle" />
     </List>,
     <Paper elevation={1} className={classes.yourComment}>
-      <Dante content={null} tooltips={[]} />
+      <DanteMini
+        content={null}
+        data_storage={{
+          save_handler: (editorContext, content) => {
+            console.log("Saved");
+            console.log(editorContext, content);
+          }
+        }}
+      />
     </Paper>
   ];
 }
