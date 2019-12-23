@@ -1,25 +1,16 @@
 import React, { Component } from "react";
 import styles from "./main.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  NavLink,
-  Link,
-  withRouter,
-  Switch
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Theme } from "./components/common/theme";
+import Grid from "@material-ui/core/Grid";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 
-import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { GlobalHeader, CustomizedBreadcrumbs } from "./components/widgets";
 
 import MainView from "./components/MainView";
-import {
-  NavBar,
-  Profile,
-  ReadPanel,
-  UserProfile,
-  Projects
-} from "./components/widgets";
+import ProjectView from "./components/ProjectView";
+
+// import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
 
 class App extends Component {
   constructor(props) {
@@ -29,11 +20,56 @@ class App extends Component {
       toProject: false
     };
   }
-
   render() {
     return (
       <div className={styles.App}>
-        <MainView />
+        <MuiThemeProvider theme={Theme}>
+          <Grid container justify="center">
+            {/* {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.sidebar}
+          />
+        ))} */}
+
+            <Grid item xs={12}>
+              <GlobalHeader viewName={"Trang chủ"} />
+            </Grid>
+
+            <Grid
+              item
+              xs={12}
+              style={{
+                padding: 10,
+                marginTop: 50
+              }}
+            >
+              <CustomizedBreadcrumbs
+                curUrl={window.location.pathname.split("/").filter(Boolean)}
+              />
+            </Grid>
+
+            {routes.map((route, index) => (
+              <Grid
+                style={{
+                  padding: 10
+                }}
+                item
+                key={index}
+                xs={12}
+              >
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.main}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </MuiThemeProvider>
       </div>
     );
   }
@@ -55,21 +91,21 @@ const routes = [
   //   },
   //   main: () => <Profile />
   // },
-  // {
-  //   path: "/projects/:project",
-  //   exact: true,
-  //   sidebar: ({ match }) => {
-  //     var breadcrumbs = [];
+  {
+    path: "/projects/:project",
+    exact: true,
+    // sidebar: ({ match }) => {
+    //   var breadcrumbs = [];
 
-  //     breadcrumbs.push({
-  //       label: match.params.project,
-  //       href: "/" + match.params.project
-  //     });
+    //   breadcrumbs.push({
+    //     label: match.params.project,
+    //     href: "/" + match.params.project
+    //   });
 
-  //     return <NavBar breadcrumb={breadcrumbs} />;
-  //   },
-  //   main: () => <Projects />
-  // },
+    //   return <NavBar breadcrumb={breadcrumbs} />;
+    // },
+    main: props => <ProjectView {...props} />
+  },
   // {
   //   path: "/projects/:project/:chaplink",
   //   exact: true,
@@ -92,12 +128,12 @@ const routes = [
   {
     path: "/",
     exact: true,
-    sidebar: ({ match }) => {
-      var breadcrumbs = [];
+    // sidebar: ({ match }) => {
+    //   var breadcrumbs = [];
 
-      return <NavBar breadcrumb={breadcrumbs} />;
-    },
-    main: () => <MainView />
+    //   return <NavBar breadcrumb={breadcrumbs} />;
+    // },
+    main: props => <MainView {...props} />
     // },
     // {
     //   path: "/userprofile",
