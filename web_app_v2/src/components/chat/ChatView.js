@@ -71,7 +71,6 @@ export default function ChatView() {
         content={null}
         data_storage={{
           save_handler: (editorContext, content) => {
-            console.log("Saved");
             console.log(editorContext, content);
           }
         }}

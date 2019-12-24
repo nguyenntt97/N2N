@@ -9,6 +9,7 @@ import { GlobalHeader, CustomizedBreadcrumbs } from "./components/widgets";
 
 import MainView from "./components/MainView";
 import ProjectView from "./components/ProjectView";
+import EditorView from "./components/EditorView"
 
 // import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
 
@@ -104,7 +105,21 @@ const routes = [
 
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
-    main: props => <ProjectView {...props} />
+    main: props => <ProjectView />
+  },{
+    path: "/edit/:project",
+    exact: true,
+    // sidebar: ({ match }) => {
+    //   var breadcrumbs = [];
+
+    //   breadcrumbs.push({
+    //     label: match.params.project,
+    //     href: "/" + match.params.project
+    //   });
+
+    //   return <NavBar breadcrumb={breadcrumbs} />;
+    // },
+    main: props => <EditorView />
   },
   // {
   //   path: "/projects/:project/:chaplink",

@@ -39,8 +39,7 @@ function VolPane(props) {
             <ListItem
               button
               onClick={() => {
-                console.log("haha");
-                props.history.push("/");
+                props.history.push("/edit/sdasddsad");
               }}
             >
               <ListItemText primary={c.title} />
