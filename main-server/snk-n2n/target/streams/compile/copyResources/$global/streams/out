@@ -1,5 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/elpsychris/projects/nanno/main-server/snk-n2n/conf/logback.xml,/home/elpsychris/projects/nanno/main-server/snk-n2n/target/scala-2.13/classes/logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/elpsychris/projects/nanno/main-server/snk-n2n/conf/application.conf,/home/elpsychris/projects/nanno/main-server/snk-n2n/target/scala-2.13/classes/application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/elpsychris/projects/nanno/main-server/snk-n2n/conf/routes,/home/elpsychris/projects/nanno/main-server/snk-n2n/target/scala-2.13/classes/routes)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/home/elpsychris/projects/nanno/main-server/snk-n2n/conf/messages,/home/elpsychris/projects/nanno/main-server/snk-n2n/target/scala-2.13/classes/messages)[0m

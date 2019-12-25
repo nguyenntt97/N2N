@@ -9,7 +9,7 @@ import io.finch.catsEffect._
 import io.finch.circe._
 import io.circe.generic.auto._
 
-object Main extends App {
+object Main extends TwitterServer {
 
   case class Message(hello: String)
 
@@ -30,5 +30,8 @@ object Main extends App {
     .serve[Application.Json](helloWorld :+: hello)
     .toService
 
+  override def main(args: Array[String]) = {
+
+  }
   Await.ready(Http.server.serve(":8081", service))
 }
