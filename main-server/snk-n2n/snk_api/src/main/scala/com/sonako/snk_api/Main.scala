@@ -1,37 +1,43 @@
 package com.sonako.snk_api
 
 import cats.effect.IO
-import com.twitter.finagle.{Http, Service}
-import com.twitter.finagle.http.{Request, Response}
-import com.twitter.util.Await
 import io.finch._
 import io.finch.catsEffect._
-import io.finch.circe._
+import com.sonako.snk_api.project.ProjectController
+import com.twitter.finagle.http.{Request, Response, Status}
+import com.twitter.finagle.{Http, Service}
+import com.twitter.server.TwitterServer
+import com.twitter.util.{Await, Future}
+
+import scala.concurrent.ExecutionContext
 import io.circe.generic.auto._
+import io.finch.circe._
 
-object Main extends TwitterServer {
-
-  case class Message(hello: String)
-
-  def healthcheck: Endpoint[IO, String] = get(pathEmpty) {
-    Ok("OK")
+case class Mess(msg: String)
+object Main extends TwitterServer with Endpoint.Module[IO]{
+  val api: Endpoint[IO, Mess] = get("hello") {
+    Ok(Mess("Hello, World"))
   }
 
-  def helloWorld: Endpoint[IO, Message] = get("hello") {
-    Ok(Message("World"))
+  val service = new Service[Request, Response] {
+    def apply(request: Request) = {
+      val response = Response(request.version, Status.Ok)
+      response.contentString = "hello"
+      Future.value(response)
+    }
+  }
+  def main(): Unit = {
+    val app = new ProjectController(Environment)(IO.contextShift(ExecutionContext.global))
+    val server = Http.server
+      .withStatsReceiver(statsReceiver)
+      .serve(":8081", app.toService)
+
+
+    onExit{
+     server.close()
+    }
+
+    Await.ready(adminHttpServer)
   }
 
-  def hello: Endpoint[IO, Message] = get("hello" :: path[String]) { s: String =>
-    Ok(Message(s))
-  }
-
-  def service: Service[Request, Response] = Bootstrap
-    .serve[Text.Plain](healthcheck)
-    .serve[Application.Json](helloWorld :+: hello)
-    .toService
-
-  override def main(args: Array[String]) = {
-
-  }
-  Await.ready(Http.server.serve(":8081", service))
 }

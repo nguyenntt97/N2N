@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.sonako"
+		module="snk_api$sources"
+		revision="0.0.1-SNAPSHOT"
+		conf="compile"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
+		date="20191229085029"/>
+	<dependencies>
+		<module organisation="org.scalikejdbc" name="scalikejdbc_2.12">
+			<revision name="2.5.2" status="release" pubdate="20170429130031" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalikejdbc.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="82">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3225" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc_2.12/ivy-2.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc_2.12/2.5.2/scalikejdbc_2.12-2.5.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.5.2" rev-constraint-default="2.5.2" rev-constraint-dynamic="2.5.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scalikejdbc_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1277" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc_2.12/srcs/scalikejdbc_2.12-2.5.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc_2.12/2.5.2/scalikejdbc_2.12-2.5.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-generic_2.12">
+			<revision name="0.11.2" status="release" pubdate="20191115200001" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="62">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3389" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-generic_2.12/ivy-0.11.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-generic_2.12/0.11.2/circe-generic_2.12-0.11.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.11.2" rev-constraint-default="0.11.2" rev-constraint-dynamic="0.11.2" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://circe.github.io/circe/api/"/>
+				<artifacts>
+					<artifact name="circe-generic_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="13093" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-generic_2.12/srcs/circe-generic_2.12-0.11.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-generic_2.12/0.11.2/circe-generic_2.12-0.11.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="5.1.24" status="release" pubdate="20150508175540" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://dev.mysql.com/doc/connector-j/en/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="48">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2538" time="0" location="/home/elpsychris/.ivy2/cache/mysql/mysql-connector-java/ivy-5.1.24.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="5.1.24" rev-constraint-default="5.1.24" rev-constraint-dynamic="5.1.24" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="769037" time="0" location="/home/elpsychris/.ivy2/cache/mysql/mysql-connector-java/srcs/mysql-connector-java-5.1.24-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.24/mysql-connector-java-5.1.24-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalikejdbc" name="scalikejdbc-interpolation_2.12">
+			<revision name="2.5.2" status="release" pubdate="20170429130012" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalikejdbc.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="43">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="4268" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-interpolation_2.12/ivy-2.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-interpolation_2.12/2.5.2/scalikejdbc-interpolation_2.12-2.5.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.5.2" rev-constraint-default="2.5.2" rev-constraint-dynamic="2.5.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scalikejdbc-interpolation_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="11236" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-interpolation_2.12/srcs/scalikejdbc-interpolation_2.12-2.5.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-interpolation_2.12/2.5.2/scalikejdbc-interpolation_2.12-2.5.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalikejdbc" name="scalikejdbc-interpolation-macro_2.12">
+			<revision name="2.5.2" status="release" pubdate="20170429125958" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalikejdbc.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="60">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="3283" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-interpolation-macro_2.12/ivy-2.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-interpolation-macro_2.12/2.5.2/scalikejdbc-interpolation-macro_2.12-2.5.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.5.2" rev-constraint-default="2.5.2" rev-constraint-dynamic="2.5.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scalikejdbc-interpolation-macro_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1135" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-interpolation-macro_2.12/srcs/scalikejdbc-interpolation-macro_2.12-2.5.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-interpolation-macro_2.12/2.5.2/scalikejdbc-interpolation-macro_2.12-2.5.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalikejdbc" name="scalikejdbc-core_2.12">
+			<revision name="2.5.2" status="release" pubdate="20170429125903" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalikejdbc.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="71">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="5185" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-core_2.12/ivy-2.5.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-core_2.12/2.5.2/scalikejdbc-core_2.12-2.5.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.5.2" rev-constraint-default="2.5.2" rev-constraint-dynamic="2.5.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scalikejdbc-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="126911" time="0" location="/home/elpsychris/.ivy2/cache/org.scalikejdbc/scalikejdbc-core_2.12/srcs/scalikejdbc-core_2.12-2.5.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scalikejdbc/scalikejdbc-core_2.12/2.5.2/scalikejdbc-core_2.12-2.5.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-dbcp2">
+			<revision name="2.1.1" status="release" pubdate="20150803073919" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/dbcp/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="49">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="11882" time="0" location="/home/elpsychris/.ivy2/cache/org.apache.commons/commons-dbcp2/ivy-2.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.1.1" rev-constraint-default="2.1.1" rev-constraint-dynamic="2.1.1" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="commons-dbcp2" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="162798" time="0" location="/home/elpsychris/.ivy2/cache/org.apache.commons/commons-dbcp2/srcs/commons-dbcp2-2.1.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/commons/commons-dbcp2/2.1.1/commons-dbcp2-2.1.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.commons" name="commons-pool2">
+			<revision name="2.4.2" status="release" pubdate="20150729092011" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-pool/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="59">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="10663" time="0" location="/home/elpsychris/.ivy2/cache/org.apache.commons/commons-pool2/ivy-2.4.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.4.2" rev-constraint-default="2.4.2" rev-constraint-dynamic="2.4.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="commons-pool2" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="117433" time="0" location="/home/elpsychris/.ivy2/cache/org.apache.commons/commons-pool2/srcs/commons-pool2-2.4.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.4.2/commons-pool2-2.4.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.finagle" name="finchx-circe_2.12">
+			<revision name="0.31.0" status="release" pubdate="20190905130858" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/finagle/finch" extra-info.apiURL="https://finagle.github.io/finch/docs/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="39">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="5025" time="0" location="/home/elpsychris/.ivy2/cache/com.github.finagle/finchx-circe_2.12/ivy-0.31.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/finagle/finchx-circe_2.12/0.31.0/finchx-circe_2.12-0.31.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.31.0" rev-constraint-default="0.31.0" rev-constraint-dynamic="0.31.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://finagle.github.io/finch/docs/"/>
+				<artifacts>
+					<artifact name="finchx-circe_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="3095" time="1150" location="/home/elpsychris/.ivy2/cache/com.github.finagle/finchx-circe_2.12/srcs/finchx-circe_2.12-0.31.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/finagle/finchx-circe_2.12/0.31.0/finchx-circe_2.12-0.31.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-fs2_2.12">
+			<revision name="0.11.0" status="release" pubdate="20190108023022" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe-fs2" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="73">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3316" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-fs2_2.12/ivy-0.11.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-fs2_2.12/0.11.0/circe-fs2_2.12-0.11.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.11.0" rev-constraint-default="0.11.0" rev-constraint-dynamic="0.11.0" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="circe-fs2_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1969" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-fs2_2.12/srcs/circe-fs2_2.12-0.11.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-fs2_2.12/0.11.0/circe-fs2_2.12-0.11.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.finagle" name="finchx-core_2.12">
+			<revision name="0.31.0" status="release" pubdate="20190905130941" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/finagle/finch" extra-info.apiURL="https://finagle.github.io/finch/docs/" downloaded="false" searched="false" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="70">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4034" time="0" location="/home/elpsychris/.ivy2/cache/com.github.finagle/finchx-core_2.12/ivy-0.31.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/finagle/finchx-core_2.12/0.31.0/finchx-core_2.12-0.31.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.31.0" rev-constraint-default="0.31.0" rev-constraint-dynamic="0.31.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://finagle.github.io/finch/docs/"/>
+				<artifacts>
+					<artifact name="finchx-core_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="47194" time="1566" location="/home/elpsychris/.ivy2/cache/com.github.finagle/finchx-core_2.12/srcs/finchx-core_2.12-0.31.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/finagle/finchx-core_2.12/0.31.0/finchx-core_2.12-0.31.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-effect_2.12">
+			<revision name="1.4.0" status="release" pubdate="20190731223927" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://typelevel.org/cats-effect/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="68">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="3287" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-effect_2.12/ivy-1.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.4.0/cats-effect_2.12-1.4.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.4.0" rev-constraint-default="1.4.0" rev-constraint-dynamic="1.4.0" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="cats-effect_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="134531" time="2974" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-effect_2.12/srcs/cats-effect_2.12-1.4.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-effect_2.12/1.4.0/cats-effect_2.12-1.4.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-core_2.12">
+			<revision name="1.6.1" status="release" pubdate="20190603201301" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="40">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="3339" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-core_2.12/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.1/cats-core_2.12-1.6.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://typelevel.org/cats/api/"/>
+				<artifacts>
+					<artifact name="cats-core_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="247279" time="1525" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-core_2.12/srcs/cats-core_2.12-1.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-core_2.12/1.6.1/cats-core_2.12-1.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-kernel_2.12">
+			<revision name="1.6.1" status="release" pubdate="20190603201124" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="45">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2903" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-kernel_2.12/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.1/cats-kernel_2.12-1.6.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://typelevel.org/cats/api/"/>
+				<artifacts>
+					<artifact name="cats-kernel_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="46018" time="1875" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-kernel_2.12/srcs/cats-kernel_2.12-1.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-kernel_2.12/1.6.1/cats-kernel_2.12-1.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ch.qos.logback" name="logback-classic">
+			<revision name="1.2.3" status="release" pubdate="20170401022753" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="32">
+				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="10412" time="0" location="/home/elpsychris/.ivy2/cache/ch.qos.logback/logback-classic/ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="logback-classic" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="230201" time="0" location="/home/elpsychris/.ivy2/cache/ch.qos.logback/logback-classic/srcs/logback-classic-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.25" status="release" pubdate="20170316233632" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="5377" time="0" location="/home/elpsychris/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.25.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.7.25" rev-constraint-default="1.7.25" rev-constraint-dynamic="1.7.25" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="55539" time="0" location="/home/elpsychris/.ivy2/cache/org.slf4j/slf4j-api/srcs/slf4j-api-1.7.25-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ch.qos.logback" name="logback-core">
+			<revision name="1.2.3" status="release" pubdate="20170401022715" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="80">
+				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<license name="GNU Lesser General Public License" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+				<metadata-artifact status="no" details="" size="7917" time="0" location="/home/elpsychris/.ivy2/cache/ch.qos.logback/logback-core/ivy-1.2.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.2.3" rev-constraint-default="1.2.3" rev-constraint-dynamic="1.2.3" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="logback-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="399141" time="0" location="/home/elpsychris/.ivy2/cache/ch.qos.logback/logback-core/srcs/logback-core-1.2.3-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.joda" name="joda-convert">
+			<revision name="1.8.1" status="release" pubdate="20151002175804" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-convert/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6434" time="0" location="/home/elpsychris/.ivy2/cache/org.joda/joda-convert/ivy-1.8.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/joda/joda-convert/1.8.1/joda-convert-1.8.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.8.1" rev-constraint-default="1.8.1" rev-constraint-dynamic="1.8.1" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="joda-convert" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45686" time="0" location="/home/elpsychris/.ivy2/cache/org.joda/joda-convert/srcs/joda-convert-1.8.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/joda/joda-convert/1.8.1/joda-convert-1.8.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="cats-macros_2.12">
+			<revision name="1.6.1" status="release" pubdate="20190603201059" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typelevel/cats" extra-info.apiURL="http://typelevel.org/cats/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2923" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-macros_2.12/ivy-1.6.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.1/cats-macros_2.12-1.6.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://typelevel.org/cats/api/"/>
+				<artifacts>
+					<artifact name="cats-macros_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="802" time="1386" location="/home/elpsychris/.ivy2/cache/org.typelevel/cats-macros_2.12/srcs/cats-macros_2.12-1.6.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/cats-macros_2.12/1.6.1/cats-macros_2.12-1.6.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="machinist_2.12">
+			<revision name="0.6.6" status="release" pubdate="20181027020138" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/typelevel/machinist" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="52">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2785" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/machinist_2.12/ivy-0.6.6.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/machinist_2.12/0.6.6/machinist_2.12-0.6.6.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.6.6" rev-constraint-default="0.6.6" rev-constraint-dynamic="0.6.6" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="machinist_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3546" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/machinist_2.12/srcs/machinist_2.12-0.6.6-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/machinist_2.12/0.6.6/machinist_2.12-0.6.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="twitter-server_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009080844" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/twitter-server" extra-info.apiURL="https://twitter.github.io/twitter-server/docs/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="21">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="12295" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/twitter-server_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/twitter-server_2.12/19.10.0/twitter-server_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/twitter-server/docs/"/>
+				<artifacts>
+					<artifact name="twitter-server_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="278407" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/twitter-server_2.12/srcs/twitter-server_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/twitter-server_2.12/19.10.0/twitter-server_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-slf4j-jul-bridge_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060323" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3960" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-slf4j-jul-bridge_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-slf4j-jul-bridge_2.12/19.10.0/util-slf4j-jul-bridge_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-slf4j-jul-bridge_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1795" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-slf4j-jul-bridge_2.12/srcs/util-slf4j-jul-bridge_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-slf4j-jul-bridge_2.12/19.10.0/util-slf4j-jul-bridge_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jul-to-slf4j">
+			<revision name="1.7.21" status="release" pubdate="20160405013912" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.slf4j.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="51">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="5260" time="0" location="/home/elpsychris/.ivy2/cache/org.slf4j/jul-to-slf4j/ivy-1.7.21.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.7.21/jul-to-slf4j-1.7.21.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.7.21" rev-constraint-default="1.7.21" rev-constraint-dynamic="1.7.21" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jul-to-slf4j" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4872" time="0" location="/home/elpsychris/.ivy2/cache/org.slf4j/jul-to-slf4j/srcs/jul-to-slf4j-1.7.21-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/jul-to-slf4j/1.7.21/jul-to-slf4j-1.7.21-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-slf4j-api_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009055758" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="58">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3742" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-slf4j-api_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-slf4j-api_2.12/19.10.0/util-slf4j-api_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-slf4j-api_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4639" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-slf4j-api_2.12/srcs/util-slf4j-api_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-slf4j-api_2.12/19.10.0/util-slf4j-api_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.chuusai" name="shapeless_2.12">
+			<revision name="2.3.3" status="release" pubdate="20171231215153" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/milessabin/shapeless" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3230" time="0" location="/home/elpsychris/.ivy2/cache/com.chuusai/shapeless_2.12/ivy-2.3.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="shapeless_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="172402" time="0" location="/home/elpsychris/.ivy2/cache/com.chuusai/shapeless_2.12/srcs/shapeless_2.12-2.3.3-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/chuusai/shapeless_2.12/2.3.3/shapeless_2.12-2.3.3-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="macro-compat_2.12">
+			<revision name="1.1.1" status="release" pubdate="20161102154258" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/milessabin/macro-compat" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="50">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2964" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/macro-compat_2.12/ivy-1.1.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.1.1" rev-constraint-default="1.1.1" rev-constraint-dynamic="1.1.1" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="macro-compat_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1052" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/macro-compat_2.12/srcs/macro-compat_2.12-1.1.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/macro-compat_2.12/1.1.1/macro-compat_2.12-1.1.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="co.fs2" name="fs2-core_2.12">
+			<revision name="1.0.2" status="release" pubdate="20181204215125" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/functional-streams-for-scala/fs2" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="3081" time="0" location="/home/elpsychris/.ivy2/cache/co.fs2/fs2-core_2.12/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/co/fs2/fs2-core_2.12/1.0.2/fs2-core_2.12-1.0.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="fs2-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="98761" time="0" location="/home/elpsychris/.ivy2/cache/co.fs2/fs2-core_2.12/srcs/fs2-core_2.12-1.0.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/co/fs2/fs2-core_2.12/1.0.2/fs2-core_2.12-1.0.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scodec" name="scodec-bits_2.12">
+			<revision name="1.1.7" status="release" pubdate="20181116064108" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/scodec/scodec-bits" extra-info.apiURL="http://scodec.org/api/scodec-bits/1.1.7/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
+				<license name="Three-clause BSD-style" url="https://github.com/scodec/scodec-bits/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2990" time="0" location="/home/elpsychris/.ivy2/cache/org.scodec/scodec-bits_2.12/ivy-1.1.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scodec/scodec-bits_2.12/1.1.7/scodec-bits_2.12-1.1.7.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.1.7" rev-constraint-default="1.1.7" rev-constraint-dynamic="1.1.7" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://scodec.org/api/scodec-bits/1.1.7/"/>
+				<artifacts>
+					<artifact name="scodec-bits_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="36350" time="0" location="/home/elpsychris/.ivy2/cache/org.scodec/scodec-bits_2.12/srcs/scodec-bits_2.12-1.1.7-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scodec/scodec-bits_2.12/1.1.7/scodec-bits_2.12-1.1.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.12.7" status="release" pubdate="20180927153203" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="64">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2637" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.7/scala-reflect-2.12.7.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="590262" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.12.7-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.7/scala-reflect-2.12.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.12.7" status="release" pubdate="20180927153542" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="65">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2471" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang/scala-library/ivy-2.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="991412" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.7-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-iteratee_2.12">
+			<revision name="0.12.0" status="release" pubdate="20190104005542" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe-iteratee" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3075" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-iteratee_2.12/ivy-0.12.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-iteratee_2.12/0.12.0/circe-iteratee_2.12-0.12.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.12.0" rev-constraint-default="0.12.0" rev-constraint-dynamic="0.12.0" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="circe-iteratee_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2246" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-iteratee_2.12/srcs/circe-iteratee_2.12-0.12.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-iteratee_2.12/0.12.0/circe-iteratee_2.12-0.12.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.iteratee" name="iteratee-core_2.12">
+			<revision name="0.18.0" status="release" pubdate="20180913193106" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/travisbrown/iteratee" extra-info.apiURL="https://travisbrown.github.io/iteratee/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="63">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2966" time="0" location="/home/elpsychris/.ivy2/cache/io.iteratee/iteratee-core_2.12/ivy-0.18.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/iteratee/iteratee-core_2.12/0.18.0/iteratee-core_2.12-0.18.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.18.0" rev-constraint-default="0.18.0" rev-constraint-dynamic="0.18.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://travisbrown.github.io/iteratee/api/"/>
+				<artifacts>
+					<artifact name="iteratee-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="23141" time="0" location="/home/elpsychris/.ivy2/cache/io.iteratee/iteratee-core_2.12/srcs/iteratee-core_2.12-0.18.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/iteratee/iteratee-core_2.12/0.18.0/iteratee-core_2.12-0.18.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="joda-time" name="joda-time">
+			<revision name="2.9.5" status="release" pubdate="20161103233647" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.joda.org/joda-time/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="6701" time="0" location="/home/elpsychris/.ivy2/cache/joda-time/joda-time/ivy-2.9.5.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/joda-time/joda-time/2.9.5/joda-time-2.9.5.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.5" rev-constraint-default="2.9.5" rev-constraint-dynamic="2.9.5" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="joda-time" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="777266" time="0" location="/home/elpsychris/.ivy2/cache/joda-time/joda-time/srcs/joda-time-2.9.5-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/joda-time/joda-time/2.9.5/joda-time-2.9.5-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-stats_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009073653" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="5315" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-stats_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-stats_2.12/19.10.0/finagle-stats_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-stats_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2413" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-stats_2.12/srcs/finagle-stats_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-stats_2.12/19.10.0/finagle-stats_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-stats-core_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009073416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="79">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="13373" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-stats-core_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-stats-core_2.12/19.10.0/finagle-stats-core_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-stats-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="27554" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-stats-core_2.12/srcs/finagle-stats-core_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-stats-core_2.12/19.10.0/finagle-stats-core_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-tunable_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072700" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="8779" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-tunable_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-tunable_2.12/19.10.0/finagle-tunable_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-tunable_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2174" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-tunable_2.12/srcs/finagle-tunable_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-tunable_2.12/19.10.0/finagle-tunable_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-http_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009073259" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="23">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="8635" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-http_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-http_2.12/19.10.0/finagle-http_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-http_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45893" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-http_2.12/srcs/finagle-http_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-http_2.12/19.10.0/finagle-http_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-http2_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009073042" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="76">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="12704" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-http2_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-http2_2.12/19.10.0/finagle-http2_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-http2_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="51884" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-http2_2.12/srcs/finagle-http2_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-http2_2.12/19.10.0/finagle-http2_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-tcnative-boringssl-static">
+			<revision name="2.0.25.Final" status="release" pubdate="20190412025836" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="17798" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-tcnative-boringssl-static/ivy-2.0.25.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.25.Final/netty-tcnative-boringssl-static-2.0.25.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.0.25.Final" rev-constraint-default="2.0.25.Final" rev-constraint-dynamic="2.0.25.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-tcnative-boringssl-static" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="34346" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-tcnative-boringssl-static/srcs/netty-tcnative-boringssl-static-2.0.25.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-tcnative-boringssl-static/2.0.25.Final/netty-tcnative-boringssl-static-2.0.25.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-codec-http2">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003715" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="53">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18358" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-http2/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.39.Final/netty-codec-http2-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-codec-http2" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="299515" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-http2/srcs/netty-codec-http2-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-codec-http2/4.1.39.Final/netty-codec-http2-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-netty4-http_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072903" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="44">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="9930" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-netty4-http_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-netty4-http_2.12/19.10.0/finagle-netty4-http_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-netty4-http_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="23081" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-netty4-http_2.12/srcs/finagle-netty4-http_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-netty4-http_2.12/19.10.0/finagle-netty4-http_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-netty4_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072759" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="61">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="13085" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-netty4_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-netty4_2.12/19.10.0/finagle-netty4_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-netty4_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="84812" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-netty4_2.12/srcs/finagle-netty4_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-netty4_2.12/19.10.0/finagle-netty4_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-base-http_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072808" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="74">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="9391" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-base-http_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-base-http_2.12/19.10.0/finagle-base-http_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-base-http_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="81302" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-base-http_2.12/srcs/finagle-base-http_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-base-http_2.12/19.10.0/finagle-base-http_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-core_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072820" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18773" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-core_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-core_2.12/19.10.0/finagle-core_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="454979" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-core_2.12/srcs/finagle-core_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-core_2.12/19.10.0/finagle-core_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-handler-proxy">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003746" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="57">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18388" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-handler-proxy/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.39.Final/netty-handler-proxy-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-handler-proxy" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="14793" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-handler-proxy/srcs/netty-handler-proxy-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-handler-proxy/4.1.39.Final/netty-handler-proxy-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-codec-http">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814004007" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="41">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18087" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-http/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.39.Final/netty-codec-http-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-codec-http" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="450250" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-http/srcs/netty-codec-http-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-codec-http/4.1.39.Final/netty-codec-http-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-codec-socks">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814004013" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="17708" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-socks/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.39.Final/netty-codec-socks-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-codec-socks" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="86401" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec-socks/srcs/netty-codec-socks-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-codec-socks/4.1.39.Final/netty-codec-socks-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-transport-native-epoll">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003919" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="69">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="19206" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport-native-epoll/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.39.Final/netty-transport-native-epoll-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-transport-native-epoll" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="72737" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport-native-epoll/srcs/netty-transport-native-epoll-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-transport-native-epoll/4.1.39.Final/netty-transport-native-epoll-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-transport-native-unix-common">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814010342" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="72">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18628" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport-native-unix-common/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.39.Final/netty-transport-native-unix-common-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-transport-native-unix-common" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="31752" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport-native-unix-common/srcs/netty-transport-native-unix-common-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-transport-native-unix-common/4.1.39.Final/netty-transport-native-unix-common-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-handler">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003817" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18889" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-handler/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-handler/4.1.39.Final/netty-handler-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-handler" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="293379" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-handler/srcs/netty-handler-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-handler/4.1.39.Final/netty-handler-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-codec">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003835" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="38">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="18992" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-codec/4.1.39.Final/netty-codec-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-codec" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="261492" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-codec/srcs/netty-codec-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-codec/4.1.39.Final/netty-codec-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-transport">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814003824" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="78">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="17676" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-transport/4.1.39.Final/netty-transport-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-transport" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="319263" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-transport/srcs/netty-transport-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-transport/4.1.39.Final/netty-transport-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-tunable_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060859" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="77">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4255" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-tunable_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-tunable_2.12/19.10.0/util-tunable_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-tunable_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="9899" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-tunable_2.12/srcs/util-tunable_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-tunable_2.12/19.10.0/util-tunable_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-security_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009061108" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="84">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3655" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-security_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-security_2.12/19.10.0/util-security_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-security_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="10452" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-security_2.12/srcs/util-security_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-security_2.12/19.10.0/util-security_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-jvm_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060937" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="33">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3906" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-jvm_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-jvm_2.12/19.10.0/util-jvm_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-jvm_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="20675" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-jvm_2.12/srcs/util-jvm_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-jvm_2.12/19.10.0/util-jvm_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-hashing_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060043" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="54">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3606" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-hashing_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-hashing_2.12/19.10.0/util-hashing_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-hashing_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="6047" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-hashing_2.12/srcs/util-hashing_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-hashing_2.12/19.10.0/util-hashing_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-codec_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060237" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="66">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3497" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-codec_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-codec_2.12/19.10.0/util-codec_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-codec_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1519" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-codec_2.12/srcs/util-codec_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-codec_2.12/19.10.0/util-codec_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-cache_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060158" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="83">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3802" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-cache_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-cache_2.12/19.10.0/util-cache_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-cache_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7564" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-cache_2.12/srcs/util-cache_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-cache_2.12/19.10.0/util-cache_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-init_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072642" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="5326" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-init_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-init_2.12/19.10.0/finagle-init_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-init_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="1060" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-init_2.12/srcs/finagle-init_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-init_2.12/19.10.0/finagle-init_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="finagle-toggle_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009072744" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/finagle" extra-info.apiURL="https://twitter.github.io/finagle/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="9793" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-toggle_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/finagle-toggle_2.12/19.10.0/finagle-toggle_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/finagle/docs/"/>
+				<artifacts>
+					<artifact name="finagle-toggle_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="19356" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/finagle-toggle_2.12/srcs/finagle-toggle_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/finagle-toggle_2.12/19.10.0/finagle-toggle_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-logging_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009061005" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="56">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3795" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-logging_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-logging_2.12/19.10.0/util-logging_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-logging_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="25016" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-logging_2.12/srcs/util-logging_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-logging_2.12/19.10.0/util-logging_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-stats_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060926" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4074" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-stats_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-stats_2.12/19.10.0/util-stats_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-stats_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="22778" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-stats_2.12/srcs/util-stats_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-stats_2.12/19.10.0/util-stats_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-lint_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060202" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="75">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3494" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-lint_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-lint_2.12/19.10.0/util-lint_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-lint_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3130" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-lint_2.12/srcs/util-lint_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-lint_2.12/19.10.0/util-lint_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-app_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060810" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3641" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-app_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-app_2.12/19.10.0/util-app_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-app_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="25495" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-app_2.12/srcs/util-app_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-app_2.12/19.10.0/util-app_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-registry_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009060107" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="31">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3506" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-registry_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-registry_2.12/19.10.0/util-registry_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-registry_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="4400" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-registry_2.12/srcs/util-registry_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-registry_2.12/19.10.0/util-registry_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-core_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009055854" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="67">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="4074" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-core_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-core_2.12/19.10.0/util-core_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="207939" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-core_2.12/srcs/util-core_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-core_2.12/19.10.0/util-core_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.12">
+			<revision name="1.1.2" status="release" pubdate="20190406045736" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2927" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/ivy-1.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.1.2" rev-constraint-default="1.1.2" rev-constraint-dynamic="1.1.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="48135" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.12/srcs/scala-parser-combinators_2.12-1.1.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.ben-manes.caffeine" name="caffeine">
+			<revision name="2.3.4" status="release" pubdate="20161031084031" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/ben-manes/caffeine" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="42">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="5473" time="0" location="/home/elpsychris/.ivy2/cache/com.github.ben-manes.caffeine/caffeine/ivy-2.3.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/2.3.4/caffeine-2.3.4.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.3.4" rev-constraint-default="2.3.4" rev-constraint-dynamic="2.3.4" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="caffeine" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="147940" time="0" location="/home/elpsychris/.ivy2/cache/com.github.ben-manes.caffeine/caffeine/srcs/caffeine-2.3.4-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/2.3.4/caffeine-2.3.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.twitter" name="util-function_2.12">
+			<revision name="19.10.0" status="release" pubdate="20191009055720" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/twitter/util" extra-info.apiURL="https://twitter.github.io/util/docs/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="47">
+				<license name="Apache License, Version 2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3360" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-function_2.12/ivy-19.10.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/twitter/util-function_2.12/19.10.0/util-function_2.12-19.10.0.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="19.10.0" rev-constraint-default="19.10.0" rev-constraint-dynamic="19.10.0" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://twitter.github.io/util/docs/"/>
+				<artifacts>
+					<artifact name="util-function_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="2388" time="0" location="/home/elpsychris/.ivy2/cache/com.twitter/util-function_2.12/srcs/util-function_2.12-19.10.0-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/twitter/util-function_2.12/19.10.0/util-function_2.12-19.10.0-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-collection-compat_2.12">
+			<revision name="2.1.2" status="release" pubdate="20190806102904" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="25">
+				<license name="Apache-2.0" url="https://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2819" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang.modules/scala-collection-compat_2.12/ivy-2.1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/2.1.2/scala-collection-compat_2.12-2.1.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.1.2" rev-constraint-default="2.1.2" rev-constraint-dynamic="2.1.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="scala-collection-compat_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="8653" time="0" location="/home/elpsychris/.ivy2/cache/org.scala-lang.modules/scala-collection-compat_2.12/srcs/scala-collection-compat_2.12-2.1.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/2.1.2/scala-collection-compat_2.12-2.1.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-core_2.12">
+			<revision name="0.11.2" status="release" pubdate="20191115195835" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3082" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-core_2.12/ivy-0.11.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-core_2.12/0.11.2/circe-core_2.12-0.11.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.11.2" rev-constraint-default="0.11.2" rev-constraint-dynamic="0.11.2" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://circe.github.io/circe/api/"/>
+				<artifacts>
+					<artifact name="circe-core_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="45496" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-core_2.12/srcs/circe-core_2.12-0.11.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-core_2.12/0.11.2/circe-core_2.12-0.11.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-numbers_2.12">
+			<revision name="0.11.2" status="release" pubdate="20191115195801" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2799" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-numbers_2.12/ivy-0.11.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-numbers_2.12/0.11.2/circe-numbers_2.12-0.11.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.11.2" rev-constraint-default="0.11.2" rev-constraint-dynamic="0.11.2" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://circe.github.io/circe/api/"/>
+				<artifacts>
+					<artifact name="circe-numbers_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="3900" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-numbers_2.12/srcs/circe-numbers_2.12-0.11.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-numbers_2.12/0.11.2/circe-numbers_2.12-0.11.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.module" name="jackson-module-scala_2.12">
+			<revision name="2.9.9" status="release" pubdate="20190520051302" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://wiki.fasterxml.com/JacksonModuleScala" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4074" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.module/jackson-module-scala_2.12/ivy-2.9.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.9.9/jackson-module-scala_2.12-2.9.9.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.9" rev-constraint-default="2.9.9" rev-constraint-dynamic="2.9.9" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jackson-module-scala_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="51045" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.module/jackson-module-scala_2.12/srcs/jackson-module-scala_2.12-2.9.9-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-scala_2.12/2.9.9/jackson-module-scala_2.12-2.9.9-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.module" name="jackson-module-paranamer">
+			<revision name="2.9.9" status="release" pubdate="20190516102123" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/FasterXML/jackson-modules-base" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="55">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="29858" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.module/jackson-module-paranamer/ivy-2.9.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.9.9/jackson-module-paranamer-2.9.9.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.9" rev-constraint-default="2.9.9" rev-constraint-dynamic="2.9.9" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jackson-module-paranamer" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="7274" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.module/jackson-module-paranamer/srcs/jackson-module-paranamer-2.9.9-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/module/jackson-module-paranamer/2.9.9/jackson-module-paranamer-2.9.9-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-databind">
+			<revision name="2.9.9" status="release" pubdate="20190516101018" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/FasterXML/jackson" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="46">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="23693" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.9.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.9/jackson-databind-2.9.9.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.9" rev-constraint-default="2.9.9" rev-constraint-dynamic="2.9.9" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jackson-databind" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="997832" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/srcs/jackson-databind-2.9.9-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.9.9/jackson-databind-2.9.9-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-annotations">
+			<revision name="2.9.9" status="release" pubdate="20190516095654" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/FasterXML/jackson" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="81">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="7874" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.9.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.9/jackson-annotations-2.9.9.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.9" rev-constraint-default="2.9.9" rev-constraint-dynamic="2.9.9" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jackson-annotations" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="68201" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/srcs/jackson-annotations-2.9.9-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.9.9/jackson-annotations-2.9.9-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-core">
+			<revision name="2.9.9" status="release" pubdate="20190516095911" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/FasterXML/jackson-core" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="22913" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.9.9.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/jackson-core-2.9.9.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.9.9" rev-constraint-default="2.9.9" rev-constraint-dynamic="2.9.9" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jackson-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="336575" time="0" location="/home/elpsychris/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/srcs/jackson-core-2.9.9-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.9.9/jackson-core-2.9.9-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-resolver">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814004043" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="17379" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-resolver/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-resolver/4.1.39.Final/netty-resolver-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-resolver" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="24930" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-resolver/srcs/netty-resolver-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-resolver/4.1.39.Final/netty-resolver-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.thoughtworks.paranamer" name="paranamer">
+			<revision name="2.8" status="release" pubdate="20150826182928" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="BSD" url="LICENSE.txt"/>
+				<metadata-artifact status="no" details="" size="4254" time="0" location="/home/elpsychris/.ivy2/cache/com.thoughtworks.paranamer/paranamer/ivy-2.8.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.8" rev-constraint-default="2.8" rev-constraint-dynamic="2.8" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="paranamer" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="27125" time="0" location="/home/elpsychris/.ivy2/cache/com.thoughtworks.paranamer/paranamer/srcs/paranamer-2.8-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.circe" name="circe-jawn_2.12">
+			<revision name="0.11.1" status="release" pubdate="20190112211028" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/circe/circe" extra-info.apiURL="https://circe.github.io/circe/api/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="Apache 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="3082" time="0" location="/home/elpsychris/.ivy2/cache/io.circe/circe-jawn_2.12/ivy-0.11.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/circe/circe-jawn_2.12/0.11.1/circe-jawn_2.12-0.11.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.11.1" rev-constraint-default="0.11.1" rev-constraint-dynamic="0.11.1" callerrev="0.0.1-SNAPSHOT" extra-info.apiURL="https://circe.github.io/circe/api/"/>
+				<artifacts>
+					<artifact name="circe-jawn_2.12" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2728" time="1048" location="/home/elpsychris/.ivy2/cache/io.circe/circe-jawn_2.12/srcs/circe-jawn_2.12-0.11.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/circe/circe-jawn_2.12/0.11.1/circe-jawn_2.12-0.11.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.typelevel" name="jawn-parser_2.12">
+			<revision name="0.14.1" status="release" pubdate="20190106175950" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://github.com/typelevel/jawn" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="27">
+				<license name="MIT" url="http://opensource.org/licenses/MIT"/>
+				<metadata-artifact status="no" details="" size="2884" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/jawn-parser_2.12/ivy-0.14.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/typelevel/jawn-parser_2.12/0.14.1/jawn-parser_2.12-0.14.1.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="0.14.1" rev-constraint-default="0.14.1" rev-constraint-dynamic="0.14.1" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="jawn-parser_2.12" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="20028" time="0" location="/home/elpsychris/.ivy2/cache/org.typelevel/jawn-parser_2.12/srcs/jawn-parser_2.12-0.14.1-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/typelevel/jawn-parser_2.12/0.14.1/jawn-parser_2.12-0.14.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-buffer">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814004048" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="1">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="17373" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-buffer/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-buffer/4.1.39.Final/netty-buffer-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-buffer" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="173823" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-buffer/srcs/netty-buffer-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-buffer/4.1.39.Final/netty-buffer-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.netty" name="netty-common">
+			<revision name="4.1.39.Final" status="release" pubdate="20190814004057" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="21009" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-common/ivy-4.1.39.Final.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/io/netty/netty-common/4.1.39.Final/netty-common-4.1.39.Final.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="4.1.39.Final" rev-constraint-default="4.1.39.Final" rev-constraint-dynamic="4.1.39.Final" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="netty-common" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="333586" time="0" location="/home/elpsychris/.ivy2/cache/io.netty/netty-common/srcs/netty-common-4.1.39.Final-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/io/netty/netty-common/4.1.39.Final/netty-common-4.1.39.Final-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-logging" name="commons-logging">
+			<revision name="1.2" status="release" pubdate="20140706011228" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://commons.apache.org/proper/commons-logging/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="11623" time="0" location="/home/elpsychris/.ivy2/cache/commons-logging/commons-logging/ivy-1.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="1.2" rev-constraint-default="1.2" rev-constraint-dynamic="1.2" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="commons-logging" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="73295" time="0" location="/home/elpsychris/.ivy2/cache/commons-logging/commons-logging/srcs/commons-logging-1.2-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hdrhistogram" name="HdrHistogram">
+			<revision name="2.1.11" status="release" pubdate="20190117230715" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://hdrhistogram.github.io/HdrHistogram/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="0">
+				<license name="Public Domain, per Creative Commons CC0" url="http://creativecommons.org/publicdomain/zero/1.0/"/>
+				<license name="BSD-2-Clause" url="https://opensource.org/licenses/BSD-2-Clause"/>
+				<metadata-artifact status="no" details="" size="4077" time="0" location="/home/elpsychris/.ivy2/cache/org.hdrhistogram/HdrHistogram/ivy-2.1.11.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11.pom"/>
+				<caller organisation="com.sonako" name="snk_api$sources" conf="compile" rev="2.1.11" rev-constraint-default="2.1.11" rev-constraint-dynamic="2.1.11" callerrev="0.0.1-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="HdrHistogram" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="118782" time="0" location="/home/elpsychris/.ivy2/cache/org.hdrhistogram/HdrHistogram/srcs/HdrHistogram-2.1.11-sources.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
