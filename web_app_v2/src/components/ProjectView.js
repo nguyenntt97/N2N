@@ -7,30 +7,64 @@ import ChatView from "./chat/ChatView";
 import color from "@material-ui/core/colors/amber";
 import { Typography, Divider } from "@material-ui/core";
 
-import ListItemText from '@material-ui/core/ListItemText';
-import FolderIcon from '@material-ui/icons/Folder';
-import List from '@material-ui/core/List';
-import Avatar from '@material-ui/core/Avatar';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from "@material-ui/core/ListItemText";
+import FolderIcon from "@material-ui/icons/Folder";
+import List from "@material-ui/core/List";
+import Avatar from "@material-ui/core/Avatar";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 // import GuildBoard from "./widgets/GuildBoard";
-
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    maxWidth: 752,
+    maxWidth: 752
   },
   demo: {
     backgroundColor: theme.palette.background.paper,
+    width: "100%",
+    position: "relative"
   },
   title: {
-    margin: theme.spacing(4, 0, 2),
+    margin: theme.spacing(4, 0, 2)
   },
   project_ava: {
     width: "100%",
     height: "100%",
     position: "relative"
+  },
+  container: {
+    overflow: "hidden",
+    marginLeft: 40,
+    height: "100%",
+    position: "absolute"
+  },
+  parallelogram: {
+    width: "40%",
+    height: "80%",
+    overflow: "hidden",
+    position: "relative"
+  },
+  longthumb: {
+    maxWidth: "100%",
+    maxHeight: "80%"
+  },
+  parallelogram: {
+    "&::after": {
+      content: "''",
+      top: 0,
+      left: "100%",
+      width: "100%",
+      bottom: 0,
+      background: "#000",
+      position: "absolute",
+      transform: "skew(30deg)",
+      transformOrigin: "bottom",
+      background: "#fff"
+    }
+  },
+  lItem: {
+    marginBottom: 5
   }
 }));
 const vol_data = [
@@ -146,8 +180,8 @@ const generateVolViews = volData =>
 function generate(element) {
   return [0, 1, 2].map(value =>
     React.cloneElement(element, {
-      key: value,
-    }),
+      key: value
+    })
   );
 }
 
@@ -160,24 +194,37 @@ export default function ProjectView() {
     {
       title: "Cập nhật",
       label: "update-tab",
-      body:
+      body: (
         <div className={classes.demo}>
           <List dense={dense}>
             {generate(
-              <ListItem>
+              <ListItem className={classes.lItem}>
                 <ListItemAvatar>
                   <Avatar>
-                    <img src="/project_sample_ava.jpg" className={classes.project_ava} />
+                    <img
+                      src="/project_sample_ava.jpg"
+                      className={classes.project_ava}
+                    />
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
                   primary="Single-line item"
-                  secondary={secondary ? 'Secondary text' : null}
+                  secondary={secondary ? "Secondary text" : null}
                 />
-              </ListItem>,
+                <div className={classes.container}>
+                  <div className={classes.parallelogram}>
+                    <img
+                      className={classes.longthumb}
+                      src="/img/cover1.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </ListItem>
             )}
           </List>
         </div>
+      )
     },
     {
       title: "TOP",
@@ -204,7 +251,7 @@ export default function ProjectView() {
             }}
           >
             Bình luận
-            </Typography>
+          </Typography>
           <Divider />
           <ChatView data={COMMENT} />
         </Grid>
@@ -214,6 +261,4 @@ export default function ProjectView() {
       </Grid>
     </Grid>
   );
-
 }
-
