@@ -27,8 +27,9 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   },
   yourComment: {
-    padding: 10,
-    marginLeft: 80
+    padding: 15,
+    marginLeft: 80,
+    marginTop: 30
   }
 }));
 

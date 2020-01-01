@@ -31,8 +31,8 @@ const useStyles = makeStyles({
   root: {
     // marginTop: Theme.spacing(5),
     borderRadius: 0,
-    borderBottom: "1px solid #413c69",
-    padding: "10px !important"
+    borderBottom: "1px solid #413c69"
+    // padding: "10px !important"
   },
   indicator: {
     "&::after": {
