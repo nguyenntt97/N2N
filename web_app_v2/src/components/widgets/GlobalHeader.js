@@ -14,7 +14,7 @@ import QuickOption from "./QuickOpt";
 const useStyles = makeStyles(theme => ({
   headerBg: {
     position: "fixed",
-    background: "#4a47a3",
+    background: "primary",
     color: "#f0f0f0"
   },
   customTb: {

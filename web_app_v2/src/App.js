@@ -9,7 +9,7 @@ import { GlobalHeader, CustomizedBreadcrumbs } from "./components/widgets";
 
 import MainView from "./components/MainView";
 import ProjectView from "./components/ProjectView";
-import EditorView from "./components/EditorView"
+import EditorView from "./components/EditorView";
 
 // import { NavBar, Profile, ReadPanel, UserProfile } from "./components/widgets";
 
@@ -106,7 +106,8 @@ const routes = [
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
     main: props => <ProjectView />
-  },{
+  },
+  {
     path: "/edit/:project",
     exact: true,
     // sidebar: ({ match }) => {

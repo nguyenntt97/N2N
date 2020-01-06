@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
       background:
         "-o-linear-gradient( right, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% )",
       background:
-        "-webkit-linear-gradient( right, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 0.8) 60%, rgba( 255, 255, 255, 1 ) 100% )",
+        "-webkit-linear-gradient( right, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 0.8) 50%, rgba( 255, 255, 255, 1 ) 100% )",
       "-ms-filter":
         "progid:DXImageTransform.Microsoft.gradient(startColorstr=#550000FF, endColorstr=#550000FF)",
       filter:
@@ -66,14 +66,15 @@ const useStyles = makeStyles(theme => ({
     width: "90%",
     left: "10%",
     top: 0,
-    position: "relative"
+    position: "relative",
+    transition: "all .3s ease-in-out"
   },
   mask: {
     position: "absolute",
-    background: "rgba(0,0,0,0.3)",
+    background: "rgba(255,200,200,0.5)",
     width: "100%",
     height: "100%",
-    zIndex: 3,
+    zIndex: 4,
     top: 0,
     left: 0
   },
@@ -110,11 +111,16 @@ const useStyles = makeStyles(theme => ({
     }
   },
   lItem: {
-    marginBottom: 5
+    marginBottom: 5,
+    "&:hover": {
+      cursor: "pointer",
+      "& $longthumb": {
+        top: "-60%"
+      }
+    }
   },
   itemTitle: {
     position: "absolute",
-    top: 0,
     left: 70,
     zIndex: 10,
     fontWeight: "bold"
@@ -160,7 +166,18 @@ export default function ProjectView() {
                 </ListItemAvatar>
                 <ListItemText
                   className={classes.itemTitle}
-                  primary="Single-line item"
+                  primary={
+                    <Typography
+                      style={{
+                        fontWeight: "bold",
+                        color: "#444f5a",
+                        textShadow:
+                          "-0.25px -0.25px 0 #dcdcdc, 0.25px -0.25px 0 #dcdcdc, -0.25px 0.25px 0 #dcdcdc, 0.25px 0.25px 0 #dcdcdc"
+                      }}
+                    >
+                      My romantic comedy...
+                    </Typography>
+                  }
                   secondary={"Views: 1000"}
                 />
                 <div className={classes.container}>
@@ -197,10 +214,10 @@ export default function ProjectView() {
         </Grid>
         <Grid item xs={12}>
           <Typography
-            variant="h6"
+            variant="h5"
             style={{
-              color: "#4a47a3",
-              fontWeight: "bold"
+              fontWeight: "bold",
+              color: "#3f72af"
             }}
           >
             Bình luận

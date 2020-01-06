@@ -33,7 +33,7 @@ const useStyles = makeStyles({
   root: {
     // marginTop: Theme.spacing(5),
     borderRadius: 0,
-    borderBottom: "1px solid #413c69"
+    borderBottom: "1px solid #3e4149"
     // padding: "10px !important"
   },
   indicator: {
@@ -54,7 +54,7 @@ const useStyles = makeStyles({
     fontFamily: "Fira Sans Condense, sans-serif",
     fontSize: 15,
     fontWeight: "bold",
-    color: "#413c69",
+    color: "secondary ",
     minWidth: 20
   }
 });

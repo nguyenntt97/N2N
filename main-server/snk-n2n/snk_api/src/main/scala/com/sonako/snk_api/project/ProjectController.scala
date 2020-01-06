@@ -14,11 +14,11 @@ class ProjectController(env: {
 val projectsRepo: ProjectsRepo
 })(implicit S: ContextShift[IO]) extends Endpoint.Module[IO]{
 
-  final val projects: Endpoint[IO, List[Project]] = get("projects") {
+  final val getProjects: Endpoint[IO, List[Project]] = get("projects") {
     Ok(env.projectsRepo.getAllProjects())
   }
 
   final def toService: Service[Request, Response] = Bootstrap
-    .serve[Application.Json](projects)
+    .serve[Application.Json](getProjects)
     .toService
 }
