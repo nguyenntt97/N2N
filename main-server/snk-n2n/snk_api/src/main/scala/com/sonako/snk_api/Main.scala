@@ -11,6 +11,7 @@ import com.twitter.util.{Await, Future}
 
 import scala.concurrent.ExecutionContext
 import io.circe.generic.auto._
+import io.finch.Text.Plain
 import io.finch.circe._
 
 case class Mess(msg: String)
@@ -28,7 +29,9 @@ object Main extends TwitterServer with Endpoint.Module[IO] {
       .withStatsReceiver(statsReceiver)
       .serve(
         ":8081",
-        Bootstrap.serve[Application.Json](projectApp.getProjects :+: editorApp.getChapter)
+        Bootstrap.serve[Application.Json](projectApp.getProjects :+:
+          editorApp.getChapter )
+          .serve[Text.Plain] (editorApp.putChapter)
           .toService
       )
 
