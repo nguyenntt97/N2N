@@ -1,14 +1,14 @@
 package com.sonako.snk_api.repository
 
 import com.sonako.snk_api.common.TimeUtils
-import com.sonako.snk_api.model.{Chapter, NewChapter, Project}
+import com.sonako.snk_api.model.{ChapterInfo, NewChapter, Project}
 import scalikejdbc._
 
 
 class EditorRepo extends SimpleRepo {
-	def getChapter(id: Long): Option[Chapter] = DB readOnly { implicit session =>
+	def getChapter(id: Long): Option[ChapterInfo] = DB readOnly { implicit session =>
 		sql"select chap_id, chap_title, chap_content, volume_id, uploader, views, rating, update_date FROM chapters WHERE chap_id=${id}"
-		  .map(rs => Chapter(rs)).single().apply()
+		  .map(rs => ChapterInfo(rs)).single().apply()
 	}
 
 	def checkExist(id: Long): Boolean

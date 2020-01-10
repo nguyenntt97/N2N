@@ -9,20 +9,20 @@ import scalikejdbc.WrappedResultSet
 
 case class NewChapter(id: Long, title: String, content: String, volId: Long, uploader: Long)
 
-case class Chapter(id: Long,
-				   title: String,
-				   content: String,
-				   volId: Long,
-				   uploaderId: Long,
-				   views: Int,
-				   rating: Double,
-				   update: Long)
+case class ChapterInfo(id: Long,
+					   title: String,
+					   content: String,
+					   volId: Long,
+					   uploaderId: Long,
+					   views: Int,
+					   rating: Double,
+					   update: Long)
 
 
-object Chapter extends SQLSyntaxSupport[Chapter] {
+object ChapterInfo extends SQLSyntaxSupport[ChapterInfo] {
 	override def tableName: String = "chapters"
 
-	def apply(rs: WrappedResultSet): Chapter = Chapter(
+	def apply(rs: WrappedResultSet): ChapterInfo = ChapterInfo(
 		rs.long("chap_id"),
 		rs.string("chap_title"),
 		rs.string("chap_content"),

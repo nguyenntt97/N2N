@@ -1,9 +1,9 @@
 val finchVersion = "0.31.0"
 val circeVersion = "0.11.2"
 val scalatestVersion = "3.0.5"
-val twitterVersion = "19.10.0"
+val twitterVersion = "19.12.0"
 
-
+//sourceDirectory in Compile := baseDirectory.value / "resources"
 lazy val root = (project in file("."))
   .settings(
 	  initialCommands in console :=
@@ -38,7 +38,8 @@ lazy val root = (project in file("."))
 		  "org.scalikejdbc" %% "scalikejdbc" % "2.5.2",
 		  "mysql" % "mysql-connector-java" % "8.0.18",
 //		  "org.slf4j" % "slf4j-log4j12" % "2.0.0-alpha1",
-		  "ch.qos.logback" % "logback-classic" % "1.2.3"
+		  "ch.qos.logback" % "logback-classic" % "1.1.7",
+		  "com.twitter" %% "twitter-server-logback-classic" % twitterVersion
 //		  "org.slf4j" % "slf4j-api" % "2.0.0-alpha0",
 //		  "log4j" % "log4j" % "1.2.17"
 	  )

@@ -3,7 +3,7 @@ package com.sonako.snk_api.project
 import com.sonako.snk_api.common.ImplicitDeEncoders
 import cats.effect.{ContextShift, IO}
 import com.sonako.snk_api.common.LogHelper
-import com.sonako.snk_api.model.{Chapter, NewChapter, Project}
+import com.sonako.snk_api.model.{ChapterInfo, NewChapter, Project}
 import com.sonako.snk_api.repository.{EditorRepo, ProjectsRepo}
 import com.twitter.finagle.Service
 import com.twitter.finagle.http.{Request, Response}
@@ -24,7 +24,7 @@ class EditorController(env: {
 
 	final val newChapter: Endpoint[IO, NewChapter] = jsonBody[NewChapter]
 
-	final val getChapter: Endpoint[IO, Chapter] = get("chapter" :: path[Long]) { chapId: Long =>
+	final val getChapter: Endpoint[IO, ChapterInfo] = get("chapter" :: path[Long]) { chapId: Long =>
 		env.editorRepo.getChapter(chapId) match {
 			case Some(chapter) => Ok(chapter)
 			case None => NoContent
