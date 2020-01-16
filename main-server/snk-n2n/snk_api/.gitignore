@@ -1,7 +1,6 @@
 */target/
 !.mvn/wrapper/maven-wrapper.jar
 */node_modules/
-project/
 
 ### STS ###
 .apt_generated
@@ -25,6 +24,5 @@ project/
 /nbdist/
 /.nb-gradle/
 /build/
-/project/
 
 .vscode

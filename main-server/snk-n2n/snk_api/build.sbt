@@ -1,7 +1,17 @@
+import sbtassembly.MergeStrategy
+
 val finchVersion = "0.31.0"
 val circeVersion = "0.11.2"
 val scalatestVersion = "3.0.5"
 val twitterVersion = "19.12.0"
+
+herokuAppName in Compile := "fathomless-sands-60587"
+lazy val commonSetting = Seq(
+	organization := "com.sonako",
+	name := "snk_api",
+	version := "0.0.1-SNAPSHOT",
+	scalaVersion := "2.12.7"
+)
 
 //sourceDirectory in Compile := baseDirectory.value / "resources"
 lazy val root = (project in file("."))
@@ -24,10 +34,9 @@ lazy val root = (project in file("."))
       """.stripMargin
   )
   .settings(
-	  organization := "com.sonako",
-	  name := "snk_api",
-	  version := "0.0.1-SNAPSHOT",
-	  scalaVersion := "2.12.7",
+	  commonSetting: _*
+  )
+  .settings(
 	  libraryDependencies ++= Seq(
 		  "com.github.finagle" %% "finchx-core" % finchVersion,
 		  "com.github.finagle" %% "finchx-circe" % finchVersion,
@@ -37,10 +46,25 @@ lazy val root = (project in file("."))
 		  "org.scalatest" %% "scalatest" % scalatestVersion % "test",
 		  "org.scalikejdbc" %% "scalikejdbc" % "2.5.2",
 		  "mysql" % "mysql-connector-java" % "8.0.18",
-//		  "org.slf4j" % "slf4j-log4j12" % "2.0.0-alpha1",
+		  //		  "org.slf4j" % "slf4j-log4j12" % "2.0.0-alpha1",
 		  "ch.qos.logback" % "logback-classic" % "1.1.7",
 		  "com.twitter" %% "twitter-server-logback-classic" % twitterVersion
-//		  "org.slf4j" % "slf4j-api" % "2.0.0-alpha0",
-//		  "log4j" % "log4j" % "1.2.17"
-	  )
+		  //		  "org.slf4j" % "slf4j-api" % "2.0.0-alpha0",
+		  //		  "log4j" % "log4j" % "1.2.17"
+	  ),
+	  excludeDependencies += "commons-logging" % "commons-logging"
   )
+  .settings(
+	mainClass in assembly := Some("com.sonako.snk_api.Main")
+)
+
+lazy val utils = (project in file("utils"))
+  .settings(commonSetting: _*)
+  .settings(
+	  assemblyJarName in assembly := "utils.jar"
+  )
+
+assemblyMergeStrategy in assembly := {
+	case PathList("META-INF", xs@_*) => MergeStrategy.discard
+	case x => MergeStrategy.first
+}
