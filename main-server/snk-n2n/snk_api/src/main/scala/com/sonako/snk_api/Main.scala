@@ -14,6 +14,8 @@ import io.circe.generic.auto._
 import io.finch.Text.Plain
 import io.finch.circe._
 
+import scala.util.Properties
+
 case class Mess(msg: String)
 
 object Main extends TwitterServer with Endpoint.Module[IO] {
@@ -28,7 +30,7 @@ object Main extends TwitterServer with Endpoint.Module[IO] {
     val server = Http.server
       .withStatsReceiver(statsReceiver)
       .serve(
-        ":8081",
+        s"0.0.0.0:${Properties.envOrElse("PORT", "8080")}",
         Bootstrap.serve[Application.Json](projectApp.getProjects :+:
           editorApp.getChapter )
           .serve[Text.Plain] (editorApp.putChapter)
