@@ -1,10 +1,11 @@
 package com.sonako.snk_api.repository
 
-import scalikejdbc.{AutoSession, ConnectionPool}
+import scalikejdbc.config._
+import scalikejdbc._
+
 
 trait SimpleRepo {
-  final val MySQLDriver = "com.mysql.jdbc.Driver"
-  Class.forName(MySQLDriver)
+  DBs.setupAll()
   implicit val session = AutoSession
-  ConnectionPool.singleton("jdbc:mysql://localhost:3306/n2n_v1","root","elKINO@2511")
+//  ConnectionPool.add('default,"jdbc:mysql://remotemysql.com:3306/VoJRCSRNkt","VoJRCSRNkt","qCkwDnxsc3")
 }

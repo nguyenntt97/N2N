@@ -44,11 +44,12 @@ lazy val root = (project in file("."))
 		  "com.twitter" %% "twitter-server" % twitterVersion,
 		  "io.circe" %% "circe-generic" % circeVersion,
 		  "org.scalatest" %% "scalatest" % scalatestVersion % "test",
-		  "org.scalikejdbc" %% "scalikejdbc" % "2.5.2",
+		  "org.scalikejdbc" %% "scalikejdbc" % "3.4.0",
 		  "mysql" % "mysql-connector-java" % "8.0.18",
 		  //		  "org.slf4j" % "slf4j-log4j12" % "2.0.0-alpha1",
 		  "ch.qos.logback" % "logback-classic" % "1.1.7",
-		  "com.twitter" %% "twitter-server-logback-classic" % twitterVersion
+		  "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
+			"org.scalikejdbc" %% "scalikejdbc-config" % "3.4.0"
 		  //		  "org.slf4j" % "slf4j-api" % "2.0.0-alpha0",
 		  //		  "log4j" % "log4j" % "1.2.17"
 	  ),
