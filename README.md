@@ -10,8 +10,9 @@ This is N2N (new Sonako) project:
   * A web service for other sub-components: Recommender system, Editor and Information Hub, Chatting features (Golang)
   * A web client (React)
   * A mobile app (Android)
-
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/logo.png" align="center" width="300" height="300" />
+<p align="center">
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/logo.png" width="300" height="300" />
+</p>
 
 ### Directory index
 
