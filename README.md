@@ -5,12 +5,10 @@
 <p align="center">
 <img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/snk_banner.png" width="400"/>
 </p>
-
-
 # Introduction
 
 ## What is it?
-
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/logo.png" height="200" align="right"/>
 This is N2N (new Sonako) project:
 
 - An web app for sharing LN's fan translation and other information
