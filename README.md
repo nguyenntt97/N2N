@@ -11,6 +11,33 @@ This is N2N project:
   * A web client (React)
   * A mobile app (Android)
 
+### Directory index
+
+```
+snk_project
+|-- backup_etc    // Backup data, schema, EER
+|-- crawler       // Crawler to generate mockup data and future migration
+|-- main-server   // Backend project
+|-- web_app_v2    // Frontend project
+|-- web-prototype // Prototype project (Deprecated)
+```
+
+### Tech stack
+
+Database:
+
+- Main DB - MySQL
+
+Main API:
+
+- Finch Framework (Scala)
+
+Web app:
+
+- React JS
+
+
+
 ## System Requirements
 
 - OS: Ubuntu (version)

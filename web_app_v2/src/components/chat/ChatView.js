@@ -27,8 +27,9 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   },
   yourComment: {
-    padding: 10,
-    marginLeft: 80
+    padding: 15,
+    marginLeft: 80,
+    marginTop: 30
   }
 }));
 
@@ -71,7 +72,6 @@ export default function ChatView() {
         content={null}
         data_storage={{
           save_handler: (editorContext, content) => {
-            console.log("Saved");
             console.log(editorContext, content);
           }
         }}

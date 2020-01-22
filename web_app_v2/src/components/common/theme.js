@@ -5,10 +5,10 @@ import * as Colors from "@material-ui/core/colors";
 export const Theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#413c69"
+      main: "#3f72af"
     },
     secondary: {
-      main: "#940a37"
+      main: "#112d4e"
     },
     error: Colors.red,
     // Used by `getContrastText()` to maximize the contrast between the background and
@@ -19,7 +19,7 @@ export const Theme = createMuiTheme({
     // E.g., shift from Red 500 to Red 300 or Red 700.
     tonalOffset: 0.2,
     textPrimary: {
-      main: "#fff"
+      main: "#424242"
     }
   },
   typography: {

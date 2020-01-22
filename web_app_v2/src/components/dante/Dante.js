@@ -5904,6 +5904,9 @@ Dante.defaultProps = {
     "code-block"
   ],
   key_commands: {
+    "enter": [
+
+    ],
     "alt-shift": [
       {
         key: 65,
@@ -6026,7 +6029,7 @@ DanteMini.defaultProps = {
     "code-block"
   ],
   key_commands: {
-    enter: [
+    "enter": [
       {
         key: 13,
         cmd: "handled"
