@@ -1,8 +1,4 @@
 <p align="center">
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/logo.png" height="200"/>
-</p>
-
-<p align="center">
 <img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/snk_banner.png" width="400"/>
 </p>
 # Introduction
