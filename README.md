@@ -1,7 +1,7 @@
 <p align="center">
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo1.png" height="200"/>
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo2.png" height="200"/>
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo3.png" height="200"/>
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo1.png" height="150"/>
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo2.png" height="150"/>
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo3.png" height="150"/>
 </p>
 
 # Introduction
