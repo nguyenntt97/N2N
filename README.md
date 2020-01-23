@@ -1,5 +1,6 @@
 <p align="center">
-<img src="https://github.com/nguyenntt97/N2N/blob/master/web_app_v2/public/snk_banner.png" width="400"/>
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo1.png" height="200"/>
+<img src="https://github.com/nguyenntt97/N2N/blob/master/web-prototype/demo2.png" height="200"/>
 </p>
 
 # Introduction
