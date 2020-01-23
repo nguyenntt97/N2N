@@ -1,7 +1,8 @@
-package com.sonako.snk_api.project
+package com.sonako.snk_api.service
 
 import cats.effect.{ContextShift, IO}
 import cats.effect.concurrent.Ref
+import com.sonako.snk_api.common.SimpleController
 import com.sonako.snk_api.model.{Message, Project}
 import com.sonako.snk_api.repository.ProjectsRepo
 import com.twitter.finagle.Service
@@ -12,13 +13,13 @@ import io.finch.circe._
 
 class ProjectController(env: {
 val projectsRepo: ProjectsRepo
-})(implicit S: ContextShift[IO]) extends Endpoint.Module[IO]{
+})(implicit S: ContextShift[IO]) extends Endpoint.Module[IO] {
 
   final val getProjects: Endpoint[IO, List[Project]] = get("projects") {
     Ok(env.projectsRepo.getAllProjects())
   }
 
-  final def toService: Service[Request, Response] = Bootstrap
+  def toService: Service[Request, Response] = Bootstrap
     .serve[Application.Json](getProjects)
     .toService
 }
