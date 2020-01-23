@@ -8,13 +8,28 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    position: "relative",
+    width: "100%",
+    flexGrow: 1,
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      width: "80%",
+      height: "100%",
+      marginRight: "10%",
+      marginLeft: "10%",
+      background: "#e8f1f5"
+    }
   },
   title: {
     width: "100%",
-    color: "#5b0909",
-    fontWeight: "bold"
-    // fontFamily: "Oswald"
+    color: "#004a7c",
+    // fontWeight: "bold"
+    fontFamily: "Yanone Kaffeesatz",
+    fontSize: "40px",
+    zIndex: "5",
+    position: "relative",
+    left: "18px"
   },
   paper: {
     height: 280,
@@ -23,7 +38,8 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     display: "flex",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    marginBottom: "40px"
   },
   cover: {
     width: "100%",
@@ -51,7 +67,7 @@ const projectItem = (item, classes) => {
   return (
     <Paper className={classes.paper}>
       <div className={classes.cover}>
-        <img src={item.cover} width="100%" />
+        <img src={item.thumbnail} width="100%" />
       </div>
       <Link
         href="/projects/123"
@@ -59,7 +75,7 @@ const projectItem = (item, classes) => {
         className={classes.link}
         to={"/projects/123"}
       >
-        {getShortened(item.title)}
+        {getShortened(item.name)}
       </Link>
       <div className={classes.borderLayout}></div>
     </Paper>
@@ -70,6 +86,8 @@ export default function ProjectPane(props) {
   const [spacing, setSpacing] = React.useState(2);
   const classes = useStyles();
 
+  console.log(props.data);
+
   return (
     <Grid container className={classes.root}>
       <Typography variant="h6" className={classes.title}>
@@ -77,7 +95,7 @@ export default function ProjectPane(props) {
       </Typography>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={3}>
-          {props.data.map((k, i) => (
+          {(props.data ? props.data.slice(6) : []).map((k, i) => (
             <Grid key={i} item>
               {projectItem(k, classes)}
             </Grid>
