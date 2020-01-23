@@ -33,7 +33,8 @@ const useStyles = makeStyles({
   root: {
     // marginTop: Theme.spacing(5),
     borderRadius: 0,
-    borderBottom: "1px solid #3e4149"
+    borderBottom: "1px solid #3e4149",
+    position: "relative"
     // padding: "10px !important"
   },
   indicator: {
@@ -81,13 +82,12 @@ export default function TabPane(props) {
   };
 
   return (
-    <Paper elevation={props.immersive ? "0" : "1"}>
-      <Tabs
-        className={classes.root}
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-      >
+    <Paper
+      elevation={props.immersive ? "0" : "1"}
+      className={classes.root}
+      style={props.style}
+    >
+      <Tabs value={value} onChange={handleChange} indicatorColor="primary">
         {props.content.map(t => (
           <Tab label={t.title} key={t.title} className={classes.tab} />
         ))}

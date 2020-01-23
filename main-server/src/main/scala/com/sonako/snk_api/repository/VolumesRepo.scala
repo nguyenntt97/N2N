@@ -5,7 +5,7 @@ import scalikejdbc._
 
 
 class VolumesRepo extends SimpleRepo {
-	def getAllVolumes(ownerId: Int): List[VolumeInfo] =
+	def getAllVolumesByUser(ownerId: Int): List[VolumeInfo] =
 		sql"""SELECT vol_id, project_id, vol_title, vol_synopsis, vol_views, vol_cover
 		 FROM volumes WHERE owner_id=${ownerId}"""
 		  .map(rs => VolumeInfo(rs)).list().apply()
