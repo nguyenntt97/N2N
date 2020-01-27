@@ -11,7 +11,7 @@ import io.circe.generic.auto._
 import io.finch._
 import io.finch.circe._
 
-class ProjectController(env: {
+class ProjectService(env: {
 val projectsRepo: ProjectsRepo
 })(implicit S: ContextShift[IO]) extends Endpoint.Module[IO] {
 

@@ -9,7 +9,7 @@ import com.twitter.finagle.http.{Request, Response}
 import io.finch._
 import io.finch.circe._
 
-class VolumeController(env: {
+class VolService(env: {
 	val editorRepo: EditorRepo
 })(implicit S: ContextShift[IO]) extends Endpoint.Module[IO] with LogHelper {
 

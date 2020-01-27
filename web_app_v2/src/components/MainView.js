@@ -75,17 +75,21 @@ function MainView() {
   }, []);
 
   return (
-    <Grid container spacing={1}>
-      <Grid container item xs={12} md={8}>
+    <Grid container>
+      <Grid item xs={12}>
         <ProjectPane data={prjData} title="Mới Nhất" />
-        <TabPane
-          immersive
-          content={mainContent}
-          style={{ marginTop: "70px" }}
-        />
       </Grid>
-      <Grid item xs={12} md={4}>
-        <TabPane content={widget} />
+      <Grid item xs={12} container>
+        <Grid item xs={12} md={9}>
+          <TabPane
+            immersive
+            content={mainContent}
+            style={{ marginTop: "70px" }}
+          />
+        </Grid>
+        <Grid item xs={12} md={3}>
+          <TabPane content={widget} style={{ marginTop: "70px" }} />
+        </Grid>
       </Grid>
     </Grid>
   );

@@ -10,19 +10,19 @@ const useStyles = makeStyles(theme => ({
   root: {
     position: "relative",
     width: "100%",
+    padding: "10px",
     flexGrow: 1,
     "&::before": {
       content: "''",
       position: "absolute",
-      width: "80%",
+      width: "90%",
       height: "100%",
-      marginRight: "10%",
-      marginLeft: "10%",
+      right: "5%",
+      left: "5%",
       background: "#e8f1f5"
     }
   },
   title: {
-    width: "100%",
     color: "#004a7c",
     // fontWeight: "bold"
     fontFamily: "Yanone Kaffeesatz",
@@ -56,6 +56,38 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     position: "relative",
     marginLeft: theme.spacing(1)
+  },
+  placeholder: {
+    width: "100%",
+    height: "100%",
+    background: "#dcdcdc",
+    display: "flex",
+    justifyContent: "center",
+    paddingTop: "60px"
+  },
+  "@keyframes ldsDualRing": {
+    "0%": {
+      transform: "rotate(0deg)"
+    },
+    "100%": {
+      transform: "rotate(360deg)"
+    }
+  },
+  ldsDualRing: {
+    display: "inline-block",
+    width: "80px",
+    height: "80px",
+    "&::after": {
+      content: "''",
+      display: "block",
+      width: "64px",
+      height: "64px",
+      margin: "8px",
+      borderRadius: "50%",
+      border: "6px solid #fff",
+      borderColor: "#fff transparent #fff transparent",
+      animation: "$ldsDualRing 1.2s linear infinite"
+    }
   }
 }));
 
@@ -64,10 +96,17 @@ const getShortened = str =>
 
 const projectItem = (item, classes) => {
   const preventDefault = event => event.preventDefault();
+  console.log(item);
   return (
     <Paper className={classes.paper}>
       <div className={classes.cover}>
-        <img src={item.thumbnail} width="100%" />
+        {item.loading ? (
+          <div className={classes.placeholder}>
+            <div className={classes.ldsDualRing} />
+          </div>
+        ) : (
+          <img src={item.thumbnail} width="100%" />
+        )}
       </div>
       <Link
         href="/projects/123"
@@ -86,7 +125,10 @@ export default function ProjectPane(props) {
   const [spacing, setSpacing] = React.useState(2);
   const classes = useStyles();
 
-  console.log(props.data);
+  const phItem = {
+    loading: true,
+    name: ""
+  };
 
   return (
     <Grid container className={classes.root}>
@@ -95,7 +137,10 @@ export default function ProjectPane(props) {
       </Typography>
       <Grid item xs={12}>
         <Grid container justify="center" spacing={3}>
-          {(props.data ? props.data.slice(6) : []).map((k, i) => (
+          {(props.data && props.data.length > 0
+            ? props.data.slice(6)
+            : Array(6).fill(phItem)
+          ).map((k, i) => (
             <Grid key={i} item>
               {projectItem(k, classes)}
             </Grid>
