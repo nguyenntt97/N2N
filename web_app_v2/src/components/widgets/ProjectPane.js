@@ -6,21 +6,29 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 
+import { getShortened } from "../common/helpers";
+
 const useStyles = makeStyles(theme => ({
   root: {
     position: "relative",
     width: "100%",
-    padding: "10px",
     flexGrow: 1,
+    background: "#e8f1f5",
+    backgroundImage: "url('/foggy-birds.png')",
+    backgroundRepeat: "repeat",
+    overflow: "hidden",
     "&::before": {
       content: "''",
       position: "absolute",
       width: "90%",
-      height: "100%",
+      height: "90%",
       right: "5%",
       left: "5%",
-      background: "#e8f1f5"
+      top: "5%"
     }
+  },
+  growBox: {
+    flexGrow: 1
   },
   title: {
     color: "#004a7c",
@@ -91,9 +99,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const getShortened = str =>
-  str.length > 30 ? str.substring(0, 30) + "..." : str;
-
 const projectItem = (item, classes) => {
   const preventDefault = event => event.preventDefault();
   console.log(item);
@@ -135,17 +140,21 @@ export default function ProjectPane(props) {
       <Typography variant="h6" className={classes.title}>
         {props.title}
       </Typography>
-      <Grid item xs={12}>
-        <Grid container justify="center" spacing={3}>
-          {(props.data && props.data.length > 0
-            ? props.data.slice(6)
-            : Array(6).fill(phItem)
-          ).map((k, i) => (
-            <Grid key={i} item>
-              {projectItem(k, classes)}
-            </Grid>
-          ))}
-        </Grid>
+      <Grid
+        item
+        container
+        justify="center"
+        spacing={3}
+        className={classes.growBox}
+      >
+        {(props.data && props.data.length > 0
+          ? props.data.slice(6)
+          : Array(6).fill(phItem)
+        ).map((k, i) => (
+          <Grid key={i} item>
+            {projectItem(k, classes)}
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

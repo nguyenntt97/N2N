@@ -34,8 +34,8 @@ const useStyles = makeStyles({
     // marginTop: Theme.spacing(5),
     borderRadius: 0,
     borderBottom: "1px solid #3e4149",
-    position: "relative"
-    // padding: "10px !important"
+    position: "relative",
+    padding: "10px !important"
   },
   indicator: {
     "&::after": {
@@ -92,6 +92,7 @@ export default function TabPane(props) {
           <Tab label={t.title} key={t.title} className={classes.tab} />
         ))}
       </Tabs>
+      <br />
       {props.content.map((t, i) => (
         <TabPanel value={value} index={i} key={i}>
           {t.body}

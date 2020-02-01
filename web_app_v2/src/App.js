@@ -53,14 +53,7 @@ class App extends Component {
             </Grid>
 
             {routes.map((route, index) => (
-              <Grid
-                style={{
-                  padding: 10
-                }}
-                item
-                key={index}
-                xs={12}
-              >
+              <Grid item key={index} xs={12}>
                 <Route
                   key={index}
                   path={route.path}

@@ -15,13 +15,15 @@ const useStyles = makeStyles(theme => ({
   headerBg: {
     position: "fixed",
     background: "primary",
-    color: "#f0f0f0"
+    color: "#f0f0f0",
+    width: "100%"
   },
   customTb: {
     minHeight: 30
   },
   grows: {
-    flexGrow: 1
+    flexGrow: 1,
+    width: "100%"
   },
   menuButton: {
     marginRight: theme.spacing(2)
