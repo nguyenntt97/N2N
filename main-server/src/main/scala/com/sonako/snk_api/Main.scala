@@ -43,9 +43,9 @@ object Main extends TwitterServer with Endpoint.Module[IO] with SimpleController
 
   override def toService: Service[Request, Response] = {
     //    val editorApp = new EditorController(Environment)(IO.contextShift(ExecutionContext.global))
-    val projectApp = new ProjectService(Environment)(IO.contextShift(ExecutionContext.global))
+    val projectService = new ProjectService(Environment)(IO.contextShift(ExecutionContext.global))
 
-    Bootstrap.serve[Application.Json](projectApp.getProjects
+    Bootstrap.serve[Application.Json](projectService.getProject :+: projectService.getProjects
       //          :+: editorApp.getChapter
     )
       //          .serve[Text.Plain] (editorApp.putChapter)

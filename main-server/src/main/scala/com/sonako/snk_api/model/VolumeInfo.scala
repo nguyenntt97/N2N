@@ -3,6 +3,7 @@ package com.sonako.snk_api.model
 import java.sql.Date
 import java.util.Calendar
 
+import com.sonako.snk_api.Environment
 import com.sonako.snk_api.common.TimeUtils
 import scalikejdbc._
 import scalikejdbc.WrappedResultSet
@@ -21,13 +22,13 @@ case class VolumeInfo(
 object VolumeInfo extends SQLSyntaxSupport[VolumeInfo] {
   override def tableName: String = "volumes"
 
-  def apply(rs: WrappedResultSet, chapListRs: WrappedResultSet): VolumeInfo = VolumeInfo(
+  def apply(rs: WrappedResultSet): VolumeInfo = VolumeInfo(
     rs.long("vol_id"),
     rs.string("vol_title"),
-    rs.string("project_synopsis"),
-    rs.int("vol_view"),
+    rs.string("vol_synopsis"),
+    rs.int("vol_views"),
     rs.string("vol_cover"),
-    ChapterInfo.apply(chapListRs)
+    Environment.chapRepo.getChapterByVolume(rs.long("vol_id"))
   )
 }
 
