@@ -1,14 +1,16 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import {
+  createMuiTheme
+} from "@material-ui/core/styles";
 import * as Colors from "@material-ui/core/colors";
 
 // All the following keys are optional, as default values are provided.
 export const Theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#3f72af"
+      main: "#BD5C3B"
     },
     secondary: {
-      main: "#112d4e"
+      main: "#63779D"
     },
     error: Colors.red,
     // Used by `getContrastText()` to maximize the contrast between the background and
@@ -26,3 +28,41 @@ export const Theme = createMuiTheme({
     fontFamily: ["Roboto", "Oswald"].join(",")
   }
 });
+
+export const loadingEffect = {
+  placeholder: {
+    width: "100%",
+    height: "100%",
+    background: "rgba(28,30,34,.8)",
+    backdropFilter: "blur(2px)",
+    display: "flex",
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: "5"
+  },
+  "@keyframes ldsDualRing": {
+    "0%": {
+      transform: "rotate(0deg)"
+    },
+    "100%": {
+      transform: "rotate(360deg)"
+    }
+  },
+  ldsDualRing: {
+    display: "inline-block",
+    width: "80px",
+    height: "80px",
+    "&::after": {
+      content: "''",
+      display: "block",
+      width: "64px",
+      height: "64px",
+      margin: "8px",
+      borderRadius: "50%",
+      border: "6px solid #fff",
+      borderColor: "#fff transparent #fff transparent",
+      animation: "$ldsDualRing 1.2s linear infinite"
+    }
+  }
+}
