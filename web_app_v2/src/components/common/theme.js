@@ -1,13 +1,11 @@
-import {
-  createMuiTheme
-} from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 import * as Colors from "@material-ui/core/colors";
 
 // All the following keys are optional, as default values are provided.
 export const Theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#BD5C3B"
+      main: "#364f6b"
     },
     secondary: {
       main: "#63779D"
@@ -22,6 +20,9 @@ export const Theme = createMuiTheme({
     tonalOffset: 0.2,
     textPrimary: {
       main: "#424242"
+    },
+    textSecondary: {
+      main: "#364f6b"
     }
   },
   typography: {
@@ -65,4 +66,4 @@ export const loadingEffect = {
       animation: "$ldsDualRing 1.2s linear infinite"
     }
   }
-}
+};
