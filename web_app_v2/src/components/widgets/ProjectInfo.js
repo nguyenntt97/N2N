@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 import { makeStyles, MuiThemeProvider } from "@material-ui/core/styles";
 import { Typography, Divider, Button } from "@material-ui/core";
-import { Skeleton, Rating } from '@material-ui/lab';
+import { Skeleton, Rating } from "@material-ui/lab";
 
 import { TabPane } from "../widgets";
-import { loadingEffect } from "../common/theme"
+import { loadingEffect } from "../common/theme";
 
 const useStyles = data =>
   makeStyles(theme => ({
@@ -47,43 +47,34 @@ const labels = {
   3: "Thường",
   4: "Hay",
   5: "Siêu phẩm"
-}
+};
 
 export default function ProjectInfo(props) {
   const classes = useStyles(data[0])();
-  const [prjData, setPrjData] = useState([]);
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(2);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        setLoading("true");
-        const response = await fetch("https://snk-api.herokuapp.com/project?id=402");
-        const json = await response.json();
-
-        setPrjData(json);
-        setLoading(false)
-      } catch (err) {
-        setLoading("null");
-      }
-    }
-
-    fetchProjects();
-  }, []);
-
-
+  console.log(props.loading);
   return (
     <Grid className={classes.projectBanner} container xs={12}>
-      {loading ? <div className={classes.placeholder}>
-        <div className={classes.ldsDualRing} />
-      </div> : null}
+      {props.loading ? (
+        <div className={classes.placeholder}>
+          <div className={classes.ldsDualRing} />
+        </div>
+      ) : null}
       <Grid container item xs={12} sm={4} lg={3} justify="center">
         <img className={classes.projectPortrait} src={data[0].cover} />
       </Grid>
 
-      <Grid container item xs={12} sm={8} lg={9} alignItems="center" justify="center">
+      <Grid
+        container
+        item
+        xs={12}
+        sm={8}
+        lg={9}
+        alignItems="center"
+        justify="center"
+      >
         <Typography
           variant="h5"
           style={{
@@ -91,13 +82,25 @@ export default function ProjectInfo(props) {
             color: "#fff"
           }}
         >
-          {loading ? "N/A" : prjData.name}
+          {props.loading ? "N/A" : props.prjData.name}
         </Typography>
-        <Grid container item xs={12} className={classes.sideInfo} justify="center">
+        <Grid
+          container
+          item
+          xs={12}
+          className={classes.sideInfo}
+          justify="center"
+        >
           <Grid item xs={12} sm={4}>
-            <p><b>Tác giả</b>: {prjData.author}, {prjData.artist}</p>
-            <p><b>Ngày đăng</b>: {prjData.author}</p>
-            <p><b>Tác giả</b>: {prjData.author}</p>
+            <p>
+              <b>Tác giả</b>: {props.prjData.author}, {props.prjData.artist}
+            </p>
+            <p>
+              <b>Ngày đăng</b>: {props.prjData.author}
+            </p>
+            <p>
+              <b>Tác giả</b>: {props.prjData.author}
+            </p>
           </Grid>
           <Grid item xs={12} sm={8} alignItems="center">
             <Grid container>
@@ -114,12 +117,16 @@ export default function ProjectInfo(props) {
                     onChangeActive={(event, newHover) => {
                       setHover(newHover);
                     }}
-                  /> &nbsp;
+                  />{" "}
+                  &nbsp;
                   {value !== null && labels[hover !== -1 ? hover : value]}
                 </Grid>
               </Box>
-            </Grid><br />
-            <Button variant="contained" color="secondary">Bookmark</Button>
+            </Grid>
+            <br />
+            <Button variant="contained" color="secondary">
+              Bookmark
+            </Button>
           </Grid>
         </Grid>
       </Grid>

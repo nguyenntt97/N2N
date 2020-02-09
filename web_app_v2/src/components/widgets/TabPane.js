@@ -83,7 +83,7 @@ export default function TabPane(props) {
 
   return (
     <Paper
-      elevation={props.immersive ? "0" : "1"}
+      elevation={props.immersive ? 0 : 1}
       className={classes.root}
       style={props.style}
     >

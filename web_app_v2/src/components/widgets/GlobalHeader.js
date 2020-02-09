@@ -54,7 +54,7 @@ export default function MainAppBar(props) {
       <AppBar className={classes.headerBg} position="static" elevation={0}>
         <Toolbar className={classes.customTb}>
           <img src="/logo_sm.png" className={classes.logo} />
-          <Typography variant="h8" className={classes.title}>
+          <Typography variant="h6" className={classes.title}>
             Sonako
           </Typography>
           <SearchBar />

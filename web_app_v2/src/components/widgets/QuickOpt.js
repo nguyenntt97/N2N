@@ -75,7 +75,7 @@ export default function QuickOptions() {
   const mobileMenuId = "primary-search-account-menu-mobile";
 
   return [
-    <div className={classes.sectionDesktop}>
+    <div key="desktop" className={classes.sectionDesktop}>
       <IconButton aria-label="show 4 new mails" color="inherit">
         <Badge badgeContent={4} color="secondary">
           <MailIcon />
@@ -97,7 +97,7 @@ export default function QuickOptions() {
         <AccountCircle />
       </IconButton>
     </div>,
-    <div className={classes.sectionMobile}>
+    <div key="mobile" className={classes.sectionMobile}>
       <IconButton
         aria-label="show more"
         aria-controls={mobileMenuId}

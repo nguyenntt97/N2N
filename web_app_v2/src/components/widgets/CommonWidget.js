@@ -133,7 +133,7 @@ export function TopBoard(props) {
     <div className={classes.demo}>
       <List dense={dense}>
         {(data && data.length > 0 ? data : []).slice(0, 10).map(item => (
-          <ListItem className={classes.lItem}>
+          <ListItem key={item.id} className={classes.lItem}>
             <ListItemAvatar>
               <Avatar>
                 <img src={item.thumbnail} className={classes.project_ava} />

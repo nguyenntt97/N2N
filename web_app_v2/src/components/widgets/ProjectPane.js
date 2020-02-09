@@ -38,6 +38,11 @@ const useStyles = makeStyles(theme => ({
     overflow: "hidden",
     padding: "10px"
   },
+  slider: {
+    transition: "all 0.5s ease-out",
+    position: "relative",
+    width: "auto !important"
+  },
   title: {
     color: "#004a7c",
     // fontWeight: "bold"
@@ -56,7 +61,8 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "40px",
     transition: "all .2s ease-in-out",
     "&:hover": {
-      transform: "scale(1.1)"
+      transform: "scale(1.1)",
+      cursor: "pointer"
     }
   },
   card: {
@@ -80,8 +86,7 @@ const useStyles = makeStyles(theme => ({
     }
   },
   link: {
-    position: "relative",
-    marginLeft: theme.spacing(1)
+    position: "relative"
   },
   backdrop: {
     position: "absolute",
@@ -102,7 +107,7 @@ const useStyles = makeStyles(theme => ({
 const projectItem = (item, classes) => {
   const preventDefault = event => event.preventDefault();
   return (
-    <Card className={classes.paper} variant="outlined">
+    <Card id="scroll-bar" className={classes.paper} variant="outlined">
       <CardContent className={classes.card}>
         <div className={classes.cover}>
           {item.loading ? (
@@ -113,25 +118,28 @@ const projectItem = (item, classes) => {
             <img src={item.thumbnail} width="100%" />
           )}
         </div>
-        <Link
-          href="/projects/123"
-          // onClick={preventDefault}
-          className={classes.link}
-          to={"/projects/123"}
-        >
-          <Typography color="textSecondary" gutterBottom>
-            <Chip
-              size="small"
-              label="Action"
-              component="a"
-              href="#chip"
-              clickable
-            />
-          </Typography>
-          <Typography variant="h6">{getShortened(item.name)}</Typography>
-        </Link>
+        <Typography color="textSecondary" gutterBottom>
+          <Chip
+            size="small"
+            label="Action"
+            component="a"
+            href="#chip"
+            clickable
+          />
+        </Typography>
+
+        <Typography variant="h6">
+          <Link
+            href="/projects/123"
+            // onClick={preventDefault}
+            className={classes.link}
+            to={"/projects/123"}
+          >
+            {getShortened(item.name)}
+          </Link>
+        </Typography>
         <Rating name="read-only" value={3} size="small" readOnly />
-        <Typography variant="h8" className={classes.dateTxt}>
+        <Typography className={classes.dateTxt}>
           <i>4 ngày trước</i>
         </Typography>
       </CardContent>
@@ -162,13 +170,93 @@ const projectItem = (item, classes) => {
   );
 };
 export default function ProjectPane(props) {
-  const [spacing, setSpacing] = React.useState(2);
+  const [focusScroll, setFocusScroll] = React.useState(false);
+  const [scrollDelta, setScrollDelta] = React.useState(0);
+  const [scrollData, setScrollData] = React.useState(0);
+  const sliderRef = React.useRef();
   const classes = useStyles();
 
   const phItem = {
     loading: true,
     name: ""
   };
+
+  const prjData =
+    props.data && props.data.length > 0
+      ? props.data.slice(0, 10)
+      : Array(10).fill(phItem);
+
+  React.useEffect(() => {
+    function preventDefault(e) {
+      e = e || window.event;
+      if (e.preventDefault) e.preventDefault();
+      e.returnValue = false;
+    }
+
+    const handleUpdateOnScroll = (setScrollData, scrollDelta) => {
+      let oneWindow = sliderRef.current.clientWidth;
+      let oneItem = sliderRef.current.firstElementChild.clientWidth;
+
+      let start = scrollDelta;
+      let end = scrollDelta + oneWindow;
+
+      if (end > oneItem * scrollData.length) {
+        setScrollData([...scrollData, ...prjData]);
+      }
+    };
+
+    const onScroll = event => {
+      handleUpdateOnScroll([]);
+      console.log(scrollDelta + event.deltaY);
+      setScrollDelta(scrollDelta + event.deltaY);
+    };
+
+    function disableScroll() {
+      if (window.addEventListener) {
+        // older FF
+        window.addEventListener("DOMMouseScroll", preventDefault, false);
+        document.addEventListener("wheel", preventDefault, { passive: false }); // Disable scrolling in Chrome
+      }
+
+      window.onwheel = preventDefault; // modern standard
+      window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+    }
+
+    function enableScroll() {
+      if (window.removeEventListener) {
+        window.removeEventListener("DOMMouseScroll", preventDefault, false);
+        document.removeEventListener("wheel", preventDefault, {
+          passive: false
+        }); // Enable scrolling in Chrome
+      }
+      window.onmousewheel = document.onmousewheel = null;
+      window.onwheel = null;
+    }
+
+    if (focusScroll == true) {
+      window.addEventListener("wheel", onScroll);
+      disableScroll();
+    }
+
+    return () => {
+      enableScroll();
+      window.removeEventListener("wheel", onScroll);
+    };
+  }, [focusScroll, scrollDelta, sliderRef]);
+
+  const onScrollFocus = ev => {
+    if (focusScroll == false) {
+      setFocusScroll(true);
+    }
+  };
+
+  const onScrollUnfocus = ev => {
+    if (focusScroll == true) {
+      setFocusScroll(false);
+    }
+  };
+
+  console.log(prjData);
 
   return (
     <Grid container className={classes.root} direction="column">
@@ -195,15 +283,33 @@ export default function ProjectPane(props) {
         className={classes.growBox}
         xs={10}
         wrap="nowrap"
+        onMouseOver={onScrollFocus}
+        onMouseLeave={onScrollUnfocus}
       >
-        {(props.data && props.data.length > 0
-          ? props.data.slice(0, 10)
-          : Array(10).fill(phItem)
-        ).map((k, i) => (
-          <Grid key={i} item>
-            {projectItem(k, classes)}
-          </Grid>
-        ))}
+        <Grid
+          ref={sliderRef}
+          item
+          container
+          spacing={3}
+          alignItems="flex-start"
+          wrap="nowrap"
+          style={{
+            left: scrollDelta * -3
+          }}
+          className={classes.slider}
+        >
+          {prjData.map((k, i) => (
+            <Grid
+              key={i}
+              item
+              style={{
+                alignSelf: "flex-start"
+              }}
+            >
+              {projectItem(k, classes)}
+            </Grid>
+          ))}
+        </Grid>
       </Grid>
     </Grid>
   );

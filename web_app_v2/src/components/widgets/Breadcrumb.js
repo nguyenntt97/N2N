@@ -29,10 +29,9 @@ function handleClick(event) {
 
 export default function CustomizedBreadcrumbs(props) {
   let arr = [
-    <Link to="/">
+    <Link key="1" to="/">
       <Breadcrumbs aria-label="breadcrumb">
         <StyledBreadcrumb
-          component="a"
           key="home"
           href="/"
           label="Home"
@@ -47,7 +46,7 @@ export default function CustomizedBreadcrumbs(props) {
     ...props.curUrl.map((level, index) => {
       let current1 = upperFirst(level);
       return (
-        <Link to={"/"}>
+        <Link key="2" to={"/"}>
           <StyledBreadcrumb
             key={index}
             href={"/" + current1}
