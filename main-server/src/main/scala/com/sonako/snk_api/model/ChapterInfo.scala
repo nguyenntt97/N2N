@@ -7,6 +7,8 @@ import com.sonako.snk_api.common.TimeUtils
 import scalikejdbc._
 import scalikejdbc.WrappedResultSet
 
+case class ChapterCommit(editor_content: String, text_content: String)
+
 case class NewChapter(id: Long, title: String, content: String, volId: Long, uploader: Long)
 
 case class ChapterInfo(id: Long,

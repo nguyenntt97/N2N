@@ -15,25 +15,9 @@ class VolService(env: {
 
 	import io.circe.generic.auto._
 
-	final val newChapter: Endpoint[IO, NewChapter] = jsonBody[NewChapter]
-
-	final val getChapter: Endpoint[IO, ChapterInfo] = get("chapter" :: path[Long]) { chapId: Long =>
-		env.editorRepo.getChapter(chapId) match {
-			case Some(chapter) => Ok(chapter)
-			case None => NoContent
-		}
-	}
-
-	final val putChapter: Endpoint[IO, String] = put("chapter" :: newChapter) { chapter: NewChapter =>
-		if (env.editorRepo.checkExist(chapter.id))
-			env.editorRepo.updateChapter(chapter)
-		else
-			env.editorRepo.insertChapter(chapter)
-
-		Ok("Success")
-	}
-
-	final def toService: Service[Request, Response] = Bootstrap
-	  .serve[Application.Json](getChapter)
-	  .toService
+//
+//
+//	final def toService: Service[Request, Response] = Bootstrap
+//	  .serve[Application.Json](getChapter)
+//	  .toService
 }

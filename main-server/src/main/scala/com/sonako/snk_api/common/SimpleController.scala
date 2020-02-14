@@ -8,7 +8,7 @@ trait SimpleController {
   val policy: Policy = Policy(
     allowsOrigin = _ => Some("*"),
     allowsMethods = _ => Some(Seq("GET", "POST")),
-    allowsHeaders = _ => Some(Seq("Accept"))
+    allowsHeaders = _ => Some(Seq("Accept", "Content-Type"))
   )
 
   def toService: Service[Request, Response]

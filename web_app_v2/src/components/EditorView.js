@@ -67,19 +67,54 @@ const useStyles = makeStyles(theme => ({
 
 export default function EditorView() {
   const classes = useStyles();
+  const [chapContent, setChapContent] = React.useState([])
+  const [loading, setLoading] = React.useState(false)
+
+  React.useEffect(() => {
+    async function fetchProjects() {
+      try {
+        setLoading(true)
+        const response = await fetch("https://snk-api.herokuapp.com/chapter/2");
+        const json = await response.json();
+
+        setChapContent(json);
+        setLoading(false)
+      } catch (err) {
+      }
+    }
+
+    fetchProjects();
+  }, []);
+  console.log(chapContent.content ? JSON.parse(chapContent.content) : null)
+
   return (
-    <Grid container spacing={2} justify="center">
+    < Grid container spacing={2} justify="center" >
       <Grid item container spacing={2} direction="column" xs={12} md={7} lg={8}>
         <Grid item>
-          <Dante
-            content={null}
-            read_only={false}
-            data_storage={{
-              save_handler: (editorContext, content) => {
-                console.log(editorContext, content);
-              }
-            }}
-          />
+          {
+            loading ? null : (
+              <Dante
+                content={chapContent.content ? JSON.parse(chapContent.content) : null}
+                read_only={false}
+                data_storage={{
+                  url: 'https://snk-api.herokuapp.com/chapter/2',
+                  method: "POST",
+                  headers: { 'Content-Type': 'application/json' },
+                  crossDomain: true
+                }}
+
+                config={{ debug: true }}
+                xhr={{
+                  // before_handler: function () {
+                  //   alert('this is the before ajax handler')
+                  // },
+                  failure_handler: function (error) {
+                    console.log('this is the error ajax handler', error)
+                  },
+                }}
+              />
+            )
+          }
         </Grid>
       </Grid>
       <Grid item xs={8} md={4} lg={3} justify="center">
@@ -98,7 +133,7 @@ export default function EditorView() {
           </div>
         </Grid>
       </Grid>
-    </Grid>
+    </Grid >
   );
 }
 
