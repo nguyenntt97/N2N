@@ -22,11 +22,6 @@ const StyledBreadcrumb = withStyles(theme => ({
   }
 }))(Chip); // TypeScript only: need a type cast here because https://github.com/Microsoft/TypeScript/issues/26591
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
 export default function CustomizedBreadcrumbs(props) {
   let arr = [
     <Link key="1" to="/">
@@ -36,7 +31,6 @@ export default function CustomizedBreadcrumbs(props) {
           href="/"
           label="Home"
           icon={<HomeIcon fontSize="small" />}
-          // onClick={handleClick}
         />
       </Breadcrumbs>
     </Link>
@@ -57,7 +51,10 @@ export default function CustomizedBreadcrumbs(props) {
       );
     })
   ];
-  console.log(arr);
 
-  return <Breadcrumbs aria-label="breadcrumb">{arr}</Breadcrumbs>;
+  return (
+    <Breadcrumbs aria-label="breadcrumb" gutterBottom>
+      {arr}
+    </Breadcrumbs>
+  );
 }

@@ -193,21 +193,20 @@ export default function ProjectPane(props) {
       e.returnValue = false;
     }
 
-    const handleUpdateOnScroll = (setScrollData, scrollDelta) => {
-      let oneWindow = sliderRef.current.clientWidth;
-      let oneItem = sliderRef.current.firstElementChild.clientWidth;
+    // const handleUpdateOnScroll = (setScrollData, scrollDelta) => {
+    //   let oneWindow = sliderRef.current.clientWidth;
 
-      let start = scrollDelta;
-      let end = scrollDelta + oneWindow;
+    //   let start = scrollDelta;
+    //   let end = scrollDelta + oneWindow;
 
-      if (end > oneItem * scrollData.length) {
-        setScrollData([...scrollData, ...prjData]);
-      }
-    };
+    //   if (end > oneItem * scrollData.length) {
+    //     setScrollData([...scrollData, ...prjData]);
+    //   }
+    // };
 
     const onScroll = event => {
-      handleUpdateOnScroll([]);
-      console.log(scrollDelta + event.deltaY);
+      // handleUpdateOnScroll([]);
+      // console.log(scrollDelta + event.deltaY);
       setScrollDelta(scrollDelta + event.deltaY);
     };
 
@@ -255,8 +254,6 @@ export default function ProjectPane(props) {
       setFocusScroll(false);
     }
   };
-
-  console.log(prjData);
 
   return (
     <Grid container className={classes.root} direction="column">

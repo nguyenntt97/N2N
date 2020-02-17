@@ -1,7 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import clsx from "clsx";
+
 import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -11,11 +13,14 @@ import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Chip from "@material-ui/core/Chip";
 import Button from "@material-ui/core/Button";
-import { TabPane, ProjectInfo, VolPane, DirTree } from "./widgets";
-import ChatView from "./chat/ChatView";
-import color from "@material-ui/core/colors/amber";
 import { Typography, Divider } from "@material-ui/core";
 import { Dante } from "./dante/Dante";
+
+import { TabPane, ProjectInfo, VolPane, DirTree, Expandable } from "./widgets";
+import ChatView from "./chat/ChatView";
+import color from "@material-ui/core/colors/amber";
+import Noti from "./common/Noti";
+
 // import GuildBoard from "./widgets/GuildBoard";
 
 const widget = [
@@ -62,79 +67,117 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       textDecoration: "underline"
     }
+  },
+  editor: {
+    maxWidth: "100%"
   }
 }));
 
 export default function EditorView() {
   const classes = useStyles();
-  const [chapContent, setChapContent] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
+  const [chapContent, setChapContent] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [notiOpen, setNotiOpen] = React.useState(false);
+  const [notiMsg, setNotiMsg] = React.useState(false);
 
   React.useEffect(() => {
     async function fetchProjects() {
       try {
-        setLoading(true)
+        setLoading(true);
         const response = await fetch("https://snk-api.herokuapp.com/chapter/2");
         const json = await response.json();
 
         setChapContent(json);
-        setLoading(false)
-      } catch (err) {
-      }
+        setLoading(false);
+      } catch (err) {}
     }
 
     fetchProjects();
   }, []);
-  console.log(chapContent.content ? JSON.parse(chapContent.content) : null)
 
-  return (
-    < Grid container spacing={2} justify="center" >
+  const expand_data = [
+    {
+      title: "My data",
+      description: "Manage your posts",
+      content: <DirTree directory={myDirectory} />
+    },
+    {
+      title: "Chapter info",
+      description: "Edit this chapter info",
+      content: (
+        <form className={classes.root} noValidate autoComplete="off">
+          <div>
+            <TextField
+              id="standard-basic"
+              label="Title"
+              fullWidth
+              margin="normal"
+              InputLabelProps={{
+                shrink: true
+              }}
+            />
+
+            <Button variant="contained" color="primary">
+              Update
+            </Button>
+          </div>
+        </form>
+      )
+    }
+  ];
+
+  return [
+    <Grid container justify="center">
       <Grid item container spacing={2} direction="column" xs={12} md={7} lg={8}>
-        <Grid item>
-          {
-            loading ? null : (
-              <Dante
-                content={chapContent.content ? JSON.parse(chapContent.content) : null}
-                read_only={false}
-                data_storage={{
-                  url: 'https://snk-api.herokuapp.com/chapter/2',
-                  method: "POST",
-                  headers: { 'Content-Type': 'application/json' },
-                  crossDomain: true
-                }}
+        <Typography
+          variant="h4"
+          color="primary"
+          gutterBottom
+          style={{
+            fontWeight: "bold"
+          }}
+        >
+          Chương mới
+        </Typography>
 
-                config={{ debug: true }}
-                xhr={{
-                  // before_handler: function () {
-                  //   alert('this is the before ajax handler')
-                  // },
-                  failure_handler: function (error) {
-                    console.log('this is the error ajax handler', error)
-                  },
-                }}
-              />
-            )
-          }
+        <Grid item className={classes.editor}>
+          {loading ? null : (
+            <Dante
+              content={
+                chapContent.content ? JSON.parse(chapContent.content) : null
+              }
+              read_only={false}
+              data_storage={{
+                url: "https://snk-api.herokuapp.com/chapter/2",
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                crossDomain: true
+              }}
+              config={{ debug: true }}
+              xhr={{
+                // before_handler: function () {
+                //   alert('this is the before ajax handler')
+                // },
+                success_handler: function(rs) {
+                  setNotiMsg("Auto-save: DONE!");
+                  setNotiOpen(true);
+                },
+                failure_handler: function(error) {
+                  console.log("this is the error ajax handler", error);
+                }
+              }}
+            />
+          )}
         </Grid>
       </Grid>
       <Grid item xs={8} md={4} lg={3} justify="center">
         <Grid item>
-          <div className={classes.root}>
-            <Typography
-              variant="h5"
-              style={{
-                color: "#005691",
-                fontWeight: "bold"
-              }}
-            >
-              Cài đặt chương mới
-            </Typography>
-            <DirTree directory={myDirectory} />
-          </div>
+          <Expandable data={expand_data} />
         </Grid>
       </Grid>
-    </Grid >
-  );
+    </Grid>,
+    <Noti open={notiOpen} msg={notiMsg} setOpen={setNotiOpen} />
+  ];
 }
 
 const myDirectory = [
@@ -153,6 +196,34 @@ const myDirectory = [
               {
                 id: "5",
                 title: "Chapter 1"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
+              },
+              {
+                id: "6",
+                title: "Chapter 2"
               },
               {
                 id: "6",

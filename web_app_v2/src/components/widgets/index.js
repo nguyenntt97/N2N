@@ -8,4 +8,5 @@ export { default as NewsPane } from "./NewsPane";
 export { default as ProjectInfo } from "./ProjectInfo";
 export { default as VolPane } from "./VolPane";
 export { default as DirTree } from "./DirTree";
+export { default as Expandable } from "./Expandable";
 export { TopBoard } from "./CommonWidget";
