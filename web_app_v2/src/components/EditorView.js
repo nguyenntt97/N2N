@@ -89,7 +89,7 @@ export default function EditorView() {
 
         setChapContent(json);
         setLoading(false);
-      } catch (err) {}
+      } catch (err) { }
     }
 
     fetchProjects();
@@ -117,9 +117,11 @@ export default function EditorView() {
               }}
             />
 
-            <Button variant="contained" color="primary">
-              Update
+            <Grid justify="flex-end">
+              <Button variant="contained" color="primary">
+                Update
             </Button>
+            </Grid>
           </div>
         </form>
       )
@@ -127,19 +129,8 @@ export default function EditorView() {
   ];
 
   return [
-    <Grid container justify="center">
+    <Grid container justify="space-around">
       <Grid item container spacing={2} direction="column" xs={12} md={7} lg={8}>
-        <Typography
-          variant="h4"
-          color="primary"
-          gutterBottom
-          style={{
-            fontWeight: "bold"
-          }}
-        >
-          Chương mới
-        </Typography>
-
         <Grid item className={classes.editor}>
           {loading ? null : (
             <Dante
@@ -158,11 +149,11 @@ export default function EditorView() {
                 // before_handler: function () {
                 //   alert('this is the before ajax handler')
                 // },
-                success_handler: function(rs) {
+                success_handler: function (rs) {
                   setNotiMsg("Auto-save: DONE!");
                   setNotiOpen(true);
                 },
-                failure_handler: function(error) {
+                failure_handler: function (error) {
                   console.log("this is the error ajax handler", error);
                 }
               }}

@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     padding: "10px"
   },
   slider: {
-    transition: "all 0.5s ease-out",
+    transition: "all .3s ease-in",
     position: "relative",
     width: "auto !important"
   },
@@ -115,8 +115,8 @@ const projectItem = (item, classes) => {
               <div className={classes.ldsDualRing} />
             </div>
           ) : (
-            <img src={item.thumbnail} width="100%" />
-          )}
+              <img src={item.thumbnail} width="100%" />
+            )}
         </div>
         <Typography color="textSecondary" gutterBottom>
           <Chip
@@ -205,9 +205,12 @@ export default function ProjectPane(props) {
     // };
 
     const onScroll = event => {
-      // handleUpdateOnScroll([]);
-      // console.log(scrollDelta + event.deltaY);
-      setScrollDelta(scrollDelta + event.deltaY);
+      let newDelta = scrollDelta + event.deltaY * -3
+      let min = -0.5 * sliderRef.current.clientWidth
+      let max = 0.5 * sliderRef.current.clientWidth
+      if (newDelta >= min && newDelta <= max) {
+        setScrollDelta(newDelta);
+      }
     };
 
     function disableScroll() {
@@ -215,10 +218,10 @@ export default function ProjectPane(props) {
         // older FF
         window.addEventListener("DOMMouseScroll", preventDefault, false);
         document.addEventListener("wheel", preventDefault, { passive: false }); // Disable scrolling in Chrome
+      } else {
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
       }
-
-      window.onwheel = preventDefault; // modern standard
-      window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
     }
 
     function enableScroll() {
@@ -227,9 +230,10 @@ export default function ProjectPane(props) {
         document.removeEventListener("wheel", preventDefault, {
           passive: false
         }); // Enable scrolling in Chrome
+      } else {
+        window.onmousewheel = document.onmousewheel = null;
+        window.onwheel = null;
       }
-      window.onmousewheel = document.onmousewheel = null;
-      window.onwheel = null;
     }
 
     if (focusScroll == true) {
@@ -291,7 +295,7 @@ export default function ProjectPane(props) {
           alignItems="flex-start"
           wrap="nowrap"
           style={{
-            left: scrollDelta * -3
+            left: scrollDelta
           }}
           className={classes.slider}
         >
