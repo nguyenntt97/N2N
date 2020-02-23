@@ -73,6 +73,7 @@ const useStyles = makeStyles(theme => ({
   cover: {
     width: "200px",
     height: 225,
+    margin: 10,
     overflow: "hidden",
     position: "relative",
     "&::before": {
