@@ -48,7 +48,7 @@ function MainView() {
     async function fetchProjects() {
       try {
         setLoading("true");
-        const response = await fetch("https://snk-api.herokuapp.com/projects");
+        const response = await fetch("http://sonako.codes:8080/projects");
         const json = await response.json();
 
         setPrjData(json);

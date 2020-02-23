@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import { ListItem, List, ListItemText, Divider, Link } from "@material-ui/core";
 import { Redirect, withRouter } from "react-router-dom";
+import { Alert, AlertTitle } from "@material-ui/lab";
 
 const useStyles = data =>
   makeStyles(theme => ({
@@ -31,22 +32,29 @@ function VolPane(props) {
   return (
     <Grid className={classes.projectBanner} container xs={12} spacing={2}>
       <Grid item container elevation={5} item xs={12} md={5} justify="center">
-        <img className={classes.projectPortrait} src={data[0].cover} />
+        <img className={classes.projectPortrait} src={props.avatar} />
       </Grid>
       <Grid item xs={12} md={6}>
-        <List component="nav" className={classes.chapterList}>
-          {props.chapters.map((c, index) => (
-            <ListItem
-              button
-              key={index}
-              onClick={() => {
-                props.history.push("/edit/sdasddsad");
-              }}
-            >
-              <ListItemText primary={c.title} />
-            </ListItem>
-          ))}
-        </List>
+        {props.empty ? (
+          <Alert severity="info" className={classes.chapterList}>
+            <AlertTitle>Tình trạng</AlertTitle>
+            Truyện chưa có người dịch!
+          </Alert>
+        ) : (
+          <List component="nav" className={classes.chapterList}>
+            {props.chapters.map((c, index) => (
+              <ListItem
+                button
+                key={index}
+                onClick={() => {
+                  props.history.push("/edit/sdasddsad");
+                }}
+              >
+                <ListItemText primary={c.title} />
+              </ListItem>
+            ))}
+          </List>
+        )}
       </Grid>
     </Grid>
   );

@@ -73,6 +73,7 @@ const useStyles = makeStyles(theme => ({
   cover: {
     width: "200px",
     height: 225,
+    margin: 10,
     overflow: "hidden",
     position: "relative",
     "&::before": {
@@ -115,8 +116,8 @@ const projectItem = (item, classes) => {
               <div className={classes.ldsDualRing} />
             </div>
           ) : (
-              <img src={item.thumbnail} width="100%" />
-            )}
+            <img src={item.thumbnail} width="100%" />
+          )}
         </div>
         <Typography color="textSecondary" gutterBottom>
           <Chip
@@ -130,10 +131,10 @@ const projectItem = (item, classes) => {
 
         <Typography variant="h6">
           <Link
-            href="/projects/123"
+            href={"/projects/" + item.id}
             // onClick={preventDefault}
             className={classes.link}
-            to={"/projects/123"}
+            to={"/projects/" + item.id}
           >
             {getShortened(item.name)}
           </Link>
@@ -205,9 +206,9 @@ export default function ProjectPane(props) {
     // };
 
     const onScroll = event => {
-      let newDelta = scrollDelta + event.deltaY * -3
-      let min = -0.5 * sliderRef.current.clientWidth
-      let max = 0.5 * sliderRef.current.clientWidth
+      let newDelta = scrollDelta + event.deltaY * -3;
+      let min = -0.5 * sliderRef.current.clientWidth;
+      let max = 0.5 * sliderRef.current.clientWidth;
       if (newDelta >= min && newDelta <= max) {
         setScrollDelta(newDelta);
       }

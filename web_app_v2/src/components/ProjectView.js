@@ -122,10 +122,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const generateVolViews = volData =>
-  volData.map(v => ({
-    title: v.title,
-    body: <VolPane chapters={v.chapList} />
-  }));
+  volData === []
+    ? volData.map(v => ({
+        title: v.title,
+        body: <VolPane chapters={v.chapList} />
+      }))
+    : [
+        {
+          title: "Tập trống",
+          body: <VolPane avatar="/img/loading.gif" empty />
+        }
+      ];
 
 function generate(element) {
   return [0, 1, 2].map(value =>
@@ -134,6 +141,11 @@ function generate(element) {
     })
   );
 }
+
+const getProjectId = () => {
+  let urlList = window.location.pathname.split("/");
+  return urlList[urlList.length - 1];
+};
 
 export default function ProjectView() {
   const classes = useStyles();
@@ -161,7 +173,7 @@ export default function ProjectView() {
     async function fetchProjects() {
       try {
         setLoading("true");
-        const response = await fetch("https://snk-api.herokuapp.com/projects");
+        const response = await fetch("http://sonako.codes:8080/projects");
         const json = await response.json();
 
         setPrjData(json);
@@ -174,7 +186,7 @@ export default function ProjectView() {
       try {
         setProjectLoading(true);
         const response = await fetch(
-          "https://snk-api.herokuapp.com/project?id=402"
+          "http://sonako.codes:8080/project?id=" + getProjectId()
         );
         const json = await response.json();
 
@@ -190,8 +202,8 @@ export default function ProjectView() {
   }, []);
 
   return (
-    <Grid container spacing={2} justify="center">
-      <Grid item container xs={12} md={8} spacing={2} justify="center">
+    <Grid container justify="space-around">
+      <Grid item container xs={12} md={7} justify="center">
         <Grid item xs={12} md={12}>
           <ProjectInfo prjData={thisPrjData} loading={projectLoading} />
         </Grid>
@@ -217,7 +229,7 @@ export default function ProjectView() {
           <ChatView data={COMMENT} />
         </Grid>
       </Grid>
-      <Grid item xs={8} md={4} lg={3} justify="center">
+      <Grid item xs={8} md={3} justify="center">
         <TabPane content={widget} />
       </Grid>
     </Grid>

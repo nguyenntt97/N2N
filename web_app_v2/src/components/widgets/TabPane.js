@@ -32,6 +32,7 @@ function TabPanel(props) {
 const useStyles = makeStyles({
   root: {
     // marginTop: Theme.spacing(5),
+    // minHeight: 400,
     borderRadius: 0,
     borderBottom: "1px solid #3e4149",
     position: "relative",
