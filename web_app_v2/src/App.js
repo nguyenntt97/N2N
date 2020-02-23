@@ -47,9 +47,11 @@ class App extends Component {
                 marginTop: 50
               }}
             >
-              <CustomizedBreadcrumbs
-                curUrl={window.location.pathname.split("/").filter(Boolean)}
-              />
+              {window.location.pathname.split("/").length <= 2 ? null : (
+                <CustomizedBreadcrumbs
+                  curUrl={window.location.pathname.split("/").filter(Boolean)}
+                />
+              )}
             </Grid>
 
             {routes.map((route, index) => (

@@ -84,12 +84,12 @@ export default function EditorView() {
     async function fetchProjects() {
       try {
         setLoading(true);
-        const response = await fetch("https://snk-api.herokuapp.com/chapter/2");
+        const response = await fetch("http://sonako.codes:8080/chapter/2");
         const json = await response.json();
 
         setChapContent(json);
         setLoading(false);
-      } catch (err) { }
+      } catch (err) {}
     }
 
     fetchProjects();
@@ -120,7 +120,7 @@ export default function EditorView() {
             <Grid justify="flex-end">
               <Button variant="contained" color="primary">
                 Update
-            </Button>
+              </Button>
             </Grid>
           </div>
         </form>
@@ -149,11 +149,11 @@ export default function EditorView() {
                 // before_handler: function () {
                 //   alert('this is the before ajax handler')
                 // },
-                success_handler: function (rs) {
+                success_handler: function(rs) {
                   setNotiMsg("Auto-save: DONE!");
                   setNotiOpen(true);
                 },
-                failure_handler: function (error) {
+                failure_handler: function(error) {
                   console.log("this is the error ajax handler", error);
                 }
               }}
