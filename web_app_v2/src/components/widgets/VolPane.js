@@ -38,6 +38,7 @@ function VolPane(props) {
           {props.chapters.map((c, index) => (
             <ListItem
               button
+              key={index}
               onClick={() => {
                 props.history.push("/edit/sdasddsad");
               }}

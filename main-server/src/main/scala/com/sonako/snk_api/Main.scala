@@ -4,7 +4,7 @@ import cats.effect.IO
 import com.sonako.snk_api.common.SimpleController
 import io.finch._
 import io.finch.catsEffect._
-import com.sonako.snk_api.service.{ProjectController}
+import com.sonako.snk_api.service.{ChapterService, ProjectService}
 import com.twitter.finagle.http.{Request, Response, Status}
 import com.twitter.finagle.{Http, Service}
 import com.twitter.server.TwitterServer
@@ -43,10 +43,15 @@ object Main extends TwitterServer with Endpoint.Module[IO] with SimpleController
 
   override def toService: Service[Request, Response] = {
     //    val editorApp = new EditorController(Environment)(IO.contextShift(ExecutionContext.global))
-    val projectApp = new ProjectController(Environment)(IO.contextShift(ExecutionContext.global))
+    val projectService = new ProjectService(Environment)(IO.contextShift(ExecutionContext.global))
+    val chapterService = new ChapterService(Environment)
 
-    Bootstrap.serve[Application.Json](projectApp.getProjects
-      //          :+: editorApp.getChapter
+    Bootstrap.serve[Application.Json](
+      projectService.getProject
+        :+: projectService.getProjects
+        :+: chapterService.getChapter
+        :+: chapterService.putChapter
+        :+: chapterService.postChapter
     )
       //          .serve[Text.Plain] (editorApp.putChapter)
       .toService

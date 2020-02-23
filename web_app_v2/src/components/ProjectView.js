@@ -4,15 +4,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { TabPane, ProjectInfo, VolPane } from "./widgets";
 import ChatView from "./chat/ChatView";
-import color from "@material-ui/core/colors/amber";
+import { TopBoard } from "./widgets/CommonWidget";
 import { Typography, Divider } from "@material-ui/core";
 
-import ListItemText from "@material-ui/core/ListItemText";
-import FolderIcon from "@material-ui/icons/Folder";
-import List from "@material-ui/core/List";
-import Avatar from "@material-ui/core/Avatar";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 // import GuildBoard from "./widgets/GuildBoard";
 
 const useStyles = makeStyles(theme => ({
@@ -129,9 +123,8 @@ const useStyles = makeStyles(theme => ({
 
 const generateVolViews = volData =>
   volData.map(v => ({
-    title: v.vol_title,
-    label: "latest-news",
-    body: <VolPane chapters={v.chapters} />
+    title: v.title,
+    body: <VolPane chapters={v.chapList} />
   }));
 
 function generate(element) {
@@ -146,55 +139,16 @@ export default function ProjectView() {
   const classes = useStyles();
   const [dense, setDense] = React.useState(false);
   const [secondary, setSecondary] = React.useState(false);
+  const [prjData, setPrjData] = React.useState([]);
+  const [thisPrjData, setThisPrjData] = React.useState([]);
+  const [loading, setLoading] = React.useState("false");
+  const [projectLoading, setProjectLoading] = React.useState(false);
 
   const widget = [
     {
       title: "Cập nhật",
       label: "update-tab",
-      body: (
-        <div className={classes.demo}>
-          <List dense={dense}>
-            {generate(
-              <ListItem className={classes.lItem}>
-                <ListItemAvatar>
-                  <Avatar>
-                    <img
-                      src="/project_sample_ava.jpg"
-                      className={classes.project_ava}
-                    />
-                  </Avatar>
-                </ListItemAvatar>
-                <ListItemText
-                  className={classes.itemTitle}
-                  primary={
-                    <Typography
-                      style={{
-                        fontWeight: "bold",
-                        color: "#444f5a",
-                        textShadow:
-                          "-0.25px -0.25px 0 #dcdcdc, 0.25px -0.25px 0 #dcdcdc, -0.25px 0.25px 0 #dcdcdc, 0.25px 0.25px 0 #dcdcdc"
-                      }}
-                    >
-                      My romantic comedy...
-                    </Typography>
-                  }
-                  secondary={"Views: 1000"}
-                />
-                <div className={classes.container}>
-                  <div className={classes.parallelogram}>
-                    <div className={classes.mask} />
-                    <img
-                      className={classes.longthumb}
-                      src="/img/cover1.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </ListItem>
-            )}
-          </List>
-        </div>
-      )
+      body: <TopBoard data={prjData} />
     },
     {
       title: "TOP",
@@ -203,14 +157,51 @@ export default function ProjectView() {
     }
   ];
 
+  React.useEffect(() => {
+    async function fetchProjects() {
+      try {
+        setLoading("true");
+        const response = await fetch("https://snk-api.herokuapp.com/projects");
+        const json = await response.json();
+
+        setPrjData(json);
+      } catch (err) {
+        setLoading("null");
+      }
+    }
+
+    async function fetchThisProject() {
+      try {
+        setProjectLoading(true);
+        const response = await fetch(
+          "https://snk-api.herokuapp.com/project?id=402"
+        );
+        const json = await response.json();
+
+        setThisPrjData(json);
+        setProjectLoading(false);
+      } catch (err) {
+        setProjectLoading("null");
+      }
+    }
+
+    fetchProjects();
+    fetchThisProject();
+  }, []);
+
   return (
     <Grid container spacing={2} justify="center">
       <Grid item container xs={12} md={8} spacing={2} justify="center">
         <Grid item xs={12} md={12}>
-          <ProjectInfo />
+          <ProjectInfo prjData={thisPrjData} loading={projectLoading} />
         </Grid>
         <Grid item xs={12} md={10} lg={8}>
-          <TabPane content={generateVolViews(vol_data)} immersive />
+          <TabPane
+            content={generateVolViews(
+              thisPrjData.volInfo ? thisPrjData.volInfo : []
+            )}
+            immersive
+          />
         </Grid>
         <Grid item xs={12}>
           <Typography

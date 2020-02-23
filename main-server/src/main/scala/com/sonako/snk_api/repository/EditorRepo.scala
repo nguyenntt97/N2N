@@ -1,7 +1,7 @@
 package com.sonako.snk_api.repository
 
 import com.sonako.snk_api.common.TimeUtils
-import com.sonako.snk_api.model.{ChapterInfo, NewChapter, Project}
+import com.sonako.snk_api.model.{ChapterCommit, ChapterInfo, NewChapter, Project}
 import scalikejdbc._
 
 
@@ -21,6 +21,6 @@ class EditorRepo extends SimpleRepo {
 	= sql"insert into chapters(chap_title, chap_content, volume_id, uploader, update_date) VALUES (${chapter.title},${chapter.content},${chapter.volId},${chapter.uploader},${TimeUtils.epoch2DateStr()})"
 	  .update().apply()
 
-	def updateChapter(chapter: NewChapter): Int
-	= sql"update chapters SET chap_title=${chapter.title},chap_content=${chapter.content} where chap_id=${chapter.id}".update().apply()
+	def updateChapter(chapId: Long, chapter: ChapterCommit): Int
+	= sql"update chapters SET chap_content=${chapter.editor_content} where chap_id=${chapId}".update().apply()
 }

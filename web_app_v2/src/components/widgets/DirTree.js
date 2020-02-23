@@ -72,7 +72,7 @@ const StyledTreeItem = withStyles(theme => ({
 
 const useStyles = makeStyles({
   root: {
-    height: 264,
+    minHeight: 264,
     flexGrow: 1,
     maxWidth: 400
   }
@@ -89,7 +89,6 @@ const generateTree = dir => {
 
 export default function DirTree(props) {
   const classes = useStyles();
-  console.log(props.directory);
 
   return (
     <TreeView
