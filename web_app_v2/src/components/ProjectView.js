@@ -205,7 +205,7 @@ export default function ProjectView() {
     <Grid container justify="space-between" style={{
       padding: 5
     }}>
-      <Grid item container xs={12} md={7} justify="center">
+      <Grid item container xs={12} md={7} lg={8} justify="center">
         <Grid item xs={12}>
           <ProjectInfo prjData={thisPrjData} loading={projectLoading} />
         </Grid>
@@ -221,15 +221,12 @@ export default function ProjectView() {
           <CommentBox content={COMMENT} />
         </Grid>
       </Grid>
-      <Grid item container xs={6} md={4} justify="center">
+      <Grid item container xs={12} sm={6} md={4} lg={3} justify="center">
         <TabPane content={widget} />
       </Grid>
     </Grid>
   );
 }
-
-
-
 
 
 

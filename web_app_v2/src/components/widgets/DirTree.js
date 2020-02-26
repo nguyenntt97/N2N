@@ -16,6 +16,9 @@ import ForumIcon from '@material-ui/icons/Forum';
 import LocalOfferIcon from '@material-ui/icons/LocalOffer';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import Box from '@material-ui/core/Box';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
 import { useSpring, animated } from "react-spring/web.cjs"; // web.cjs is required for IE 11 support
 
 function MinusSquare(props) {
@@ -80,7 +83,7 @@ const useTreeItemStyles = makeStyles(theme => ({
     },
   },
   group: {
-    marginLeft: 0,
+    marginLeft: 20,
     '& $content': {
       paddingLeft: theme.spacing(2),
     },
@@ -113,19 +116,26 @@ TransitionComponent.propTypes = {
 
 function StyledTreeItem(props) {
   const classes = useTreeItemStyles();
-  const { labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
+  const { isAddNew, labelText, labelIcon: LabelIcon, labelInfo, color, bgColor, ...other } = props;
 
+  let label = <Typography variant="body2" className={classes.labelText}>
+    {labelText}
+  </Typography>
   return (
     <TreeItem
       label={
         <div className={classes.labelRoot}>
           <LabelIcon color="inherit" className={classes.labelIcon} />
-          <Typography variant="body2" className={classes.labelText}>
-            {labelText}
-          </Typography>
-          <Typography variant="caption" color="inherit">
-            {labelInfo}
-          </Typography>
+          {isAddNew ? <Box fontStyle="italic">
+            {label}
+          </Box> :
+            <React.Fragment>
+              {label}
+              <Typography variant="caption" color="inherit">
+                {labelInfo}
+              </Typography>
+            </React.Fragment>
+          }
         </div>
       }
       style={{
@@ -150,28 +160,32 @@ StyledTreeItem.propTypes = {
   labelIcon: PropTypes.elementType,
   labelInfo: PropTypes.string,
   labelText: PropTypes.string.isRequired,
+  isAddNew: PropTypes.bool
 };
 
 const useStyles = makeStyles({
   root: {
-    height: 264,
+    minHeight: 264,
     flexGrow: 1,
     maxWidth: 400,
   },
 });
 
-const generateTree = dir => {
-  if (dir == undefined) return null;
-  return dir.map((node, i) => (
-    <StyledTreeItem key={i} nodeId={node.id} labelText={node.title} labelIcon={SupervisorAccountIcon}>
-      {generateTree(node.child)}
-      <StyledTreeItem key={i + i * 100}
-        nodeId={node.id + i * 100}
-        labelIcon={SupervisorAccountIcon}
-        labelInfo="3323"
-        labelText="New item" />
-    </StyledTreeItem>
-  ));
+const generateTree = (dir, curI) => {
+  if (dir === undefined) return
+  return [
+    <StyledTreeItem key={100 + curI}
+      nodeId={"100" + curI}
+      labelIcon={AddBoxIcon}
+      labelInfo="3323"
+      labelText="New item"
+      isAddNew />,
+    dir.map((node, i) => (
+      <StyledTreeItem key={i} nodeId={node.id} labelText={node.title} labelIcon={SupervisorAccountIcon}>
+        {node.child !== undefined ? generateTree(node.child, i) : null}
+      </StyledTreeItem>
+    ))
+  ];
 };
 
 export default function DirTree(props) {
@@ -183,7 +197,7 @@ export default function DirTree(props) {
       defaultExpanded={["1"]}
       defaultCollapseIcon={<MinusSquare />}
       defaultExpandIcon={<PlusSquare />}
-      defaultEndIcon={<CloseSquare />}
+      defaultEndIcon={null}
     >
       {generateTree(props.directory)}
     </TreeView>

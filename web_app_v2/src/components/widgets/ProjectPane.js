@@ -36,10 +36,10 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     zIndex: "5",
     overflow: "hidden",
-    padding: "10px"
+    padding: 10
   },
   slider: {
-    transition: "all .3s ease-in",
+    transition: "all .3s ease-in-out",
     position: "relative",
     width: "auto !important"
   },
@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: "40px",
     transition: "all .2s ease-in-out",
     "&:hover": {
-      transform: "scale(1.1)",
+      transform: "scale(1.05)",
       cursor: "pointer"
     }
   },
@@ -175,6 +175,7 @@ export default function ProjectPane(props) {
   const [scrollDelta, setScrollDelta] = React.useState(0);
   const [scrollData, setScrollData] = React.useState(0);
   const sliderRef = React.useRef();
+  const slideWrapRef = React.useRef();
   const classes = useStyles();
 
   const phItem = {
@@ -206,11 +207,15 @@ export default function ProjectPane(props) {
     // };
 
     const onScroll = event => {
-      let newDelta = scrollDelta + event.deltaY * -3;
-      let min = -0.5 * sliderRef.current.clientWidth;
-      let max = 0.5 * sliderRef.current.clientWidth;
+      let newDelta = scrollDelta + event.deltaY * -2;
+      let min = -0.5 * (sliderRef.current.clientWidth - slideWrapRef.current.clientWidth * 0.6);
+      let max = 0.5 * (sliderRef.current.clientWidth - slideWrapRef.current.clientWidth * 0.6);
       if (newDelta >= min && newDelta <= max) {
         setScrollDelta(newDelta);
+        disableScroll()
+        setTimeout(() => {
+          enableScroll()
+        }, 400);
       }
     };
 
@@ -277,6 +282,7 @@ export default function ProjectPane(props) {
         {props.title}
       </Typography> */}
       <Grid
+        ref={slideWrapRef}
         item
         container
         spacing={3}

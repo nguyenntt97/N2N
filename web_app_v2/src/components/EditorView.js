@@ -6,14 +6,7 @@ import clsx from "clsx";
 
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import ExpansionPanel from "@material-ui/core/ExpansionPanel";
-import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
-import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Chip from "@material-ui/core/Chip";
+
 import Button from "@material-ui/core/Button";
 import { Typography, Divider } from "@material-ui/core";
 import { Dante } from "./dante/Dante";
@@ -132,7 +125,12 @@ export default function EditorView() {
   ];
 
   return [
-    <Grid container justify="space-around">
+    <Grid container justify="space-around" direction="row-reverse">
+      <Grid container item xs={12} md={4} lg={3} justify="center" style={{
+        padding: 10
+      }}>
+        <Expandable data={expand_data} />
+      </Grid>
       <Grid item container spacing={2} direction="column" xs={12} md={7} style={{
         padding: 40
       }}>
@@ -166,11 +164,6 @@ export default function EditorView() {
           )}
         </Grid>
       </Grid>
-      <Grid container item xs={12} md={4} lg={3} justify="center" style={{
-        padding: 10
-      }}>
-        <Expandable data={expand_data} />
-      </Grid>
     </Grid>,
     <Noti open={notiOpen} msg={notiMsg} setOpen={setNotiOpen} />
   ];
@@ -182,19 +175,19 @@ const myDirectory = [
     title: "My Data",
     child: [
       {
-        id: "3",
+        id: "2",
         title: "Maou no Vadalis",
         child: [
           {
-            id: "4",
+            id: "3",
             title: "Vol 1",
             child: [
               {
-                id: "5",
+                id: "4",
                 title: "Chapter 1"
               },
               {
-                id: "6",
+                id: "5",
                 title: "Chapter 2"
               }
             ]
@@ -204,7 +197,7 @@ const myDirectory = [
     ]
   },
   {
-    id: "2",
+    id: "6",
     title: "Shared Data",
     child: []
   }
