@@ -26,43 +26,16 @@ class App extends Component {
       <div className={styles.App}>
         <MuiThemeProvider theme={Theme}>
           <Grid container justify="center">
-            {/* {routes.map((route, index) => (
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.sidebar}
-          />
-        ))} */}
-
             <Grid item xs={12}>
               <GlobalHeader viewName={"Trang chủ"} />
             </Grid>
-
-            <Grid
-              item
-              xs={12}
-              style={{
-                padding: 10,
-                marginTop: 50
-              }}
-            >
-              {window.location.pathname.split("/").length <= 2 ? null : (
-                <CustomizedBreadcrumbs
-                  curUrl={window.location.pathname.split("/").filter(Boolean)}
-                />
-              )}
-            </Grid>
-
-            {routes.map((route, index) => (
-              <Grid item key={index} xs={12}>
-                <Route
-                  key={index}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.main}
-                />
-              </Grid>
+            {routes.map((route, i) => (
+              <Route
+                key={i}
+                path={route.path}
+                exact={route.exact}
+                component={route.main}
+              />
             ))}
           </Grid>
         </MuiThemeProvider>
@@ -88,7 +61,7 @@ const routes = [
   //   main: () => <Profile />
   // },
   {
-    path: "/projects/:project",
+    path: "/projects/:projectId",
     exact: true,
     // sidebar: ({ match }) => {
     //   var breadcrumbs = [];
@@ -100,10 +73,16 @@ const routes = [
 
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
-    main: props => <ProjectView />
+    main: props =>
+      <React.Fragment key="project">
+        <CustomizedBreadcrumbs
+          curUrl={window.location.pathname.split("/").filter(Boolean)}
+        />
+        <ProjectView />
+      </React.Fragment>
   },
   {
-    path: "/edit/:project",
+    path: "/edit/:chapId",
     exact: true,
     // sidebar: ({ match }) => {
     //   var breadcrumbs = [];
@@ -115,7 +94,12 @@ const routes = [
 
     //   return <NavBar breadcrumb={breadcrumbs} />;
     // },
-    main: props => <EditorView />
+    main: props => <React.Fragment key="chapter">
+      <CustomizedBreadcrumbs
+        curUrl={window.location.pathname.split("/").filter(Boolean)}
+      />
+      <EditorView />
+    </React.Fragment>
   },
   // {
   //   path: "/projects/:project/:chaplink",

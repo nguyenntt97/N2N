@@ -23,8 +23,8 @@ const useStyles = makeStyles(theme => ({
     position: "relative",
     width: "100%",
     flexGrow: 1,
-    paddingTop: "50px",
-    marginTop: "-50px",
+    paddingTop: "55px",
+    marginTop: "40px",
     paddingBottom: "40px",
     background: "#e8f1f5",
     backgroundImage: "url('/foggy-birds.png')",
@@ -116,8 +116,8 @@ const projectItem = (item, classes) => {
               <div className={classes.ldsDualRing} />
             </div>
           ) : (
-            <img src={item.thumbnail} width="100%" />
-          )}
+              <img src={item.thumbnail} width="100%" />
+            )}
         </div>
         <Typography color="textSecondary" gutterBottom>
           <Chip

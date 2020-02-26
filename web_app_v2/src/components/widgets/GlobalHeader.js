@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import Box from '@material-ui/core/Box';
 
 // My components
 import SearchBar from "./SearchBar";
@@ -21,7 +22,10 @@ const useStyles = makeStyles(theme => ({
     width: "100%"
   },
   customTb: {
-    minHeight: 30
+    height: 25,
+    display: "flex",
+    justifyContent: "space-between",
+    position: "relative"
   },
   grows: {
     flexGrow: 1,
@@ -31,19 +35,20 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2)
   },
   title: {
-    marginLeft: theme.spacing(1),
+    // marginLeft: theme.spacing(1),
     display: "none",
+    flexGrow: "0",
+    height: "30px",
+    flexWrap: "nowrap",
+    position: "relative",
+    alignItems: "center",
     [theme.breakpoints.up("sm")]: {
-      display: "block"
+      display: "flex"
     }
   },
   logo: {
     position: "relative",
-    top: "4px",
-    height: "40px"
-  },
-  title: {
-    fontWeight: "bold"
+    height: "130%"
   }
 }));
 
@@ -53,13 +58,34 @@ export default function MainAppBar(props) {
     <div className={classes.grows}>
       <AppBar className={classes.headerBg} position="static" elevation={0}>
         <Toolbar className={classes.customTb}>
-          <img src="/logo_sm.png" className={classes.logo} />
-          <Typography variant="h6" className={classes.title}>
-            Sonako
-          </Typography>
-          <SearchBar />
-          <div className={classes.grows} />
-          <QuickOption />
+          <Box style={{
+            flexGrow: 5,
+            display: "flex",
+            justifyContent: "flext-start"
+          }}>
+            <Box style={{
+              flexGrow: 0,
+              marginRight: 5
+            }}>
+              <Typography component="div" variant="h6" className={classes.title}>
+                <img src="/img/logo_new.png" className={classes.logo} />
+                <Box fontWeight="fontWeightBold">Sonako</Box>
+              </Typography>
+            </Box>
+            <Box style={{
+              flexGrow: 5,
+              maxWidth: 600,
+              position: "relative"
+            }}>
+              <SearchBar />
+            </Box>
+          </Box>
+          <Box style={{
+            flexGrow: 0
+          }}>
+            <QuickOption />
+          </Box>
+
         </Toolbar>
       </AppBar>
     </div>

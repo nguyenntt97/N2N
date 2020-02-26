@@ -19,7 +19,8 @@ const useStyles = data =>
       minHeight: 250,
       borderRadius: 15,
       backgroundSize: "cover",
-      position: "relative"
+      position: "relative",
+      padding: 5
     },
     projectPortrait: {
       height: 250,
@@ -54,9 +55,8 @@ export default function ProjectInfo(props) {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(2);
 
-  console.log(props.loading);
   return (
-    <Grid className={classes.projectBanner} container xs={12}>
+    <Grid className={classes.projectBanner} container item xs={12}>
       {props.loading ? (
         <div className={classes.placeholder}>
           <div className={classes.ldsDualRing} />
@@ -102,7 +102,7 @@ export default function ProjectInfo(props) {
               <b>Tác giả</b>: {props.prjData.author}
             </p>
           </Grid>
-          <Grid item xs={12} sm={8} alignItems="center">
+          <Grid container item xs={12} sm={8} alignItems="center">
             <Grid container>
               <Box>
                 <b>Đánh giá</b>: <br />

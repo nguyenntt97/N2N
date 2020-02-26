@@ -29,8 +29,9 @@ const data = [
 function VolPane(props) {
   const classes = useStyles(data[0])();
 
+  console.log(props.avatar)
   return (
-    <Grid className={classes.projectBanner} container xs={12} spacing={2}>
+    <Grid className={classes.projectBanner} container justify="space-around">
       <Grid item container elevation={5} item xs={12} md={5} justify="center">
         <img className={classes.projectPortrait} src={props.avatar} />
       </Grid>
@@ -41,20 +42,20 @@ function VolPane(props) {
             Truyện chưa có người dịch!
           </Alert>
         ) : (
-          <List component="nav" className={classes.chapterList}>
-            {props.chapters.map((c, index) => (
-              <ListItem
-                button
-                key={index}
-                onClick={() => {
-                  props.history.push("/edit/sdasddsad");
-                }}
-              >
-                <ListItemText primary={c.title} />
-              </ListItem>
-            ))}
-          </List>
-        )}
+            <List component="nav" className={classes.chapterList}>
+              {props.chapters.map((c, index) => (
+                <ListItem
+                  button
+                  key={index}
+                  onClick={() => {
+                    props.history.push("/edit/" + c.id);
+                  }}
+                >
+                  <ListItemText primary={c.title} />
+                </ListItem>
+              ))}
+            </List>
+          )}
       </Grid>
     </Grid>
   );

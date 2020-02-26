@@ -45,7 +45,7 @@ export default function CustomizedBreadcrumbs(props) {
             key={index}
             href={"/" + current1}
             label={current1}
-            // onClick={handleClick}
+          // onClick={handleClick}
           />
         </Link>
       );
@@ -53,7 +53,12 @@ export default function CustomizedBreadcrumbs(props) {
   ];
 
   return (
-    <Breadcrumbs aria-label="breadcrumb" gutterBottom>
+    <Breadcrumbs aria-label="breadcrumb" style={{
+      marginTop: 70,
+      padding: 10,
+      width: "100%",
+      textAlign: "left"
+    }} gutterBottom>
       {arr}
     </Breadcrumbs>
   );

@@ -2,10 +2,8 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { TabPane, ProjectInfo, VolPane } from "./widgets";
-import ChatView from "./chat/ChatView";
+import { TabPane, ProjectInfo, VolPane, CommentBox } from "./widgets";
 import { TopBoard } from "./widgets/CommonWidget";
-import { Typography, Divider } from "@material-ui/core";
 
 // import GuildBoard from "./widgets/GuildBoard";
 
@@ -122,17 +120,19 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const generateVolViews = volData =>
-  volData === []
+  volData !== []
     ? volData.map(v => ({
-        title: v.title,
-        body: <VolPane chapters={v.chapList} />
-      }))
+      title: v.title,
+      body: <VolPane
+        avatar={v.cover}
+        chapters={v.chapList} />
+    }))
     : [
-        {
-          title: "Tập trống",
-          body: <VolPane avatar="/img/loading.gif" empty />
-        }
-      ];
+      {
+        title: "Tập trống",
+        body: <VolPane avatar="/img/loading.gif" empty />
+      }
+    ];
 
 function generate(element) {
   return [0, 1, 2].map(value =>
@@ -202,12 +202,14 @@ export default function ProjectView() {
   }, []);
 
   return (
-    <Grid container justify="space-around">
+    <Grid container justify="space-between" style={{
+      padding: 5
+    }}>
       <Grid item container xs={12} md={7} justify="center">
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12}>
           <ProjectInfo prjData={thisPrjData} loading={projectLoading} />
         </Grid>
-        <Grid item xs={12} md={10} lg={8}>
+        <Grid item xs={12} >
           <TabPane
             content={generateVolViews(
               thisPrjData.volInfo ? thisPrjData.volInfo : []
@@ -215,26 +217,42 @@ export default function ProjectView() {
             immersive
           />
         </Grid>
-        <Grid item xs={12}>
-          <Typography
-            variant="h5"
-            style={{
-              fontWeight: "bold",
-              color: "#3f72af"
-            }}
-          >
-            Bình luận
-          </Typography>
-          <Divider />
-          <ChatView data={COMMENT} />
+        <Grid item xs={12} style={{ padding: 10 }}>
+          <CommentBox content={COMMENT} />
         </Grid>
       </Grid>
-      <Grid item xs={8} md={3} justify="center">
+      <Grid item container xs={6} md={4} justify="center">
         <TabPane content={widget} />
       </Grid>
     </Grid>
   );
 }
+
+
+
+
+
+
+const COMMENT = [
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Kết từ cái nhìn đầu",
+    date: "11/02/2019"
+  },
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Chém gió",
+    date: "11/02/2019"
+  },
+  {
+    username: "superman",
+    avatar: "sample-ava.jpg",
+    content: "Kết từ cái nhìn đầu",
+    date: "11/02/2019"
+  }
+];
 
 const vol_data = [
   {
@@ -318,23 +336,3 @@ const vol_data = [
   }
 ];
 
-const COMMENT = [
-  {
-    username: "superman",
-    avatar: "sample-ava.jpg",
-    content: "Kết từ cái nhìn đầu",
-    date: "11/02/2019"
-  },
-  {
-    username: "superman",
-    avatar: "sample-ava.jpg",
-    content: "Chém gió",
-    date: "11/02/2019"
-  },
-  {
-    username: "superman",
-    avatar: "sample-ava.jpg",
-    content: "Kết từ cái nhìn đầu",
-    date: "11/02/2019"
-  }
-];

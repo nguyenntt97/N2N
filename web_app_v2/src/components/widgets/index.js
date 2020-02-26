@@ -9,4 +9,5 @@ export { default as ProjectInfo } from "./ProjectInfo";
 export { default as VolPane } from "./VolPane";
 export { default as DirTree } from "./DirTree";
 export { default as Expandable } from "./Expandable";
+export { default as CommentBox } from "./CommentBox";
 export { TopBoard } from "./CommonWidget";

@@ -40,8 +40,7 @@ export default function Expandable(props) {
           <ExpansionPanelSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls={"panel" + i + "bh-content"}
-            id={"panel" + i + "bh-header"}
-          >
+            id={"panel" + i + "bh-header"}>
             <Typography className={classes.heading}>{v.title}</Typography>
             <Typography className={classes.secondaryHeading}>
               {v.description}

@@ -34,7 +34,8 @@ const useStyles = makeStyles({
     // marginTop: Theme.spacing(5),
     // minHeight: 400,
     borderRadius: 0,
-    borderBottom: "1px solid #3e4149",
+    // borderBottom: "1px solid #3e4149",
+    width: "100%",
     position: "relative",
     padding: "10px !important"
   },

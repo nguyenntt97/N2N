@@ -1,4 +1,6 @@
 import React from "react";
+import { useParams } from "react-router";
+
 import Grid from "@material-ui/core/Grid";
 import clsx from "clsx";
 
@@ -79,17 +81,18 @@ export default function EditorView() {
   const [loading, setLoading] = React.useState(false);
   const [notiOpen, setNotiOpen] = React.useState(false);
   const [notiMsg, setNotiMsg] = React.useState(false);
+  const { chapId } = useParams();
 
   React.useEffect(() => {
     async function fetchProjects() {
       try {
         setLoading(true);
-        const response = await fetch("http://sonako.codes:8080/chapter/2");
+        const response = await fetch("http://sonako.codes:8080/chapter/" + chapId);
         const json = await response.json();
 
         setChapContent(json);
         setLoading(false);
-      } catch (err) {}
+      } catch (err) { }
     }
 
     fetchProjects();
@@ -117,7 +120,7 @@ export default function EditorView() {
               }}
             />
 
-            <Grid justify="flex-end">
+            <Grid container justify="flex-end">
               <Button variant="contained" color="primary">
                 Update
               </Button>
@@ -130,7 +133,9 @@ export default function EditorView() {
 
   return [
     <Grid container justify="space-around">
-      <Grid item container spacing={2} direction="column" xs={12} md={7} lg={8}>
+      <Grid item container spacing={2} direction="column" xs={12} md={7} style={{
+        padding: 40
+      }}>
         <Grid item className={classes.editor}>
           {loading ? null : (
             <Dante
@@ -139,7 +144,7 @@ export default function EditorView() {
               }
               read_only={false}
               data_storage={{
-                url: "https://snk-api.herokuapp.com/chapter/2",
+                url: "http://sonako.codes:8080/chapter/" + chapId,
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 crossDomain: true
@@ -149,11 +154,11 @@ export default function EditorView() {
                 // before_handler: function () {
                 //   alert('this is the before ajax handler')
                 // },
-                success_handler: function(rs) {
+                success_handler: function (rs) {
                   setNotiMsg("Auto-save: DONE!");
                   setNotiOpen(true);
                 },
-                failure_handler: function(error) {
+                failure_handler: function (error) {
                   console.log("this is the error ajax handler", error);
                 }
               }}
@@ -161,10 +166,10 @@ export default function EditorView() {
           )}
         </Grid>
       </Grid>
-      <Grid item xs={8} md={4} lg={3} justify="center">
-        <Grid item>
-          <Expandable data={expand_data} />
-        </Grid>
+      <Grid container item xs={12} md={4} lg={3} justify="center" style={{
+        padding: 10
+      }}>
+        <Expandable data={expand_data} />
       </Grid>
     </Grid>,
     <Noti open={notiOpen} msg={notiMsg} setOpen={setNotiOpen} />
@@ -187,34 +192,6 @@ const myDirectory = [
               {
                 id: "5",
                 title: "Chapter 1"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
-              },
-              {
-                id: "6",
-                title: "Chapter 2"
               },
               {
                 id: "6",
