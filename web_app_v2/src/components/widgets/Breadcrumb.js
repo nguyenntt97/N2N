@@ -40,12 +40,11 @@ export default function CustomizedBreadcrumbs(props) {
     ...props.curUrl.map((level, index) => {
       let current1 = upperFirst(level);
       return (
-        <Link key="2" to={"/"}>
+        <Link key={index} to={"/"}>
           <StyledBreadcrumb
             key={index}
             href={"/" + current1}
             label={current1}
-          // onClick={handleClick}
           />
         </Link>
       );

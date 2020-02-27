@@ -20,6 +20,10 @@ import { loadingEffect } from "../common/theme";
 
 const useStyles = makeStyles(theme => ({
   root: {
+    display: "none",
+    [theme.breakpoints.up("md")]: {
+      display: "flex"
+    },
     position: "relative",
     width: "100%",
     flexGrow: 1,

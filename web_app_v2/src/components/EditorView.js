@@ -74,6 +74,7 @@ export default function EditorView() {
   const [loading, setLoading] = React.useState(false);
   const [notiOpen, setNotiOpen] = React.useState(false);
   const [notiMsg, setNotiMsg] = React.useState(false);
+  const [editMode, setEditMode] = React.useState(false);
   const { chapId } = useParams();
 
   React.useEffect(() => {
@@ -125,13 +126,13 @@ export default function EditorView() {
   ];
 
   return [
-    <Grid container justify="space-around" direction="row-reverse">
-      <Grid container item xs={12} md={4} lg={3} justify="center" style={{
+    <Grid container justify="space-around" padding={5}>
+      <Grid container item xs={12} md={4} justify="center" style={{
         padding: 10
       }}>
         <Expandable data={expand_data} />
       </Grid>
-      <Grid item container spacing={2} direction="column" xs={12} md={7} style={{
+      <Grid item container spacing={2} direction="column" xs={12} md={8} style={{
         padding: 40
       }}>
         <Grid item className={classes.editor}>
@@ -140,7 +141,7 @@ export default function EditorView() {
               content={
                 chapContent.content ? JSON.parse(chapContent.content) : null
               }
-              read_only={false}
+              read_only={!editMode}
               data_storage={{
                 url: "http://sonako.codes:8080/chapter/" + chapId,
                 method: "POST",

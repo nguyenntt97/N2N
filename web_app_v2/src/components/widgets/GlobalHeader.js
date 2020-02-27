@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     position: "fixed",
     background: "primary",
     color: "#f0f0f0",
-    width: "100%"
+    width: "inherit"
   },
   customTb: {
     height: 25,
@@ -55,39 +55,37 @@ const useStyles = makeStyles(theme => ({
 export default function MainAppBar(props) {
   const classes = useStyles();
   return (
-    <div className={classes.grows}>
-      <AppBar className={classes.headerBg} position="static" elevation={0}>
-        <Toolbar className={classes.customTb}>
+    <AppBar className={classes.headerBg} position="static" elevation={0}>
+      <Toolbar className={classes.customTb}>
+        <Box style={{
+          flexGrow: 5,
+          display: "flex",
+          justifyContent: "flext-start"
+        }}>
+          <Box style={{
+            flexGrow: 0,
+            marginRight: 5
+          }}>
+            <Typography component="div" variant="h6" className={classes.title}>
+              <img src="/img/logo_new.png" className={classes.logo} />
+              <Box fontWeight="fontWeightBold">Sonako</Box>
+            </Typography>
+          </Box>
           <Box style={{
             flexGrow: 5,
-            display: "flex",
-            justifyContent: "flext-start"
+            maxWidth: 600,
+            position: "relative"
           }}>
-            <Box style={{
-              flexGrow: 0,
-              marginRight: 5
-            }}>
-              <Typography component="div" variant="h6" className={classes.title}>
-                <img src="/img/logo_new.png" className={classes.logo} />
-                <Box fontWeight="fontWeightBold">Sonako</Box>
-              </Typography>
-            </Box>
-            <Box style={{
-              flexGrow: 5,
-              maxWidth: 600,
-              position: "relative"
-            }}>
-              <SearchBar />
-            </Box>
+            <SearchBar />
           </Box>
-          <Box style={{
-            flexGrow: 0
-          }}>
-            <QuickOption />
-          </Box>
+        </Box>
+        <Box style={{
+          flexGrow: 0
+        }}>
+          <QuickOption />
+        </Box>
 
-        </Toolbar>
-      </AppBar>
-    </div>
+      </Toolbar>
+    </AppBar>
   );
 }

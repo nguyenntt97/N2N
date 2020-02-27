@@ -36,6 +36,7 @@ const useStyles = makeStyles({
     borderRadius: 0,
     // borderBottom: "1px solid #3e4149",
     width: "100%",
+    boxSizing: "border-box",
     position: "relative",
     padding: "10px !important"
   },

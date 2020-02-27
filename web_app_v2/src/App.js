@@ -26,9 +26,7 @@ class App extends Component {
       <div className={styles.App}>
         <MuiThemeProvider theme={Theme}>
           <Grid container justify="center">
-            <Grid item xs={12}>
-              <GlobalHeader viewName={"Trang chủ"} />
-            </Grid>
+            <GlobalHeader viewName={"Trang chủ"} />
             {routes.map((route, i) => (
               <Route
                 key={i}

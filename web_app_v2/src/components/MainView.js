@@ -78,16 +78,20 @@ function MainView() {
       <Grid item xs={12}>
         <ProjectPane data={prjData} title="Mới Nhất" />
       </Grid>
-      <Grid item xs={12} container justify="center">
+      <Grid item xs={12} container justify="center" style={{ marginTop: "70px" }}>
         <Grid item xs={12} md={7}>
           <TabPane
             immersive
             content={mainContent}
-            style={{ marginTop: "70px" }}
           />
         </Grid>
-        <Grid item xs={12} md={3}>
-          <TabPane content={widget} style={{ marginTop: "70px" }} />
+        <Grid container item sm={12} md={4} justify="space-around">
+          <Grid item xs={12} sm={5} md={12}>
+            <TabPane content={widget} />
+          </Grid>
+          <Grid item xs={12} sm={5} md={12}>
+            <TabPane content={widget} />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
