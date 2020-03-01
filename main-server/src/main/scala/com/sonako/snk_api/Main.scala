@@ -1,10 +1,10 @@
 package com.sonako.snk_api
 
 import cats.effect.IO
-import com.sonako.snk_api.common.SimpleController
+import com.sonako.snk_api.common.{SSLContextSingleton, SimpleController}
 import io.finch._
 import io.finch.catsEffect._
-import com.sonako.snk_api.service.{ChapterService, ProjectService}
+import com.sonako.snk_api.service.{ChapterService, ProjectService, UserService}
 import com.twitter.finagle.http.{Request, Response, Status}
 import com.twitter.finagle.{Http, Service}
 import com.twitter.server.TwitterServer
@@ -20,40 +20,35 @@ import scala.util.Properties
 case class Mess(msg: String)
 
 object Main extends TwitterServer with Endpoint.Module[IO] with SimpleController {
-  val api: Endpoint[IO, Mess] = get("hello") {
-    Ok(Mess("Hello, World"))
-  }
-
-
-  def main(): Unit = {
-    val server = Http.server
-      .withStatsReceiver(statsReceiver)
-      .serve(
-        s"0.0.0.0:${Properties.envOrElse("PORT", "8080")}",
-        toCorsService
-      )
-
-
-    onExit {
-      server.close()
+    val hello: Endpoint[IO, Mess] = get("hello") {
+        Ok(Mess("Welcome to Sonako's public API"))
     }
-
-    Await.ready(adminHttpServer)
-  }
-
-  override def toService: Service[Request, Response] = {
-    //    val editorApp = new EditorController(Environment)(IO.contextShift(ExecutionContext.global))
-    val projectService = new ProjectService(Environment)(IO.contextShift(ExecutionContext.global))
-    val chapterService = new ChapterService(Environment)
-
-    Bootstrap.serve[Application.Json](
-      projectService.getProject
-        :+: projectService.getProjects
-        :+: chapterService.getChapter
-        :+: chapterService.putChapter
-        :+: chapterService.postChapter
-    )
-      //          .serve[Text.Plain] (editorApp.putChapter)
-      .toService
-  }
+    
+    
+    def main(): Unit = {
+        val server = Http.server
+//          .withTransport.tls(SSLContextSingleton.getSSLContext)
+          .withStatsReceiver(statsReceiver)
+          .serve(
+              s"0.0.0.0:${Properties.envOrElse("PORT", "8080")}",
+              toCorsService
+          )
+        
+        
+        onExit {
+            server.close()
+        }
+        
+        Await.ready(adminHttpServer)
+    }
+    
+    override def toService: Service[Request, Response] = {
+        val projectService = new ProjectService(Environment)
+        val chapterService = new ChapterService(Environment)
+        val userService = new UserService
+        Bootstrap.serve[Application.Json](
+            projectService.toService :+: chapterService.toService :+: userService.getCurrentUser
+        )
+          .toService
+    }
 }

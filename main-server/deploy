@@ -1,0 +1,15 @@
+#!/bin/sh
+
+BUILD_DIR=./target/scala-2.12/
+DEPLOY_DIR=/snk_deploy/snk_api/
+
+echo "Building project..."
+sbt assembly
+rm -rf $BUILD_DIR/classes
+rm -rf $BUILD_DIR/test-classes
+rm -rf $BUILD_DIR/update
+cp runserver $BUILD_DIR 
+
+echo "Deploying..."
+scp -rv $BUILD_DIR/* root@sonako.codes:$DEPLOY_DIR
+echo "Done..."

@@ -7,17 +7,17 @@ val twitterVersion = "19.12.0"
 
 herokuAppName in Compile := "snk-api"
 lazy val commonSetting = Seq(
-	organization := "com.sonako",
-	name := "snk_api",
-	version := "0.0.1-SNAPSHOT",
-	scalaVersion := "2.12.7"
+    organization := "com.sonako",
+    name := "snk_api",
+    version := "dev.0.1",
+    scalaVersion := "2.12.7"
 )
 
 //sourceDirectory in Compile := baseDirectory.value / "resources"
 lazy val root = (project in file("."))
   .settings(
-	  initialCommands in console :=
-		"""
+      initialCommands in console :=
+        """
 		  |import io.finch._
 		  |import io.finch.circe._
 		  |import io.finch.generic._
@@ -34,40 +34,37 @@ lazy val root = (project in file("."))
       """.stripMargin
   )
   .settings(
-	  commonSetting: _*
+      commonSetting: _*
   )
   .settings(
-	  libraryDependencies ++= Seq(
-		  "com.github.finagle" %% "finchx-core" % finchVersion,
-		  "com.github.finagle" %% "finchx-circe" % finchVersion,
-		  "com.twitter" %% "finagle-stats" % twitterVersion,
-		  "com.twitter" %% "twitter-server" % twitterVersion,
-		  "io.circe" %% "circe-generic" % circeVersion,
-		  "org.scalatest" %% "scalatest" % scalatestVersion % "test",
-		  "org.scalikejdbc" %% "scalikejdbc" % "3.4.0",
-		  "mysql" % "mysql-connector-java" % "8.0.18",
-		  //		  "org.slf4j" % "slf4j-log4j12" % "2.0.0-alpha1",
-		  "ch.qos.logback" % "logback-classic" % "1.1.7",
-		  "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
-			"org.scalikejdbc" %% "scalikejdbc-config" % "3.4.0"
-		  //		  "org.slf4j" % "slf4j-api" % "2.0.0-alpha0",
-		  //		  "log4j" % "log4j" % "1.2.17"
-	  ),
-	  excludeDependencies += "commons-logging" % "commons-logging"
+      libraryDependencies ++= Seq(
+          "com.github.finagle" %% "finchx-core" % finchVersion,
+          "com.github.finagle" %% "finchx-circe" % finchVersion,
+          "com.twitter" %% "finagle-stats" % twitterVersion,
+          "com.twitter" %% "twitter-server" % twitterVersion,
+          "io.circe" %% "circe-generic" % circeVersion,
+          "org.scalatest" %% "scalatest" % scalatestVersion % "test",
+          "org.scalikejdbc" %% "scalikejdbc" % "3.4.0",
+          "mysql" % "mysql-connector-java" % "8.0.18",
+          "ch.qos.logback" % "logback-classic" % "1.1.7",
+          "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
+          "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
+          "org.scalikejdbc" %% "scalikejdbc-config" % "3.4.0"
+      ),
+      excludeDependencies += "commons-logging" % "commons-logging"
   )
   .settings(
-	mainClass in assembly := Some("com.sonako.snk_api.Main")
-)
-
-lazy val utils = (project in file("utils"))
-  .settings(commonSetting: _*)
-  .settings(
-	  assemblyJarName in assembly := "utils.jar"
+      mainClass in assembly := Some("com.sonako.snk_api.Main")
   )
 
 assemblyMergeStrategy in assembly := {
-	case PathList("META-INF", xs@_*) => MergeStrategy.discard
-	case x => MergeStrategy.first
+    case PathList("META-INF", xs@_*) => MergeStrategy.discard
+    case x => MergeStrategy.first
 }
+
+unmanagedResourceDirectories in Compile += {
+    baseDirectory.value / "src/main/resources"
+}
+
 
 enablePlugins(JavaAppPackaging)

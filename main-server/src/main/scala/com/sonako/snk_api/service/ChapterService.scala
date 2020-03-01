@@ -43,7 +43,5 @@ class ChapterService(env: {
 		Ok("Success")
 	}
 
-	final def toService: Service[Request, Response] = Bootstrap
-	  .serve[Application.Json](getChapter)
-	  .toService
+	final def toService = getChapter :+: postChapter :+: putChapter
 }

@@ -5,6 +5,7 @@ import com.twitter.finagle.http.filter.Cors.{HttpFilter, Policy}
 import com.twitter.finagle.http.{Request, Response}
 
 trait SimpleController {
+  
   val policy: Policy = Policy(
     allowsOrigin = _ => Some("*"),
     allowsMethods = _ => Some(Seq("GET", "POST")),
