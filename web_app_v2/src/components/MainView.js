@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useEndpoint, genReq } from "./common/fetchApi"
 import Grid from "@material-ui/core/Grid";
 
 import { ProjectPane, TabPane, NewsPane, TopBoard } from "./widgets";
@@ -41,30 +42,28 @@ const mainContent = [
 ];
 
 function MainView() {
-  const [prjData, setPrjData] = useState([]);
-  const [loading, setLoading] = useState("false");
+  const projectList = useEndpoint(genReq("/projects"))
+  // useEffect(() => {
+  //   async function fetchProjects() {
+  //     try {
+  //       setLoading("true");
+  //       const response = await fetch("http://sonako.codes:8080/projects");
+  //       const json = await response.json();
 
-  useEffect(() => {
-    async function fetchProjects() {
-      try {
-        setLoading("true");
-        const response = await fetch("http://sonako.codes:8080/projects");
-        const json = await response.json();
+  //       setPrjData(json);
+  //     } catch (err) {
+  //       setLoading("null");
+  //     }
+  //   }
 
-        setPrjData(json);
-      } catch (err) {
-        setLoading("null");
-      }
-    }
-
-    fetchProjects();
-  }, []);
+  //   fetchProjects();
+  // }, []);
 
   const widget = [
     {
       title: "Cập nhật",
       label: "update-tab",
-      body: <TopBoard data={prjData} />
+      body: <TopBoard data={projectList.data} />
     },
     {
       title: "TOP",
@@ -72,11 +71,10 @@ function MainView() {
       body: <span>Content 2</span>
     }
   ];
-
   return (
     <Grid container>
       <Grid item xs={12}>
-        <ProjectPane data={prjData} title="Mới Nhất" />
+        <ProjectPane data={projectList.data} title="Mới Nhất" />
       </Grid>
       <Grid item xs={12} container justify="center" style={{ marginTop: "70px" }}>
         <Grid item xs={12} md={7}>

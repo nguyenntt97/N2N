@@ -143,7 +143,7 @@ export default function EditorView() {
               }
               read_only={!editMode}
               data_storage={{
-                url: "http://sonako.codes:8080/chapter/" + chapId,
+                url: "https://sonako.codes:8080/chapter/" + chapId,
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 crossDomain: true
