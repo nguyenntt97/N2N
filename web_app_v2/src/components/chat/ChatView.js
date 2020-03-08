@@ -9,9 +9,9 @@ import BeachAccessIcon from "@material-ui/icons/BeachAccess";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import { Dante, DanteMini } from "../dante/Dante";
-import { Paper } from "@material-ui/core";
+import { Paper, Button } from "@material-ui/core";
 import { Theme } from "../common/theme";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,35 +33,36 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const basicUser = (text) => <Typography component="div" style={{ color: '#1b262c' }}>
-  <Box fontWeight="fontWeightMedium">
-    {text}
-  </Box>
-</Typography >
-const modUser = (text) => <Typography component="div" style={{ color: '#3282b8' }}>
-  <Box fontWeight="fontWeightBold">
-    {text}
-  </Box>
-</Typography>
+const basicUser = text => (
+  <Typography component="div" style={{ color: "#1b262c" }}>
+    <Box fontWeight="fontWeightMedium">{text}</Box>
+  </Typography>
+);
+const modUser = text => (
+  <Typography component="div" style={{ color: "#3282b8" }}>
+    <Box fontWeight="fontWeightBold">{text}</Box>
+  </Typography>
+);
 export default function ChatView() {
   const classes = useStyles();
 
   return (
     <React.Fragment>
-      <List className={classes.root} >
+      <List className={classes.root}>
         <ListItem>
           <ListItemAvatar>
             <Avatar>
               <img src="/sample-ava.jpg" className={classes.ava} />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={
-            basicUser("Shakuma")
-          } secondary={
-            <React.Fragment>
-              {"I'll be in your neighborhood doing errands this…"}
-            </React.Fragment>
-          } />
+          <ListItemText
+            primary={basicUser("Shakuma")}
+            secondary={
+              <React.Fragment>
+                {"I'll be in your neighborhood doing errands this…"}
+              </React.Fragment>
+            }
+          />
         </ListItem>
         <li>
           {/* <Divider component="li" variant="inset" color="white" /> */}
@@ -72,7 +73,7 @@ export default function ChatView() {
             variant="caption"
           >
             Hôm nay
-        </Typography>
+          </Typography>
         </li>
         <ListItem>
           <ListItemAvatar>
@@ -80,9 +81,7 @@ export default function ChatView() {
               <img src="/sample-ava.jpg" className={classes.ava} />
             </Avatar>
           </ListItemAvatar>
-          <ListItemText primary={
-            modUser("nguyenntt")
-          } secondary={"OMG <3"} />
+          <ListItemText primary={modUser("nguyenntt")} secondary={"OMG <3"} />
         </ListItem>
         {/* <Divider variant="middle" /> */}
       </List>
@@ -96,7 +95,11 @@ export default function ChatView() {
           }}
         />
       </Paper>
+      <Box component="div" style={{ textAlign: "right", padding: "10px 0px" }}>
+        <Button variant="contained" color="primary">
+          Post
+        </Button>
+      </Box>
     </React.Fragment>
-
-  )
+  );
 }

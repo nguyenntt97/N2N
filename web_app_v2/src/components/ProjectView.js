@@ -4,8 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import { TabPane, ProjectInfo, VolPane, CommentBox } from "./widgets";
 import { TopBoard } from "./widgets/CommonWidget";
-
-// import GuildBoard from "./widgets/GuildBoard";
+import { useEndpoint, genReq } from "./common/fetchApi";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -120,19 +119,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const generateVolViews = volData =>
-  volData !== []
+  volData.length > 0
     ? volData.map(v => ({
-      title: v.title,
-      body: <VolPane
-        avatar={v.cover}
-        chapters={v.chapList} />
-    }))
+        title: v.title,
+        body: <VolPane avatar={v.cover} chapters={v.chapList} />
+      }))
     : [
-      {
-        title: "Tập trống",
-        body: <VolPane avatar="/img/loading.gif" empty />
-      }
-    ];
+        {
+          title: "Tập trống",
+          body: <VolPane avatar="/img/loading.gif" empty />
+        }
+      ];
 
 function generate(element) {
   return [0, 1, 2].map(value =>
@@ -149,18 +146,15 @@ const getProjectId = () => {
 
 export default function ProjectView() {
   const classes = useStyles();
-  const [dense, setDense] = React.useState(false);
-  const [secondary, setSecondary] = React.useState(false);
-  const [prjData, setPrjData] = React.useState([]);
-  const [thisPrjData, setThisPrjData] = React.useState([]);
-  const [loading, setLoading] = React.useState("false");
-  const [projectLoading, setProjectLoading] = React.useState(false);
+
+  var prjData = useEndpoint(genReq("/projects"), []);
+  var thisPrjData = useEndpoint(genReq(`/project?id=${getProjectId()}`), {});
 
   const widget = [
     {
       title: "Cập nhật",
       label: "update-tab",
-      body: <TopBoard data={prjData} />
+      body: <TopBoard data={prjData.data} />
     },
     {
       title: "TOP",
@@ -169,50 +163,25 @@ export default function ProjectView() {
     }
   ];
 
-  React.useEffect(() => {
-    async function fetchProjects() {
-      try {
-        setLoading("true");
-        const response = await fetch("http://sonako.codes:8080/projects");
-        const json = await response.json();
-
-        setPrjData(json);
-      } catch (err) {
-        setLoading("null");
-      }
-    }
-
-    async function fetchThisProject() {
-      try {
-        setProjectLoading(true);
-        const response = await fetch(
-          "http://sonako.codes:8080/project?id=" + getProjectId()
-        );
-        const json = await response.json();
-
-        setThisPrjData(json);
-        setProjectLoading(false);
-      } catch (err) {
-        setProjectLoading("null");
-      }
-    }
-
-    fetchProjects();
-    fetchThisProject();
-  }, []);
-
   return (
-    <Grid container justify="space-between" style={{
-      padding: 5
-    }}>
+    <Grid
+      container
+      justify="space-between"
+      style={{
+        padding: 5
+      }}
+    >
       <Grid item container xs={12} md={7} lg={8} justify="center">
         <Grid item xs={12}>
-          <ProjectInfo prjData={thisPrjData} loading={projectLoading} />
+          <ProjectInfo
+            prjData={thisPrjData.data}
+            loading={!thisPrjData.complete}
+          />
         </Grid>
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <TabPane
             content={generateVolViews(
-              thisPrjData.volInfo ? thisPrjData.volInfo : []
+              thisPrjData.data.volInfo ? thisPrjData.data.volInfo : []
             )}
             immersive
           />
@@ -227,8 +196,6 @@ export default function ProjectView() {
     </Grid>
   );
 }
-
-
 
 const COMMENT = [
   {
@@ -332,4 +299,3 @@ const vol_data = [
     ]
   }
 ];
-

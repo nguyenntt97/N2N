@@ -1,12 +1,8 @@
 package com.sonako.snk_api.model
 
-import java.sql.Date
-import java.util.Calendar
-
-import com.sonako.snk_api.Environment
 import com.sonako.snk_api.common.TimeUtils
-import scalikejdbc._
-import scalikejdbc.WrappedResultSet
+import com.sonako.snk_api.repository.VolumeRepo
+import scalikejdbc.{WrappedResultSet, _}
 
 case class NewProject(id: Long, title: String, content: String, volId: Long, uploader: Long)
 
@@ -36,7 +32,7 @@ object ProjectInfo extends SQLSyntaxSupport[ProjectInfo] {
     rs.intOpt("project_creator"),
     rs.int("project_created"),
     TimeUtils.dateTime2Epoch(rs.timestamp("project_latest")),
-    Environment.volRepo.getVolListByProject(rs.long("project_id"))
+    VolumeRepo.getVolListByProject(rs.long("project_id"))
   )
 }
 

@@ -5,7 +5,7 @@ import com.sonako.snk_api.model.{ChapterCommit, ChapterInfo, NewChapter, Project
 import scalikejdbc._
 
 
-class EditorRepo extends SimpleRepo {
+object EditorRepo extends SimpleRepo {
 	def getChapter(id: Long): Option[ChapterInfo] = DB readOnly { implicit session =>
 		sql"select chap_id, chap_title, chap_content, volume_id, uploader, views, rating, update_date FROM chapters WHERE chap_id=${id}"
 		  .map(rs => ChapterInfo(rs)).single().apply()

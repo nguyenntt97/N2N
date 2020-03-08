@@ -11,16 +11,12 @@ import { loadingEffect } from "../common/theme";
 const useStyles = data =>
   makeStyles(theme => ({
     projectBanner: {
-      backgroundImage:
-        "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('" +
-        data.banner +
-        "')",
       width: "100%",
       minHeight: 250,
       borderRadius: 15,
       backgroundSize: "cover",
       position: "relative",
-      padding: 5
+      padding: 10
     },
     projectPortrait: {
       height: 250,
@@ -34,14 +30,11 @@ const useStyles = data =>
     ...loadingEffect
   }));
 
-const data = [
-  {
-    cover: "/img/cover1.jpg",
-    title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?",
-    banner: "/img/cover2.png"
-  }
-];
-
+var data = {
+  cover: "/img/cover1.jpg",
+  title: "Naze Boku no Sekai wo Dare mo Oboeteinainoka?",
+  banner: "/img/cover2.png"
+};
 const labels = {
   1: "Dở tệ",
   2: "Tệ",
@@ -55,15 +48,29 @@ export default function ProjectInfo(props) {
   const [value, setValue] = React.useState(2);
   const [hover, setHover] = React.useState(2);
 
+  data.banner = props.prjData.thumbnail;
+  data.cover = props.prjData.thumbnail;
+
   return (
-    <Grid className={classes.projectBanner} container item xs={12}>
+    <Grid
+      className={classes.projectBanner}
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('" +
+          data.banner +
+          "')"
+      }}
+      container
+      item
+      xs={12}
+    >
       {props.loading ? (
         <div className={classes.placeholder}>
           <div className={classes.ldsDualRing} />
         </div>
       ) : null}
       <Grid container item xs={12} sm={4} lg={3} justify="center">
-        <img className={classes.projectPortrait} src={data[0].cover} />
+        <img className={classes.projectPortrait} src={data.cover} />
       </Grid>
 
       <Grid
@@ -91,7 +98,7 @@ export default function ProjectInfo(props) {
           className={classes.sideInfo}
           justify="center"
         >
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={6} sm={4}>
             <p>
               <b>Tác giả</b>: {props.prjData.author}, {props.prjData.artist}
             </p>
@@ -102,7 +109,7 @@ export default function ProjectInfo(props) {
               <b>Tác giả</b>: {props.prjData.author}
             </p>
           </Grid>
-          <Grid container item xs={12} sm={8} alignItems="center">
+          <Grid container item xs={6} sm={8} alignItems="center">
             <Grid container>
               <Box>
                 <b>Đánh giá</b>: <br />

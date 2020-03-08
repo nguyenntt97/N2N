@@ -1,20 +1,38 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import { Grid, IconButton, Tooltip } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { ListItem, List, ListItemText, Divider, Link } from "@material-ui/core";
+import {
+  ListItem,
+  List,
+  ListItemText,
+  Divider,
+  Link,
+  Box
+} from "@material-ui/core";
 import { Redirect, withRouter } from "react-router-dom";
 import { Alert, AlertTitle } from "@material-ui/lab";
+import EditIcon from "@material-ui/icons/Edit";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const useStyles = data =>
   makeStyles(theme => ({
-    projectPortrait: {
+    volPane: {
+      width: "100%",
+      position: "relative"
+    },
+    volCover: {
       height: 270,
       position: "relative",
-      margin: 25,
       borderRadius: 15
     },
     chapterList: {
-      width: "100%"
+      position: "relative"
+    },
+    operator: {
+      width: "100%",
+      position: "relative",
+      textAlign: "right",
+      padding: 5
     }
   }));
 
@@ -29,19 +47,19 @@ const data = [
 function VolPane(props) {
   const classes = useStyles(data[0])();
 
-  console.log(props.avatar)
   return (
-    <Grid className={classes.projectBanner} container justify="space-around">
+    <Grid className={classes.volPane} container justify="space-around">
       <Grid item container elevation={5} item xs={12} md={5} justify="center">
-        <img className={classes.projectPortrait} src={props.avatar} />
+        <img className={classes.volCover} src={props.avatar} />
       </Grid>
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} style={{ position: "relative" }}>
         {props.empty ? (
           <Alert severity="info" className={classes.chapterList}>
             <AlertTitle>Tình trạng</AlertTitle>
             Truyện chưa có người dịch!
           </Alert>
         ) : (
+          <React.Fragment>
             <List component="nav" className={classes.chapterList}>
               {props.chapters.map((c, index) => (
                 <ListItem
@@ -55,7 +73,18 @@ function VolPane(props) {
                 </ListItem>
               ))}
             </List>
-          )}
+            <Box component="div" className={classes.operator}>
+              <Tooltip title="Edit" placement="bottom">
+                <IconButton aria-label="edit">
+                  <EditIcon />
+                </IconButton>
+              </Tooltip>
+              <IconButton aria-label="more">
+                <MoreVertIcon />
+              </IconButton>
+            </Box>
+          </React.Fragment>
+        )}
       </Grid>
     </Grid>
   );

@@ -12,7 +12,7 @@ import scalikejdbc._
 //creator: Int,
 //created: Long,
 //latest: Long,
-class ProjectRepo extends SimpleRepo {
+object ProjectRepo extends SimpleRepo {
   def getAllProjects(): List[Project] = (sql"""
                                             SELECT project_id, project_name, project_ava
                                             FROM projects ORDER BY project_latest DESC LIMIT 12

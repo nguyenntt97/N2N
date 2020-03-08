@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useEndpoint, genReq } from "./common/fetchApi"
+import { useEndpoint, genReq } from "./common/fetchApi";
 import Grid from "@material-ui/core/Grid";
 
 import { ProjectPane, TabPane, NewsPane, TopBoard } from "./widgets";
@@ -42,22 +42,7 @@ const mainContent = [
 ];
 
 function MainView() {
-  const projectList = useEndpoint(genReq("/projects"))
-  // useEffect(() => {
-  //   async function fetchProjects() {
-  //     try {
-  //       setLoading("true");
-  //       const response = await fetch("http://sonako.codes:8080/projects");
-  //       const json = await response.json();
-
-  //       setPrjData(json);
-  //     } catch (err) {
-  //       setLoading("null");
-  //     }
-  //   }
-
-  //   fetchProjects();
-  // }, []);
+  const projectList = useEndpoint(genReq("/projects"));
 
   const widget = [
     {
@@ -76,12 +61,15 @@ function MainView() {
       <Grid item xs={12}>
         <ProjectPane data={projectList.data} title="Mới Nhất" />
       </Grid>
-      <Grid item xs={12} container justify="center" style={{ marginTop: "70px" }}>
+      <Grid
+        item
+        xs={12}
+        container
+        justify="center"
+        style={{ marginTop: "70px" }}
+      >
         <Grid item xs={12} md={7}>
-          <TabPane
-            immersive
-            content={mainContent}
-          />
+          <TabPane immersive content={mainContent} />
         </Grid>
         <Grid container item sm={12} md={4} justify="space-around">
           <Grid item xs={12} sm={5} md={12}>

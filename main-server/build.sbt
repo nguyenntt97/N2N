@@ -49,7 +49,9 @@ lazy val root = (project in file("."))
           "ch.qos.logback" % "logback-classic" % "1.1.7",
           "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
           "com.twitter" %% "twitter-server-logback-classic" % twitterVersion,
-          "org.scalikejdbc" %% "scalikejdbc-config" % "3.4.0"
+          "org.scalikejdbc" %% "scalikejdbc-config" % "3.4.0",
+          "com.pauldijou" %% "jwt-circe" % "4.3.0"
+//          "com.github.finagle" % "finagle-oauth2_2.12" % "19.8.0"
       ),
       excludeDependencies += "commons-logging" % "commons-logging"
   )

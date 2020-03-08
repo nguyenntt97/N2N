@@ -5,9 +5,5 @@ import com.sonako.snk_api.service.UserService
 import scalikejdbc.AutoSession
 
 object Environment {
-  lazy val projectsRepo: ProjectRepo = new ProjectRepo()
-  lazy val editorRepo: EditorRepo = new EditorRepo()
-  lazy val volRepo: VolumeRepo = new VolumeRepo()
-  lazy val chapRepo: ChapterRepo = new ChapterRepo()
   lazy val userService = new UserService
 }

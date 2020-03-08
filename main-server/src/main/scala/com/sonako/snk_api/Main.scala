@@ -43,11 +43,9 @@ object Main extends TwitterServer with Endpoint.Module[IO] with SimpleController
     }
     
     override def toService: Service[Request, Response] = {
-        val projectService = new ProjectService(Environment)
-        val chapterService = new ChapterService(Environment)
         val userService = new UserService
         Bootstrap.serve[Application.Json](
-            projectService.toService :+: chapterService.toService :+: userService.getCurrentUser
+            ProjectService.api :+: ChapterService.api :+: userService.getCurrentUser
         )
           .toService
     }
