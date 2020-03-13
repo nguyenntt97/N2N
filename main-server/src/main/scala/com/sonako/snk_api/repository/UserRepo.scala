@@ -6,7 +6,7 @@ import scalikejdbc._
 object UserRepo extends SimpleRepo {
   def doAuthen(authInfo: AuthInfo): Option[UserClaim] =
     sql"""
-      SELECT acc_id, acc_role FROM accounts WHERE acc_id = ${authInfo.id} AND acc_pass = ${authInfo.password}
+      SELECT acc_id, acc_name, acc_role FROM accounts WHERE acc_name = ${authInfo.username} AND acc_pass = ${authInfo.password}
     """.map(UserClaim.apply).single().apply()
   
   def getProjectInfo(projectId: Long): Option[ProjectInfo] =

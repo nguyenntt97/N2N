@@ -4,7 +4,7 @@ import cats.effect.IO
 import com.sonako.snk_api.common.{SSLContextSingleton, SimpleController}
 import io.finch._
 import io.finch.catsEffect._
-import com.sonako.snk_api.service.{ChapterService, ProjectService, UserService}
+import com.sonako.snk_api.service.{AuthService, ChapterService, ProjectService}
 import com.twitter.finagle.http.{Request, Response, Status}
 import com.twitter.finagle.{Http, Service}
 import com.twitter.server.TwitterServer
@@ -43,9 +43,8 @@ object Main extends TwitterServer with Endpoint.Module[IO] with SimpleController
     }
     
     override def toService: Service[Request, Response] = {
-        val userService = new UserService
         Bootstrap.serve[Application.Json](
-            ProjectService.api :+: ChapterService.api :+: userService.getCurrentUser
+            ProjectService.api :+: ChapterService.api :+: AuthService.api
         )
           .toService
     }
